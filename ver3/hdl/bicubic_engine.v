@@ -14,7 +14,6 @@ localparam logic [7:0] INV_Q08 [1:100] = '{
     8'h04, 8'h04, 8'h04, 8'h04, 8'h04, 8'h04, 8'h04, 8'h04, 8'h04, 8'h04
 };
 
-
 `define INIT  3'b000
 `define XC1   3'b001
 `define XC2   3'b010
@@ -23,35 +22,29 @@ localparam logic [7:0] INV_Q08 [1:100] = '{
 `define XCP_H 3'b101
 `define XCP_V 3'b110
 
+// Given X, P, when start, return XCP, takes 5 cycles
 module Bicubic (
     input clk,
     input rst,
+    input start,
+    input [7:0] X [0:3],  // Q0.8
+    input [7:0] P [0:3],  // Q8.0
     output reg [7:0] out_val,
-    output reg done
+    output reg finish
 );
 
 // mem
-reg        [7:0] P_ROM_H1   [0:3]; // P(-1), P(0), P(1), P(2)
-reg        [7:0] P_ROM_H2   [0:3]; // P(-1), P(0), P(1), P(2)
-reg        [7:0] P_ROM_H3   [0:3]; // P(-1), P(0), P(1), P(2)
-reg        [7:0] P_ROM_H4   [0:3]; // P(-1), P(0), P(1), P(2)
-reg        [7:0] X_ROM_H    [0:3]; // 1, x, x², x³
-reg        [7:0] X_ROM_V    [0:3]; // 1, x, x², x³
 reg signed [3:0] C_col0_ROM [0:3]; // signed Q2.1
 reg signed [3:0] C_col1_ROM [0:3]; // signed Q2.1
 reg signed [3:0] C_col2_ROM [0:3]; // signed Q2.1
 reg signed [3:0] C_col3_ROM [0:3]; // signed Q2.1
 
 // registers
-reg        [7:0] X   [0:3], X_next  [0:3]; // Q0.8
-reg        [7:0] P   [0:3], P_next  [0:3]; // Q8.0
 reg signed [12:0] XC [0:3], XC_next [0:3]; // signed Q2.8 * 4 = 13 bit
 reg        [7:0]            out_val_next;  // Q8.0
-reg                         done_next;     
+reg                         finish_next;     
 reg        [2:0] state,     state_next;    // 5 states
 reg        [3:0] cnt,       cnt_next;      
-
-reg [7:0] P_REG_V [0:2], P_REG_V_next [0:2];
 
 // wire                         signed   Q0.8        signed Q2.1   = 13 bit
 wire signed [11:0] XC0_prod0 = ($signed({1'b0, X[0]}) * C_col0_ROM[0]);
@@ -92,20 +85,15 @@ wire        [7:0]  XCP_sum_round_shift_clamp = (XCP_sum_round_shift <  13'sd0   
 // FSM(X, P, XC, out_val, done, cnt, state)
 always @(*) begin
     // default signal
-    X_next[0] = X[0]; X_next[1] = X[1]; X_next[2] = X[2]; X_next[3] = X[3];
-    P_next[0] = P[0]; P_next[1] = P[1]; P_next[2] = P[2]; P_next[3] = P[3];
     XC_next[0] = XC[0]; XC_next[1] = XC[1]; XC_next[2] = XC[2]; XC_next[3] = XC[3];
     out_val_next = out_val;
-    done_next    = 1'b0;
+    finish_next    = 1'b0;
     cnt_next     = cnt;
     state_next   = state;
     P_REG_V_next[0] = P_REG_V[0]; P_REG_V_next[1] = P_REG_V[1]; P_REG_V_next[2] = P_REG_V[2];
     // only list changed signals, which will overwrite above's
     case (state)
-        `INIT: begin // load X, P
-            X_next[0] = X_ROM_H[0]; X_next[1] = X_ROM_H[1]; X_next[2] = X_ROM_H[2]; X_next[3] = X_ROM_H[3]; // load X
-            P_next[0] = P_ROM_H1[0]; P_next[1] = P_ROM_H1[1]; P_next[2] = P_ROM_H1[2]; P_next[3] = P_ROM_H1[3]; // load P
-            state_next = `XC1;
+        `IDLE : begin // calc 1, x, x2, x3, load X, P
         end
         `XC1: begin // X*C_col0
             XC_next[0] = XC_sum0_round_shift;
@@ -127,37 +115,8 @@ always @(*) begin
                 state_next = `XCP_H;
             end
         end
-        `XCP_H: begin // XC*P
-            case (cnt)
-                3'd0: begin
-                    P_REG_V_next[0] = XCP_sum_round_shift_clamp;
-                    P_next[0] = P_ROM_H2[0]; P_next[1] = P_ROM_H2[1]; P_next[2] = P_ROM_H2[2]; P_next[3] = P_ROM_H2[3];
-                    X_next[0] = X[0]; X_next[1] = X[1]; X_next[2] = X[2]; X_next[3] = X[3];
-                end
-                3'd1: begin
-                    P_REG_V_next[1] = XCP_sum_round_shift_clamp;
-                    P_next[0] = P_ROM_H3[0]; P_next[1] = P_ROM_H3[1]; P_next[2] = P_ROM_H3[2]; P_next[3] = P_ROM_H3[3];
-                    X_next[0] = X[0]; X_next[1] = X[1]; X_next[2] = X[2]; X_next[3] = X[3];
-                end
-                3'd2: begin
-                    P_REG_V_next[2] = XCP_sum_round_shift_clamp;
-                    P_next[0] = P_ROM_H4[0]; P_next[1] = P_ROM_H4[1]; P_next[2] = P_ROM_H4[2]; P_next[3] = P_ROM_H4[3];
-                    X_next[0] = X[0]; X_next[1] = X[1]; X_next[2] = X[2]; X_next[3] = X[3];
-                end
-                3'd3: begin
-                    P_next[0] = P_REG_V[0]; P_next[1] = P_REG_V[1]; P_next[2] = P_REG_V[2]; P_next[3] = XCP_sum_round_shift_clamp;
-                    X_next[0] = X_ROM_V[0]; X_next[1] = X_ROM_V[1]; X_next[2] = X_ROM_V[2]; X_next[3] = X_ROM_V[3];
-                end
-            endcase
+        `XCP: begin // XC*P
             done_next = 1'b0;
-            cnt_next = cnt + 1;
-            state_next = `XC1;
-        end
-        `XCP_V: begin // XC*P
-            // clamp
-            out_val_next = XCP_sum_round_shift_clamp;
-            done_next = 1'b1;
-            cnt_next = 3'd0;
             state_next = `XC1;
         end
         default: begin 
@@ -169,57 +128,21 @@ end
 // sequential for registers
 always @(posedge clk) begin
     if (rst) begin
-        X[0] <= X_ROM_H[0]; X[1] <= X_ROM_H[1]; X[2] <= X_ROM_H[2]; X[3] <= X_ROM_H[3];
-        P[0] <= P_ROM_H1[0]; P[1] <= P_ROM_H1[1]; P[2] <= P_ROM_H1[2]; P[3] <= P_ROM_H1[3];
         XC[0] <= 11'd0; XC[1] <= 11'd0; XC[2] <= 11'd0; XC[3] <= 11'd0;
         out_val <= 8'd0;
-        done <= 1'b0;
-        cnt <= 3'd0;
+        finish <= 1'b0;
         state <= `INIT;
-        P_REG_V[0] <= 8'h0;
-        P_REG_V[1] <= 8'h0;
-        P_REG_V[2] <= 8'h0;
     end else begin
-        X[0] <= X_next[0]; X[1] <= X_next[1]; X[2] <= X_next[2]; X[3] <= X_next[3];
-        P[0] <= P_next[0]; P[1] <= P_next[1]; P[2] <= P_next[2]; P[3] <= P_next[3];
         XC[0] <= XC_next[0]; XC[1] <= XC_next[1]; XC[2] <= XC_next[2]; XC[3] <= XC_next[3];
         out_val <= out_val_next;
-        done <= done_next;
-        cnt <= cnt_next;
+        finish <= finish_next;
         state <= state_next;
-        P_REG_V[0] <= P_REG_V_next[0];
-        P_REG_V[1] <= P_REG_V_next[1];
-        P_REG_V[2] <= P_REG_V_next[2];
     end
 end
 
 // sequential for mem
 always @(posedge clk) begin
     if (rst) begin
-        P_ROM_H1[0] <= 8'h4d;
-        P_ROM_H1[1] <= 8'h6;
-        P_ROM_H1[2] <= 8'h17;
-        P_ROM_H1[3] <= 8'h4f;
-        P_ROM_H2[0] <= 8'h4c;
-        P_ROM_H2[1] <= 8'h3f;
-        P_ROM_H2[2] <= 8'h4c;
-        P_ROM_H2[3] <= 8'h4c;
-        P_ROM_H3[0] <= 8'h4b;
-        P_ROM_H3[1] <= 8'h4c;
-        P_ROM_H3[2] <= 8'hf;
-        P_ROM_H3[3] <= 8'h1c;
-        P_ROM_H4[0] <= 8'h49;
-        P_ROM_H4[1] <= 8'h4a;
-        P_ROM_H4[2] <= 8'h3a;
-        P_ROM_H4[3] <= 8'h49;
-        X_ROM_H[0] <= 8'd76; 
-        X_ROM_H[1] <= 8'd114;
-        X_ROM_H[2] <= 8'd171;
-        X_ROM_H[3] <= 8'd255;
-        X_ROM_V[0] <= 8'd76; 
-        X_ROM_V[1] <= 8'd114;
-        X_ROM_V[2] <= 8'd171;
-        X_ROM_V[3] <= 8'd255;
         C_col0_ROM[0] <= 4'b1111; C_col1_ROM[0] <= 4'b0011; C_col2_ROM[0] <= 4'b1101; C_col3_ROM[0] <= 4'b0001; // [-0.5 , +1.0 , -0.5 ,  0.0]
         C_col0_ROM[1] <= 4'b0010; C_col1_ROM[1] <= 4'b1011; C_col2_ROM[1] <= 4'b0100; C_col3_ROM[1] <= 4'b1111; // [+1.5 , -2.5 ,  0.0 , +1.0]
         C_col0_ROM[2] <= 4'b1111; C_col1_ROM[2] <= 4'b0000; C_col2_ROM[2] <= 4'b0001; C_col3_ROM[2] <= 4'b0000; // [-1.5 , +2.0 , +0.5 ,  0.0]
