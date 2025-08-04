@@ -7,3 +7,5 @@ Ver 3: Support bicubic for a whole column, preload 1/27, 2/27... in row 100, 1/2
 Ver 4: Support whole image
 
 Ver 5: Calculate frac itself
+
+Shift and subract may not be the best way, using Newton-Raphson to calculate very accurate num, and add up should be better
