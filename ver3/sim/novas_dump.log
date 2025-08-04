@@ -126,7 +126,7 @@ Limit information:
 cputime		unlimited
 filesize		unlimited
 datasize		unlimited
-stacksize		8193 kbytes
+stacksize		8192 kbytes
 coredumpsize		0 kbytes
 memoryuse		unlimited
 vmemoryuse		unlimited
@@ -144,13 +144,13 @@ LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd
 LD_LIBRARY_PATH=/usr/cad/synopsys/vcs/2022.06/lib:/usr/cad/synopsys/vcs/2022.06/linux64/lib:/usr/cad/synopsys/verdi/2022.06/etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2022.06/share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2022.06/share/PLI/VCS/LINUX64/::/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64::/lib64:/usr/lib64:/usr/local/lib64
 HOSTTYPE=x86_64-linux
 SNPS_INTERNAL_VCS_LINUX_OS=linux
-SNPS_VCS_INTERNAL_ROOT_START_TIME=1753255159.182661275
-SSH_CONNECTION=140.114.24.31 59644 140.114.24.110 22
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1754329556.692767722
+SSH_CONNECTION=140.114.24.31 35520 140.114.24.110 22
 LANG=en_US.UTF-8
-DISPLAY=localhost:12.0
+DISPLAY=localhost:10.0
 HOSTNAME=ws20
 SCRNAME=vcs
-SNPS_VCS_INTERNAL_CURR_PID=1090548
+SNPS_VCS_INTERNAL_CURR_PID=456506
 TOOL_HOME=/usr/cad/synopsys/vcs/2022.06/linux64
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2022.06/linux64/clang
 OVA_UUM=0
@@ -159,7 +159,7 @@ MACHTYPE=x86_64
 MODULES_USE_COMPAT_VERSION=0
 VCS_MODE_FLAG=64
 OSTYPE=linux
-XDG_SESSION_ID=1310
+XDG_SESSION_ID=731
 MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
 USER=u110061146
 VCS_MX_HOME_INTERNAL=1
@@ -169,24 +169,24 @@ VMR_MODE_FLAG=64
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 HOME=/home/u110/u110061146
 HOST=ws20
-SSH_CLIENT=140.114.24.31 59644 22
+SSH_CLIENT=140.114.24.31 35520 22
 VCS_CC=gcc
 VCS_ARG_ADDED_FOR_TMP=1
 SHLIB_PATH=/usr/cad/synopsys/verdi/2022.06/etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2022.06/share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2022.06/share/PLI/VCS/LINUX64/:
 VCS_USER_OPTIONS=-f hdl.f -full64 -R -debug_access+all +v2k
 VCS_ARCH_OVERRIDE=linux
 LOADEDMODULES=
-SSH_TTY=/dev/pts/2
+SSH_TTY=/dev/pts/0
 MAIL=/var/spool/mail/u110061146
 MPI_HOME=/home/u110/u110061146/opt/mpich
 REMOTEHOST=140.114.24.31
 SHELL=/usr/bin/tcsh
 TERM=xterm
-SNPS_VCS_INTERNAL_ROOT_PID=1090548
+SNPS_VCS_INTERNAL_ROOT_PID=456506
 SCRIPT_NAME=vcs
 SNPS_VCS_INTERNAL_MEMPRELOAD_USE_LIBC=1
 LM_LICENSE_FILE=26585@lshc:26585@lstc:1717@lstc:5280@lshc:5280@lstc:
-SNPS_VCS_TMPDIR=/tmp/vcs_20250723071919_1090548
+SNPS_VCS_TMPDIR=/tmp/vcs_20250804174556_456506
 VPPATH=/home/u110/u110061146/ee6470/riscv-vp/vp/build/bin
 VERDI_HOME=/usr/cad/synopsys/verdi/2022.06
 SHLVL=3
@@ -197,7 +197,7 @@ VCS_DEPTH=0
 MODULEPATH=/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
 GDK_BACKEND=x11
 LOGNAME=u110061146
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-o1hNLuZgQy,guid=37fe6c0bbc5ba2a830cc74ef68808c91
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-Ij7cLSfgBT,guid=92ad5e5000286ba2630e96d06890ef2b
 XDG_RUNTIME_DIR=/run/user/23078
 MODULEPATH_modshare=/usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2
 PATH=.:/usr/cad/synopsys/verdi/2022.06/bin:/usr/cad/synopsys/vcs/2022.06/amd64/bin:/home/u110/u110061146/opt/mpich/bin:/usr/cadtool/riscv-gnu-toolchain/bin:/usr/cadtool/riscv-gnu-toolchain/bin:/home/u110/u110061146/local/tree/usr/bin:/home/u110/u110061146/ee6470/cmake-4.0.0-rc2-linux-x86_64/bin:/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
@@ -218,8 +218,8 @@ Runtime command line arguments:
 argv[0]=simv
 argv[1]=+v2k
 219 profile - 100
-          CPU/Mem usage: 0.020 sys,  0.130 user,  305.36M mem
-220 Elapsed time:    0:00:00    Wed Jul 23 03:19:22 2025
+          CPU/Mem usage: 0.020 sys,  0.130 user,  307.36M mem
+220 Elapsed time:    0:00:00    Mon Aug  4 13:45:59 2025
 221 User CPU time used: 0 seconds
 222 System CPU time used: 0 seconds
 223 pliAppInit
@@ -233,70 +233,70 @@ argv[1]=+v2k
 231 LIBSSCORE=found /usr/cad/synopsys/verdi/2022.06/share/PLI/lib/LINUXAMD64/libsscore_vcs202206.so through $NOVAS_HOME setting.
 232 FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
 233 (C) 1996 - 2022 by Synopsys, Inc.
-234 sps_call_fsdbDumpfile_main at 0 : ./test_Bicubic.v(24)
-235 argv[0]: (Bicubic_ver2.fsdb)
+234 sps_call_fsdbDumpfile_main at 0 : ./test_Divider.v(25)
+235 argv[0]: (Divider_ver3.fsdb)
 236 *Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-237 *Verdi* : Create FSDB file 'Bicubic_ver2.fsdb'
+237 *Verdi* : Create FSDB file 'Divider_ver3.fsdb'
 238 [spi_vcs_vd_ppi_create_root]: no upf option
 239 compile option from '/home/u110/u110061146/B_ICC2024_preliminary_grad_cell-based/ver3/sim/simv.daidir/vcs_rebuild'.
 240   "vcs '-f' 'hdl.f' '-full64' '-R' '-debug_access+all' '+v2k' 2>&1"
 241 DVDI_is_vir_unload_enabled is enable
 242 FSDB_VCS_ENABLE_NATIVE_VC is enable
-243 sps_call_fsdbDumpvars_vd_main at 0 : ./test_Bicubic.v(25)
+243 sps_call_fsdbDumpvars_vd_main at 0 : ./test_Divider.v(26)
 244 argv[0]: (+mda)
 245 *Verdi* : Begin traversing the scopes, layer (0).
 246 *Verdi* : Enable +mda dumping.
 247 *Verdi* : End of traversing.
 248 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.020 sys,  0.130 user,  406.06M mem
-                   incr: 0.000 sys,  0.000 user,  9.01M mem
-                   accu: 0.000 sys,  0.000 user,  9.01M mem
-              accu incr: 0.000 sys,  0.000 user,  9.01M mem
+          CPU/Mem usage: 0.020 sys,  0.130 user,  406.87M mem
+                   incr: 0.000 sys,  0.000 user,  7.82M mem
+                   accu: 0.000 sys,  0.000 user,  7.82M mem
+              accu incr: 0.000 sys,  0.000 user,  7.82M mem
 
-          Count usage: 117 var,  117 idcode,  52 callback
-                 incr: 117 var,  117 idcode,  52 callback
-                 accu: 117 var,  117 idcode,  52 callback
-            accu incr: 117 var,  117 idcode,  52 callback
-249 Elapsed time:    0:00:00    Wed Jul 23 03:19:22 2025
+          Count usage: 20 var,  19 idcode,  9 callback
+                 incr: 20 var,  19 idcode,  9 callback
+                 accu: 20 var,  19 idcode,  9 callback
+            accu incr: 20 var,  19 idcode,  9 callback
+249 Elapsed time:    0:00:00    Mon Aug  4 13:45:59 2025
 250 User CPU time used: 0 seconds
 251 System CPU time used: 0 seconds
 252 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.020 sys,  0.130 user,  407.11M mem
+          CPU/Mem usage: 0.020 sys,  0.130 user,  407.92M mem
                    incr: 0.000 sys,  0.000 user,  1.05M mem
-                   accu: 0.000 sys,  0.000 user,  10.06M mem
+                   accu: 0.000 sys,  0.000 user,  8.87M mem
               accu incr: 0.000 sys,  0.000 user,  1.05M mem
 
-          Count usage: 117 var,  117 idcode,  52 callback
+          Count usage: 20 var,  19 idcode,  9 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 117 var,  117 idcode,  52 callback
+                 accu: 20 var,  19 idcode,  9 callback
             accu incr: 0 var,  0 idcode,  0 callback
-253 Elapsed time:    0:00:00    Wed Jul 23 03:19:22 2025
+253 Elapsed time:    0:00:00    Mon Aug  4 13:45:59 2025
 254 User CPU time used: 0 seconds
 255 System CPU time used: 0 seconds
-256 End of simulation at 402000
-257 Memory usage: 407.114 M
-258 Maximum resident set size: 113 MB
-259 Hard page faults: 0
-260 Soft page faults: 12142
-261 Elapsed time:    0:00:00    Wed Jul 23 03:19:22 2025
+256 End of simulation at 2260000
+257 Memory usage: 407.925 M
+258 Maximum resident set size: 111 MB
+259 Hard page faults: 3
+260 Soft page faults: 11958
+261 Elapsed time:    0:00:00    Mon Aug  4 13:45:59 2025
 262 User CPU time used: 0 seconds
 263 System CPU time used: 0 seconds
 264 Begin FSDB profile info:
-265 FSDB Writer : bc1(846) bcn(15498) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.004657) io wait(0.000000) theadpool wait(0.000000)
+265 FSDB Writer : bc1(456) bcn(919) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.004598) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
 266 End FSDB profile info
-267 FSDB closed. Name: Bicubic_ver2.fsdb Size: 12569
+267 FSDB closed. Name: Divider_ver3.fsdb Size: 10643
 268 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-269                      - BlockUsed:1 Acquire:17044 BufferUsed:189797
+269                      - BlockUsed:1 Acquire:1818 BufferUsed:25910
 270                      - Flush:3 Expand:0 ProducerWait:0 ConsumerWait:0
-271                      - MainProducerTime:0.166844150 TotalConsumerTime:0.000000000
-272                      - ElapsedTime:0.076882000
-273 Producer   0 profile - BlockUsed:1 Acquire:17044 BufferUsed:189797
+271                      - MainProducerTime:0.167911963 TotalConsumerTime:0.000000000
+272                      - ElapsedTime:0.097249000
+273 Producer   0 profile - BlockUsed:1 Acquire:1818 BufferUsed:25910
 274 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
-275                      - BlockUsed:1 Acquire:17044 BufferUsed:189797
+275                      - BlockUsed:1 Acquire:1818 BufferUsed:25910
 276 SimExit
-277 Elapsed time:    0:00:01    Wed Jul 23 03:19:23 2025
+277 Elapsed time:    0:00:01    Mon Aug  4 13:46:00 2025
 278 User CPU time used: 0 seconds
 279 System CPU time used: 0 seconds
 280 Sim process exit

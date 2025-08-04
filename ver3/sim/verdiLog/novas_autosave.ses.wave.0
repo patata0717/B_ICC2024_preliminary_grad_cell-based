@@ -1,0 +1,76 @@
+Magic 271485
+Revision Verdi_T-2022.06
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 1280 546 100 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/u110/u110061146/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 343400.000000
+cursor 0.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 2
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/u110/u110061146/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb"
+addSignal -h 15 /tb_Divider/clk
+addSignal -h 15 /tb_Divider/dut/rst
+addSignal -h 15 -UNSIGNED -HEX /tb_Divider/cycle_cnt[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope dividend[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope divider[6:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_Divider/dut/qoutient[7:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope remainder[7:0]
+addGroup "G2"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/u110/u110061146/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/tb_Divider"
+"/tb_Divider/dut"
+
+SCOPE_LIST_BEGIN
+"/tb_Divider"
+"/tb_Divider/dut"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

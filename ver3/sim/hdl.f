@@ -1,2 +1,2 @@
-./test_Bicubic.v
-../hdl/Bicubic.v
+./test_Divider.v
+../hdl/Divider.v

@@ -33,7 +33,7 @@
 /usr/cad/synopsys/verdi/2022.06/share/PLI/VCS/LINUX64/verdi.tab
 hdl.f
 46
-XDG_SESSION_ID=1310
+XDG_SESSION_ID=731
 XDG_RUNTIME_DIR=/run/user/23078
 VPPATH=/home/u110/u110061146/ee6470/riscv-vp/vp/build/bin
 VMR_MODE_FLAG=64
@@ -52,9 +52,9 @@ VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/usr/cad/synopsys/vcs/2022.06/linux64
 SYN_MAN_DIR=/usr/cad/synopsys/vcs/2022.06/doc/man
-SSH_TTY=/dev/pts/2
-SSH_CONNECTION=140.114.24.31 59644 140.114.24.110 22
-SSH_CLIENT=140.114.24.31 59644 22
+SSH_TTY=/dev/pts/0
+SSH_CONNECTION=140.114.24.31 35520 140.114.24.110 22
+SSH_CLIENT=140.114.24.31 35520 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2022.06/linux64/clang
 SNPS_INTERNAL_VCS_LINUX_OS=linux
@@ -78,13 +78,13 @@ GROUP=u110
 GDK_BACKEND=x11
 EE6470=/home/u110/u110061146/ee6470
 DEBUGINFOD_URLS=https://debuginfod.centos.org/
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-o1hNLuZgQy,guid=37fe6c0bbc5ba2a830cc74ef68808c91
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-Ij7cLSfgBT,guid=92ad5e5000286ba2630e96d06890ef2b
 0
 0
 5
-1753254771 ../hdl/Bicubic.v
-1753255158 ./test_Bicubic.v
-1753254772 hdl.f
+1754304224 ../hdl/Divider.v
+1754329556 ./test_Divider.v
+1754304257 hdl.f
 1653825972 /usr/cad/synopsys/verdi/2022.06/share/PLI/VCS/LINUX64/verdi.tab
 1654052745 /usr/cad/synopsys/vcs/2022.06/linux64/lib/vcsdp_lite.tab
 4
@@ -92,5 +92,5 @@ DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-o1hNLuZgQy,guid=37fe6c0bbc5ba2a
 1654053585 /usr/cad/synopsys/vcs/2022.06/linux64/lib/liberrorinf.so
 1654053489 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libsnpsmalloc.so
 1654053565 /usr/cad/synopsys/vcs/2022.06/linux64/lib/libvfs.so
-1753255163 simv.daidir
+1754329560 simv.daidir
 -1 partitionlib

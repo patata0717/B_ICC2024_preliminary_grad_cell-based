@@ -20,34 +20,49 @@ module tb_Divider;
     .frac_val  (frac_val)
   );
 
+// dump waveform
+initial begin
+    $fsdbDumpfile("Divider_ver3.fsdb");
+    $fsdbDumpvars("+mda");
+end
+
   // 10 ns clock period
   initial clk = 0;
   always #5 clk = ~clk;
 
-  integer i;
-  initial begin
+  integer i, j;
+
+
+// initial for dividend and divider
+initial begin
     // Initialize
     rst       = 1;
     cycle_cnt = 3'd0;
-    dividend  = 7'd1;    // numerator = 1
-    divider   = 7'd27;   // denominator = 27
+    dividend  = 7'd0;
+    divider   = 7'd27;
 
     #20;
     rst = 0;             // release reset
 
     // Step through 8 cycles
-    for (i = 0; i < 8; i = i + 1) begin
-      cycle_cnt = i[2:0];
+    for (j = 1; j <= 27; j = j + 1) begin
+      #70;
+      dividend = j;
       #10;
+      divider = 7'd27;
+      $display("%d/27 = %d", j - 1, frac_val);
     end
-
-    // At this point we've done cycles 0–7
-    // frac_val should now hold floor((1/27)*256)
-    $display("1/27 in Q0.8 → 0x%0h (%0d decimal)", frac_val, frac_val);
-    // For reference, (1/27)*256 ≈ 9.481 → expect 8'h09 after truncation
-
+    #80
     $finish;
+end
+
+initial begin
+  #20;
+  for (i = 0; i < 8 * 27; i = i + 1) begin
+    cycle_cnt = i[2:0]; // cycle_cnt should be 3 bits
+    #10;
   end
+end
 
 endmodule
 

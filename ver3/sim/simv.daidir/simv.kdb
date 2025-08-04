@@ -9,7 +9,7 @@ UUM=FALSE
 KDB=FALSE
 USE_NOVAS_HOME=FALSE
 COSIM=FALSE
-TOP=test_Bicubic 
+TOP=tb_Divider 
 OPTION=-ssv -ssy 
 ELAB_OPTION=-ssv -ssy 
 
