@@ -1,4 +1,4 @@
-@verdi rc file Version 1.0
+@nWave rc file Version 1.0
 [Library]
 work = ./work
 [Annotation]
@@ -142,11 +142,11 @@ Selected = ID_WHITE
 Trans. = ID_GREEN2
 State = ID_BLACK
 Init. = ID_BLACK
+StopAskBkgndColor = FALSE
 SmartTips = TRUE
 VectorFont = FALSE
 StateAutomaticFont = TRUE
 AnnotAutomaticFont = TRUE
-StopAskBkgndColor = FALSE
 ShowStateAction = FALSE
 ShowTransAction = FALSE
 ShowTransCond = FALSE
@@ -223,19 +223,21 @@ Selection-LineWidth = 1
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-nWaveOpenFsdbDirHistory = "\"/home/u110/u110061146/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\""
+nWaveOpenFsdbDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\""
+nWaveRestoreRCDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/novas.rc\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/signal.rc\""
 [Form]
-version = Verdi_T-2022.06
+version = Verdi_W-2024.09-SP2
 [General]
 autoSaveSession = FALSE
 TclAutoSource = 
 cmd_enter_form = FALSE
+SyncBrowserDir = TRUE
+FindBarVisible = 
+recent_commands_Verdi = hbInvokeWave
+recent_commands_nWave = nextEvent,previousEvent,zoomOut,zoomIn,reread,getSignal,digitalFUDec,digitalFBin,digitalFHex,digitalFOct
 ColorTheme = classic
 prevColorTheme = classic
-SyncBrowserDir = TRUE
-recent_commands_Verdi = hbInvokeWave
-recent_commands_nWave = zoomOut,restoreSignal,openFile
-version = Verdi_T-2022.06
+version = Verdi_W-2024.09-SP2
 SignalCaseInSensitive = FALSE
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
@@ -332,6 +334,15 @@ containerHeight = 800
 HB_designTreeFont = *-adobe-courier-medium-r-*-*-12-*-*-*-*-*-iso8859-*
 Text_font = COURIER12
 nMemory_font = Fixed 14
+Wave_legend_window_font = -f COURIER12 -c ID_CYAN5
+Wave_value_window_font = -f COURIER12 -c ID_CYAN5
+Wave_curve_window_font = -f COURIER12 -c ID_CYAN5
+Wave_group_name_font = -f COURIER12 -c ID_GREEN5
+Wave_ruler_value_font = -f COURIER12 -c ID_CYAN5
+Wave_analog_ruler_value_font = -f COURIER12 -c ID_CYAN5
+Wave_comment_string_font = -f COURIER12 -c ID_RED5
+Wave_getsignal_form_font = -f COURIER12
+Text_annotFont = FIXED12
 [OtherEditor]
 cmd1 = "xterm -font 9x15 -fg black -bg gray -e"
 name = "vi"
@@ -376,11 +387,13 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-restoreSigDlg = 364,162,551,438
-openFileDlg = 339,106,602,483
-QwWarnMsgDlg = 330,195,600,250
-QwUserAskDlg = 468,225,324,134
-qWaveSignalDialog = 240,108,800,479
+restoreSigDlg = 452,226,551,438
+unknownSave_SaveSignal(s)NotFound = 422,235,590,340
+unknownSave = 497,323,461,245
+openFileDlg = 427,204,602,483
+qWaveSignalDialog = 320,198,800,479
+QwWarnMsgDlg = 410,285,600,250
+QwUserAskDlg = 548,309,324,125
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -396,7 +409,7 @@ HighlightSafetyObject = TRUE
 3 = string (session file name)
 4 = string (session file name)
 5 = string (session file name)
-1 = /home/u110/u110061146/B_ICC2024_preliminary_grad_cell-based/ver3/sim/verdiLog/novas_autosave.ses
+1 = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/verdiLog/novas_autosave.ses
 [Simulation]
 scsPath = scsim
 scsOption = 
@@ -550,7 +563,7 @@ text3DLight = ID_WHITE
 text3DShadow = ID_BLACK
 textHvlDriver = ID_GREEN3
 textHvlLoad = ID_YELLOW3
-textHvlDriverLoad = ID_BLUE3
+textHGridline = ID_GRAY5
 irOutline = ID_RED2
 irDriver = ID_YELLOW5
 irLoad = ID_BLACK
@@ -564,7 +577,7 @@ hdlPackage = ID_BLUE5
 hdlRefPackage = ID_BLUE5
 hdlAlias = ID_BLACK
 hdlGeneric = ID_BLUE5
-specialAnnotShadow = ID_BLUE1
+specialAnnotShadow = ID_WHITE
 hdlZeroInHead = ID_GREEN2
 hdlZeroInComment = ID_GREEN2
 hdlPslHead = ID_BLACK
@@ -575,9 +588,10 @@ pdmlIdentifier = ID_BLACK
 pdmlCommand = ID_BLACK
 pdmlMacro = ID_BLACK
 font = COURIER12
-annotFont = Helvetica_M_R_10
+annotFont = FIXED12
+textHvlDriverLoad = ID_BLUE3
 [Text.1]
-viewport = 0 23 1280 649 45
+viewport = 0 23 1440 829 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -663,40 +677,52 @@ viaLogViewerDefaultRuleOneSearchForm = "share/VIA/Apps/PredefinedRules/Misc/Ones
 [VIA.oneSearch.preference]
 DefaultDisplayTimeUnit = "1.000000ns"
 DefaultLogTimeUnit = "1.000000ns"
-isOneSearchVisible = FALSE
+isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC]
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = Severity
-width = 60
+name = "Block's First Line"
+width = 120
 visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = Message
-width = 2000
-visualIndex = 4
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = Time
-width = 60
-visualIndex = 0
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
-name = Code
+name = "Severity"
 width = 60
 visualIndex = 2
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+name = "Type"
+width = 60
+visualIndex = 4
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = "Message"
+width = 2000
+visualIndex = 5
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = Type
+name = "Time"
+width = 60
+visualIndex = 0
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+name = "Code"
 width = 60
 visualIndex = 3
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
 [VIA.ruleHistory]
 /usr/cad/synopsys/verdi/2024.09-sp2/share/VIA/Apps/PredefinedRules/Misc/Onesearch_rule.rc = 
 [Vi]
@@ -770,8 +796,11 @@ ShowDeltaTime = TRUE
 WaveExtendLastTick = TRUE
 displayMessageLabelOnly = TRUE
 AutoApplySeverityColor = TRUE
-getSignalForm = 240 108 800 479 164 381 390 89
-viewPort = 0 25 1280 546 100 65
+scope_to_save_with_macro
+open_file_dir
+open_rc_file_dir
+getSignalForm = 320 198 800 479 165 387 393 91
+viewPort = 8 31 1440 731 126 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -781,7 +810,7 @@ cursor = -c ID_YELLOW5 -lw 1 -ls long_dashed
 marker = -c ID_WHITE -lw 1 -ls dash_dot_l
 usermarker = -c ID_GREEN5 -lw 1 -ls long_dashed
 trace = -c ID_GRAY5 -lw 1 -ls long_dashed
-grid = -c ID_GRAY3 -lw 1 -ls dot_dashed
+grid = -c ID_GRAY3 -lw 1 -ls dot_dashed_l
 rulerBackground = -c ID_GRAY3
 rulerForeground = -c ID_YELLOW5
 busTextColor = -c ID_ORANGE8
@@ -911,7 +940,6 @@ displayDeltaY = FALSE
 signal_rc_abspath = TRUE
 signal_rc_no_natural_bus_range = FALSE
 save_scope_with_macro = FALSE
-scope_to_save_with_macro
 FitAnaByBusSize = FALSE
 DisplayVerticalZoomTools = FALSE
 DisplayIndicateBar = FALSE
@@ -938,10 +966,9 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/u110/u110061146/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\""
+RecentFile1 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\""
+RecentFile2 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/signal.rc\""
 open_file_time_range = FALSE
-open_file_dir
-open_rc_file_dir
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
 curve_window_font = -f COURIER12 -c ID_CYAN5
@@ -949,18 +976,18 @@ group_name_font = -f COURIER12 -c ID_GREEN5
 ruler_value_font = -f COURIER12 -c ID_CYAN5
 analog_ruler_value_font = -f COURIER12 -c ID_CYAN5
 comment_string_font = -f COURIER12 -c ID_RED5
-getsignal_form_font = -f COURIER12
+getsignal_form_font = -f COURIER12 
 SigsCheckNum = on 1000
 filter_synthesized_net = off n
 filterOutNet = on
 exclude_signal_with_prefix = off n
 synthesizeNetOnly = on
-filter_synthesized_instance = off
+filter_synthesized_instance = off 
 filterOutInstance = on
 showGroupTree = TRUE
 hierGroupDelim = /
 MsgSeverityColor = {y \"Severity\"==\"1\" ID_RED5} {y \"Severity\"==\"2\" ID_RED6} {y \"Severity\"==\"3\" ID_RED7} {y \"Severity\"==\"4\" ID_RED8} {y \"Severity\"==\"5\" ID_ORANGE5} {y \"Severity\"==\"6\" ID_ORANGE6} {y \"Severity\"==\"7\" ID_ORANGE7} {y \"Severity\"==\"8\" \
-ID_GREEN7} {y \"Severity\"==\"9\" ID_GREEN6} {y \"Severity\"==\"10\" ID_GREEN5}
+ID_GREEN7} {y \"Severity\"==\"9\" ID_GREEN6} {y \"Severity\"==\"10\" ID_GREEN5} 
 waveDblClkActiveTrace = on
 SEQShowComparisonIcon = TRUE
 SEQAddDriverLoadInSameGroup = TRUE
@@ -972,6 +999,7 @@ maskFsaRegRule = TRUE
 maskFsaCoreRule = TRUE
 maskFsaSfsmRule = TRUE
 maskFsaEcrRule = TRUE
+maskTPropagation = TRUE
 [cov_hier_name_column]
 justify = TRUE
 [coverageColors]
@@ -1038,6 +1066,7 @@ HvpMergeTool =
 ShowMergeMenuItem = FALSE
 fsmScoreMode = Transition
 [eco]
+NameRule = 
 IsFreezeSilicon = FALSE
 cellQuantityManagement = FALSE
 ManageMode = INSTANCE_NAME
@@ -1045,10 +1074,9 @@ SpareCellsPinsManagement = TRUE
 LogCommitReport = FALSE
 InputPinStatus = 1
 OutputPinStatus = 2
-NameRule = 
 RevisedComponentColor = ID_BLUE5
 SpareCellColor = ID_RED5
-UserName = u110061146
+UserName = patata0717
 CommentFormat = Novas ECO updated by ${UserName} ${Date} ${Time}
 PrefixN = eco_n
 PrefixP = eco_p
@@ -1281,11 +1309,11 @@ margin_left = 0.50
 margin_right = 0.50
 margin_unit = inches
 [spiceDebug]
-RTVSSCSig = ID_BLUE7
 ThroughNet = ID_YELLOW5
 InstrumentSig = ID_GREEN5
 InterfaceElement = ID_GREEN5
 Run-timeInterfaceElement = ID_BLUE5
+RTVSSCSig = ID_BLUE7
 HighlightThroughNet = TRUE
 HighlightInterfaceElement = TRUE
 HighlightRuntimeInterfaceElement = TRUE
@@ -1313,7 +1341,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 1280 546 100 65
+viewPort = 0 25 1440 731 126 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

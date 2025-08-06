@@ -122,24 +122,10 @@ end
 // sequential for mem
 always @(posedge clk) begin
     if (rst) begin
-        P_ROM[0] <= 8'h00;    // P(-1)
-        P_ROM[1] <= 8'h10;    // P(0)
-        P_ROM[2] <= 8'h20;    // P(1)
-        P_ROM[3] <= 8'h30;    // P(2)
-/*
-        P_ROM[0] <= 8'h49;    // P(-1)
-        P_ROM[1] <= 8'h4a;    // P(0)
-        P_ROM[2] <= 8'h3a;    // P(1)
-        P_ROM[3] <= 8'h49;    // P(2)
-        P_ROM[0] <= 8'h4c;    // P(-1)
-        P_ROM[1] <= 8'h3f;    // P(0)
-        P_ROM[2] <= 8'h4c;    // P(1)
-        P_ROM[3] <= 8'h4c;    // P(2)
-        P_ROM[0] <= 8'h4d;    // P(-1)
-        P_ROM[1] <= 8'h6;    // P(0)
-        P_ROM[2] <= 8'h17;    // P(1)
-        P_ROM[3] <= 8'h4f;    // P(2)
-*/
+        P_ROM[0] <= 8'h2e;    // P(-1)
+        P_ROM[1] <= 8'h2f;    // P(0)
+        P_ROM[2] <= 8'h2e;    // P(1)
+        P_ROM[3] <= 8'h0c;    // P(2)
         X_ROM[0] <= 8'd76;   // 1    =  255/256 
         X_ROM[1] <= 8'd114;   // 2/3  =  171/256 
         X_ROM[2] <= 8'd171;   // 4/9  =  114/256 

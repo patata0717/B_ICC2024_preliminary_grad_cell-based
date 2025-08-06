@@ -53,6 +53,7 @@ initial begin
       $display("%d/27 = %d", j - 1, frac_val);
     end
     #80
+    $display("27/27 = %d", frac_val);
     $finish;
 end
 

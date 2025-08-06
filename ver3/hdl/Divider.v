@@ -1,5 +1,5 @@
 // shifht and subtract divider
-// no rounding, throw the remainder away
+// rounding to floor
 
 module Divider (
     input clk,

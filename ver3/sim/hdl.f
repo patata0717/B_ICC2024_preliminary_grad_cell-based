@@ -1,2 +1,2 @@
-./test_Divider.v
-../hdl/Divider.v
+./test_Cubic_engine.v
+../hdl/Cubic_engine.v

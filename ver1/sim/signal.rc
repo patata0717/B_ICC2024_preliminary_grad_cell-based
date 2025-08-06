@@ -2,11 +2,11 @@ Magic 271485
 Revision Verdi_W-2024.09-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1440 731 164 65
+viewPort 0 25 1440 705 164 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / -i 0 "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/Bicubic_ver1.fsdb"
+openDirFile -d / -i 1 "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/Bicubic_ver1.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -21,9 +21,9 @@ cursor 3442.33046005004
 marker 0.000000
 
 ; visible top row signal index
-top 4
+top 0
 ; marker line index
-markerPos 3
+markerPos 18
 
 ; event list
 ; addEvent event_name event_expression
@@ -48,10 +48,24 @@ activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_pre
 addSignal -h 15 /test_Bicubic/clk
 addSignal -h 15 -holdScope done
 addSignal -h 15 -UNSIGNED -HEX /test_Bicubic/u_Bicubic/state[2:0]
+addSignal -expanded -h 15 -holdScope X[0:3]
+addSignal -h 15 -UNSIGNED -HEX -holdScope X[0][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope X[1][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope X[2][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope X[3][7:0]
+addSignal -expanded -h 15 -holdScope P[0:3]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P[0][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P[1][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P[2][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P[3][7:0]
+addSignal -expanded -h 15 -holdScope XC[0:3]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[0][12:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[1][12:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[2][12:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[3][12:0]
 addSignal -h 15 -UNSIGNED -HEX /test_Bicubic/out_val[7:0]
 addSignal -h 15 -holdScope rst
-addSignal -expanded -h 15 /test_Bicubic/u_Bicubic/XC[0:3]
-addSignal -h 15 -UNSIGNED -HEX -holdScope XC[0][10:0]
+addSignal -h 15 -UNSIGNED -HEX /test_Bicubic/u_Bicubic/XC[0][10:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope XC[1][10:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope XC[2][10:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope XC[3][10:0]

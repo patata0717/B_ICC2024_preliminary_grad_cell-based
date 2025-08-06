@@ -1,6 +1,8 @@
 // ver3, calculate col 2
 // (H0 V0) = (81 18)，(SW SH) = (17 15)，(TW TH)=(22 28)
 
+// 把frac val接到ram裡，空接測試
+
 // state
 `define INIT 1'b0
 `define RUN  1'b1
@@ -94,12 +96,13 @@ wire [15:0] frac_val; // Q0.8 * 2
 wire [7:0] cubic_val;
 wire [15:0] x_x_raw_round = x * x + 16'h0080;
 wire [15:0] x2_x_raw_round = x2 * x + 16'h0080;;
-wire valid = (state == `RUN) && (cycle_cnt == 3'd0);
-wire [23:0] X_in = (valid) ?
+wire X_valid = (state == `RUN) && (cycle_cnt == 3'd0);
+wire V_valid = (state == `RUN);
+wire [23:0] X_in = (X_valid) ?
                        (mode == `V) ? {x3, x2, x}
                                     : {8'd113, 8'd149, 8'd195}; // SW/TW
                            : 24'd0; 
-wire  [7:0] P_in = (valid) ?  
+wire  [7:0] P_in = (V_valid) ?  
                        (mode == `V) ?                
                            (cycle_cnt == 3'd1) ? P_buf[0] :     // 1 → use P_buf[0]
                            (cycle_cnt == 3'd2) ? P_buf[1] :     // 2 → use P_buf[1]
@@ -114,26 +117,41 @@ wire prev_coord_h = 7'd1; // fix at col 2
 reg [6:0] divider;
 reg [6:0] dividend;
 
-
-// combinational for divider, dividend
+// combinational for divider
 always @* begin
     if (state == `INIT) begin
-        if (8'd0 <= cycle_cnt_lv2 && cycle_cnt_lv2 <= TH - 1) begin
+        if (cycle_cnt_lv2 < TH) begin
             divider = TH - 1;
-            dividend = cycle_cnt_lv2;
-        end else if (TH <= cycle_cnt_lv2 && cycle_cnt_lv2 <= TH + TW - 1) begin
+        end else if (cycle_cnt_lv2 >= TH && cycle_cnt_lv2 < TH + TW) begin
             divider = TW - 1;
-            dividend = cycle_cnt_lv2 - TH;
         end else begin
             divider = 7'd0;
-            dividend = 7'd0;
         end
     end else begin
         divider = 7'd0;
-        dividend = 7'd0; 
     end
 end
 
+// combinational for dividend
+always @* begin
+    if (state == `INIT) begin
+        if (cycle_cnt_lv2 < TH) begin
+            if (cycle_cnt == 3'd7) begin
+                dividend = cycle_cnt_lv2 + 1;
+            end else begin
+                dividend = cycle_cnt_lv2;
+            end
+        end else if (cycle_cnt_lv2 >= TH && cycle_cnt_lv2 < TH + TW) begin
+            if (cycle_cnt == 3'd7) begin
+                dividend = cycle_cnt_lv2 - TH + 1;
+            end else begin
+                dividend = cycle_cnt_lv2 - TH;
+            end
+        end
+    end else begin
+        dividend = 7'd0;
+    end
+end
 
 // combinatial for control(state, coord_h, coord_v, cycle_cnt, cycle_cnt_lv2, mode, line_shift, done)
 // cycle 0
@@ -145,7 +163,7 @@ always @* begin
         line_shift_next = line_shift;
         done_next = done;
         if (cycle_cnt_lv2 == TW + TH && cycle_cnt == 3'd7) begin
-            cycle_cnt_next = cycle_cnt + 1;
+            cycle_cnt_next = 3'd0;
             cycle_cnt_lv2_next = 8'd0;
             state_next = `RUN;
         end else if (cycle_cnt == 3'd7) begin
@@ -162,50 +180,51 @@ always @* begin
         cycle_cnt_lv2_next = cycle_cnt_lv2;
         line_shift_next = 0;
         done_next = done;
-        init_cnt_next = init_cnt;
+        state_next = `RUN;
         if (coord_v == 7'd0 && cycle_cnt == 3'd4) begin          // 5 cycle
             cycle_cnt_next = 3'd0;
             mode_next = `H;
             coord_v_next = coord_v + 1;
+            line_shift_next = -1;
         end else if (coord_v == 7'd1 && cycle_cnt == 3'd4) begin // 25 cycle
             case (cycle_cnt_lv2) // 4H1V
-                3'd0: begin
-                    cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
-                    mode_next = `H;
-                    coord_v_next = coord_v;
-                    line_shift_next = -1;
-                end
-                3'd1: begin
+                8'd0: begin
                     cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
                     mode_next = `H;
                     coord_v_next = coord_v;
                     line_shift_next = 0;
                 end
-                3'd2: begin
+                8'd1: begin
                     cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
                     mode_next = `H;
                     coord_v_next = coord_v;
                     line_shift_next = 1;
                 end
-                3'd3: begin
+                8'd2: begin
                     cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
-                    mode_next = `V;
+                    mode_next = `H;
                     coord_v_next = coord_v;
                     line_shift_next = 2;
                 end
-                3'd4: begin
-                    cycle_cnt_lv2_next = 3'd0;
+                8'd3: begin
+                    cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
+                    mode_next = `V;
+                    coord_v_next = coord_v;
+                    line_shift_next = 0;
+                end
+                8'd4: begin
+                    cycle_cnt_lv2_next = 8'd0;
                     mode_next = `H;
                     coord_v_next = coord_v + 1;
                 end
                 default: begin
-                    cycle_cnt_lv2_next = 3'dx;
+                    cycle_cnt_lv2_next = 8'dx;
                     mode_next = 1'dx;
                     coord_v_next = 7'dx;
                 end
             endcase
             cycle_cnt_next = 3'd0;
-        end else if (coord_v == TH - 1 && cycle_cnt == 3'd4) begin // 5 cycle
+        end else if (coord_v < TH && cycle_cnt == 3'd4) begin // 5 cycle
             done_next = 1'd1;
             mode_next = `H;
             coord_v_next = coord_v + 1;
@@ -216,11 +235,11 @@ always @* begin
                     mode_next = `V;
                 end
                 3'd1: begin
-                    cycle_cnt_lv2_next = 3'd0;
+                    cycle_cnt_lv2_next = 8'd0;
                     mode_next = `H;
                 end
                 default: begin
-                    cycle_cnt_lv2_next = 3'dx;
+                    cycle_cnt_lv2_next = 8'dx;
                     mode_next = 1'dx;
                 end
             endcase
@@ -271,15 +290,25 @@ end
 // combinational for SRAM_addr, SRAM_data_i, WEN, fetch frac x
 always @* begin
     SRAM_data_i = cubic_val;
-    if (mode == `H) begin
-        SRAM_addr = {7'd100, 7'd14}; // 14/27
-        WEN = 1'b1; // disable
-    end else if (mode == `V && cycle_cnt == 3'd0) begin
-        SRAM_addr = {prev_coord_v, prev_coord_h};
-        WEN = 1'b0; // enable
-    end else begin // V
-        SRAM_addr = {7'd101, next_rem_v};
-        WEN = 1'b1; // disable
+    if (state == `INIT) begin
+        if (cycle_cnt == 3'd7) begin
+            SRAM_addr = {7'd100, cycle_cnt_lv2};
+            WEN = 1'b0; // enable
+        end else begin
+            SRAM_addr = {7'd100, cycle_cnt_lv2}; // don't care
+            WEN = 1'b1; // disable
+        end
+    end else begin // state == `RUN
+        if (mode == `H) begin
+            SRAM_addr = {7'd100, 7'd14}; // 14/27
+            WEN = 1'b1; // disable
+        end else if (mode == `V && cycle_cnt == 3'd0) begin
+            SRAM_addr = {prev_coord_v, prev_coord_h};
+            WEN = 1'b0; // enable
+        end else begin // V
+            SRAM_addr = {7'd101, next_rem_v};
+            WEN = 1'b1; // disable
+        end
     end
 end
 
@@ -363,16 +392,16 @@ always @* begin
             // hold
         end else if (coord_v == 7'd1) begin
             case (cycle_cnt_lv2)
-                3'd0: begin
+                8'd0: begin
                     P_buf_next[0] = cubic_val;
                 end
-                3'd1: begin
+                8'd1: begin
                     P_buf_next[1] = cubic_val;
                 end
-                3'd2: begin
+                8'd2: begin
                     P_buf_next[2] = cubic_val;
                 end
-                3'd3: begin
+                8'd3: begin
                     P_buf_next[3] = cubic_val;
                 end
                 default: begin
@@ -384,7 +413,7 @@ always @* begin
             endcase
         end else if (coord_v == TH - 1) begin
             // hold
-        end else begin
+        end else begin // other coord
             P_buf_next[3] = cubic_val;
             P_buf_next[2] = P_buf[3];
             P_buf_next[1] = P_buf[2];
@@ -407,7 +436,7 @@ always @(posedge CLK) begin
         next_rem_h <= 7'd14;
         next_rem_v <= 7'd0;
         cycle_cnt <= 3'd0;
-        cycle_cnt_lv2 <= 3'd0;
+        cycle_cnt_lv2 <= 8'd0;
         mode <= `H;
         line_shift <= 0;
         P_buf[0] <= 8'd0;
