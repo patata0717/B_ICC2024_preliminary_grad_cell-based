@@ -1,4 +1,4 @@
-fHsimDesignHasDebugNodes           	63
+fHsimDesignHasDebugNodes           	13
 fNSParam                           	256
 fLargeSizeSdfTest                  	0
 fHsimDelayGateMbme                 	0
@@ -181,8 +181,8 @@ fHsimAmsTunnelingDiag              	0
 fHsimScUpwardXmrNoSplit            	1
 fHsimOrigNdbViewOnly               	0
 fHsimVcsInterface                  	1
-fHsimVcsInterfaceAlias             	0
-fHsimSVTypesIntf                   	0
+fHsimVcsInterfaceAlias             	1
+fHsimSVTypesIntf                   	1
 fUnifiedAssertCtrlDiag             	0
 fHsimEnable2StateScal              	0
 fHsimDisable2StateScalIbn          	0
@@ -195,7 +195,7 @@ fHsimCheckVIDynLoadOffsets         	0
 fHsimModInline                     	1
 fHsimModInlineDbg                  	0
 fHsimPCDrvLoadDbg                  	0
-fHsimDrvChk                        	0
+fHsimDrvChk                        	1
 fHsimRtlProcessingNeeded           	0
 fHsimGrpByGrpElab                  	0
 fHsimGrpByGrpElabMaster            	0
@@ -486,7 +486,7 @@ fHsimNewDebugOptMemDiag            	0
 hsGlobalVerboseLevel               	0
 fHsimTestPxpcode                   	0
 fHsimMdbVectorConstProp            	1
-fHsimEnableSeqUdpWrite             	1
+fHsimEnableSeqUdpWrite             	0
 fHsimDisableSeqUdpWriteForce       	0
 fHsimDumpMDBOnlyForSeqUdp          	0
 fHsimInitRegRandom                 	0
@@ -780,7 +780,7 @@ fHsimSchedMinput                   	0
 fHsimSchedSeqPrim                  	0
 fHsimSchedSelectFanout             	0
 fHsimSchedSelectFanoutDebug        	0
-fSpecifyInDesign                   	0
+fSpecifyInDesign                   	1
 fFgpDynamicReadOn                  	0
 fHsCgOptAllUc                      	0
 fHsimXmrRepl                       	0
@@ -811,7 +811,7 @@ fFsimNativeFaultFlow               	0
 fFsimSerialFaultFlow               	0
 fFsimCompiled                      	0
 fFsimOptCapsFlow                   	0
-fFsimUserEnabledForceCaps          	1
+fFsimUserEnabledForceCaps          	0
 fEnableForceSelectorOptimization   	0
 fFsimPortFaults                    	0
 fFsimPortFaultsOpt                 	0
@@ -840,7 +840,7 @@ fHsimPreInlineInstNum64            	0
 fHsimAutoInstNum64Limit            	-7
 fHsimAutoEnableInstNum64PC         	0
 fHsCgOptFixLeaf                    	1
-fHsimDumpVars                      	0
+fHsimDumpVars                      	1
 fFgpTbReactiveLite                 	1
 fHsCgOptCongLite                   	1
 fHsimGateDiag                      	0
@@ -937,7 +937,7 @@ fHsimDefRtvsViewHasSpice           	0
 fLicUseAarchOnly                   	0
 fFgpJaguarLevelization             	0
 fHsimGatesUsed                     	0
-fHsimDebugAccessUsed               	1
+fHsimDebugAccessUsed               	0
 fHsimDebugRegionUsed               	0
 fFgpSchedSelectGateOpt             	0
 fFgpSelectiveSGSched               	0

@@ -13,13 +13,18 @@ wire [7:0] cubic_val;
 // loop index
 integer i, j, k;
 
-Cubic_engine cubic_engine (
-    .clk(CLK),
-    .rst(RST),
-    .X_in(X_in),      // Q0.8 * 3
-    .P_in(P_in),      // Q8.0 * 1
-    .cycle_cnt(cycle_cnt),
-    .out(cubic_val)  // Q8.0
+Image_resizer image_resizer (
+    .CLK(CLK),
+    .RST(RST),
+    .start(start),
+    .V0(V0),
+    .H0(H0),
+    .SW(SW),
+    .SH(SH),
+    .TW(TW),
+    .TH(TH),
+    .out_val(out_val),
+    .done(done)
 );
 
 // dump waveform

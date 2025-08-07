@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 // Bicubic.v to calculate
 
 // Given X, P, when start, return XCP, takes 5 cycles

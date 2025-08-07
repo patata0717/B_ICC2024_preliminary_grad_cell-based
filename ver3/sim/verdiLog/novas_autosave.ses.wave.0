@@ -2,11 +2,11 @@ Magic 271485
 Revision Verdi_W-2024.09-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1440 731 126 65
+viewPort 0 25 1440 707 164 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb"
+openDirFile -d / "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 2035812.500000 2177062.500000
-cursor 2170000.000000
+zoom 2331720.000000 4617720.000000
+cursor 0.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 4
+markerPos 8
 
 ; event list
 ; addEvent event_name event_expression
@@ -46,32 +46,45 @@ curSTATUS ByChange
 
 
 addGroup "G1"
-addGroup "G2"
-activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb"
-addSignal -h 15 /tb_Divider/clk
-addSignal -h 15 -holdScope rst
-addSignal -h 15 -UNSIGNED -UDEC -holdScope i[31:0]
+activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb"
+addSignal -expanded -h 15 /testfixture/u_Bicubic/cubic_engine/X[0:3]
+addSignal -h 15 -UNSIGNED -HEX -holdScope X[0][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope X[1][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope X[2][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope X[3][7:0]
+addSignal -h 15 /testfixture/u_Bicubic/state
+addSignal -h 15 -holdScope mode
+addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_data_o[7:0]
+addSignal -expanded -h 15 /testfixture/u_Bicubic/cubic_engine/P[0:3]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P[0][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P[1][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P[2][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P[3][7:0]
+addSignal -expanded -h 15 -holdScope XC[0:3]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[0][12:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[1][12:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[2][12:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[3][12:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope cycle_cnt[2:0]
-addSignal -h 15 -UNSIGNED -UDEC -holdScope dividend[6:0]
-addSignal -h 15 -UNSIGNED -UDEC -holdScope divider[6:0]
-addSignal -h 15 -UNSIGNED -UDEC /tb_Divider/dut/qoutient[7:0]
-addSignal -h 15 -2COMP -UDEC -holdScope remainder[7:0]
-addGroup "G3"
+addSignal -h 15 -UNSIGNED -HEX -holdScope out[7:0]
+addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm
-activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb"
+activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb"
 
 GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close
 
-"/tb_Divider"
+"/testfixture"
+"/testfixture/u_Bicubic"
+"/testfixture/u_Bicubic/cubic_engine"
 
 SCOPE_LIST_BEGIN
-"/tb_Divider"
-"/test_Bicubic"
-"/test_Bicubic/u_Bicubic"
-"/tb_Divider/dut"
+"/testfixture"
+"/testfixture/READ_PATTERN"
+"/testfixture/u_Bicubic"
+"/testfixture/u_Bicubic/cubic_engine"
 SCOPE_LIST_END
 
 GETSIGNALFORM_SCOPE_HIERARCHY_END

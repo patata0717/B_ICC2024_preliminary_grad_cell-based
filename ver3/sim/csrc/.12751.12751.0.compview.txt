@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1754466037.827474504, "rt":0.01, "ut":0.00, "st":0.00}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1754466037.426127488}
+{"VCS_COMP_START_TIME": 1754466037.426127488}
+{"VCS_COMP_END_TIME": 1754466037.868387471}
+{"VCS_USER_OPTIONS": "-R -sverilog tb.sv Bicubic.v Divider.v -v ImgROM.v -v ResultSRAM.v +define+P1 +access+r +vcs+fsdbon +fsdb+mda +fsdbfile+Bicubic.fsdb +notimingcheck"}

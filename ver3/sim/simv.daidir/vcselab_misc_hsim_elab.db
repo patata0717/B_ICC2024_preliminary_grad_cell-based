@@ -30,7 +30,7 @@ fHsimTaskFuncXmrsDbg               	0
 fHsimAllTaskFuncXmrs               	0
 fHsimDoXmrProcessing               	1
 fNoMergeDelays                     	0
-uGlblTimeUnit                      	5
+uGlblTimeUnit                      	4
 fHsimAllMtm                        	0
 fSimprofileNew                     	0
 fFsimFlag                          	0
@@ -63,7 +63,7 @@ fCcExConfigFileFlag                	0
 fFsimForcelist                     	0
 fNewCBSemantics                    	1
 fSchedAtEnd                        	0
-fSpecifyInDesign                   	0
+fSpecifyInDesign                   	1
 fSvNettRealResType                 	0
 fFgpSched0User                     	0
 fFgpDynelabFix                     	1
@@ -227,8 +227,8 @@ fHsimAmsNewDrs                     	0
 fHsimScUpwardXmrNoSplit            	1
 fHsimOrigNdbViewOnly               	0
 fHsimVcsInterface                  	1
-fHsimVcsInterfaceAlias             	0
-fHsimSVTypesIntf                   	0
+fHsimVcsInterfaceAlias             	1
+fHsimSVTypesIntf                   	1
 fUnifiedAssertCtrlDiag             	0
 fHsimEnable2StateScal              	0
 fHsimDisable2StateScalIbn          	0
@@ -678,7 +678,7 @@ iTransE                            	100
 fPulseOpt                          	0
 fGblPulseOnD                       	0
 fGblPulseOnE                       	0
-fSystemVCSEnabled                  	0
+fSystemVCSEnabled                  	1
 fHsimForcedPort                    	0
 fpicOption                         	1
 fModelSave                         	0
@@ -901,7 +901,7 @@ fHsimNewDebugOptMemDiag            	0
 hsGlobalVerboseLevel               	0
 fHsimTestPxpcode                   	0
 fHsimMdbVectorConstProp            	1
-fHsimEnableSeqUdpWrite             	1
+fHsimEnableSeqUdpWrite             	0
 fHsimDisableSeqUdpWriteForce       	0
 fHsimDumpMDBOnlyForSeqUdp          	0
 fHsimInitRegRandom                 	0
@@ -1381,7 +1381,7 @@ fFsimNativeFaultFlow               	0
 fFsimSerialFaultFlow               	0
 fFsimCompiled                      	0
 fFsimOptCapsFlow                   	0
-fFsimUserEnabledForceCaps          	1
+fFsimUserEnabledForceCaps          	0
 fEnableForceSelectorOptimization   	0
 fFsimPortFaults                    	0
 fFsimPortFaultsOpt                 	0
@@ -1421,7 +1421,7 @@ fHsimPreInlineInstNum64            	0
 fHsimAutoInstNum64Limit            	-7
 fHsimAutoEnableInstNum64PC         	0
 fHsCgOptFixLeaf                    	1
-fHsimDumpVars                      	0
+fHsimDumpVars                      	1
 fFgpTbReactiveLite                 	1
 fHsimCcnUnion                      	0
 fHsimOnlyElabMod                   	0
@@ -1589,7 +1589,7 @@ fHsimDefRtvsViewHasSpice           	0
 fLicUseAarchOnly                   	0
 fFgpJaguarLevelization             	0
 fHsimGatesUsed                     	0
-fHsimDebugAccessUsed               	1
+fHsimDebugAccessUsed               	0
 fHsimDebugRegionUsed               	0
 fHsimUpgradeWarnToErrForICPSD_W    	0
 fHsimUpgradeWarnToErrForICPD_PCA_W 	0

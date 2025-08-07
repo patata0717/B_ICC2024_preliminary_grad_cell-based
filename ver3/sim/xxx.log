@@ -1,0 +1,103 @@
+*** Using c compiler gcc instead of cc ...
+                         Chronologic VCS (TM)
+       Version W-2024.09-SP2_Full64 -- Wed Aug  6 18:27:01 2025
+
+                    Copyright (c) 1991 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+The design hasn't changed and need not be recompiled. 
+If you really want to, delete file simv.daidir/.vcs.timestamp and
+run VCS again.
+
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Notice: timing checks disabled with +notimingcheck at compile-time
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP2_Full64; Runtime version W-2024.09-SP2_Full64;  Aug  6 18:27 2025
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2, Linux x86_64/64bit, 03/03/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'Bicubic.fsdb'
+*Verdi* : Begin traversing the scopes, layer (0).
+*Verdi* : Enable +mda dumping.
+*Verdi* : End of traversing.
+*******************************
+** Simulation Start          **
+*******************************
+== PATTERN pattern2
+---- orgin ( 81 ,  18), size  17 x  15
+  [1;34m  0[0m[1;34m  1[0m[1;34m  2[0m[1;34m  3[0m[1;34m  4[0m[1;34m  5[0m[1;34m  6[0m[1;34m  7[0m[1;34m  8[0m[1;34m  9[0m[1;34m 10[0m[1;34m 11[0m[1;34m 12[0m[1;34m 13[0m[1;34m 14[0m[1;34m 15[0m[1;34m 16[0m
+[1;34m 0[0m 3a 39 38 1f 8d ca 8f 6a 6c 6e 6e 71 75 77 78 7f 80
+[1;34m 1[0m 27 3a 39 38 16 a4 bc 7c 69 6b 6d 6e 72 76 7c 7b 7a
+[1;34m 2[0m 5c 2d 3a 3a 39 06 c8 b6 6e 69 6b 6d 72 7a 78 76 78
+[1;34m 3[0m 17 55 2b 3b 3a 39 22 c7 ac 68 69 6e 79 75 72 73 75
+[1;34m 4[0m 3f 06 71 3a 3b 3a 34 57 c7 8f 6b 77 72 6e 6e 71 73
+[1;34m 5[0m 40 3f 57 12 3d 3c 3b 26 95 bc 7d 6e 6a 6b 6d 70 7b
+[1;34m 6[0m 41 40 06 44 16 3d 3d 3b 06 d1 af 66 67 69 6b 78 7e
+[1;34m 7[0m 41 41 0e 2e 60 2f 3e 3d 38 58 c6 82 66 67 6e 74 71
+[1;34m 8[0m 41 41 0e 41 11 30 3f 3e 3d 1c c3 b1 67 66 6b 6b 6c
+[1;34m 9[0m 25 25 06 25 25 53 01 3f 3e 3d 24 c4 8e 64 67 68 6a
+[1;34m10[0m 2f 2e 0c 2e 2e 14 65 3c 3f 3e 2c a9 b1 65 64 66 68
+[1;34m11[0m 43 43 10 43 43 43 06 05 41 40 3f 22 c2 89 63 65 6b
+[1;34m12[0m 43 43 11 43 43 43 3c 5e 3a 41 40 2c ac b7 62 68 78
+[1;34m13[0m 43 43 11 44 45 44 43 06 01 41 41 3f 2a c1 85 75 72
+[1;34m14[0m 43 43 11 44 45 45 45 3b 5d 3c 41 40 1c c0 af 6b 64
+---- resize  22 x  28
+  [1;34m  0[0m[1;34m  1[0m[1;34m  2[0m[1;34m  3[0m[1;34m  4[0m[1;34m  5[0m[1;34m  6[0m[1;34m  7[0m[1;34m  8[0m[1;34m  9[0m[1;34m 10[0m[1;34m 11[0m[1;34m 12[0m[1;34m 13[0m[1;34m 14[0m[1;34m 15[0m[1;34m 16[0m[1;34m 17[0m[1;34m 18[0m[1;34m 19[0m[1;34m 20[0m[1;34m 21[0m
+[1;34m 0[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m 1[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m 2[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m 3[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m 4[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m 5[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m 6[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m 7[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m 8[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m 9[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m10[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m11[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m12[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m13[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m14[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m15[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m16[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m17[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m18[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m19[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m20[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m21[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m22[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m23[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m24[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m25[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m26[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+[1;34m27[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m[1;31m xx[0m
+---- error count         616
+
+********************************
+**   Finish Simulation    
+**   Error pixels:      616 
+**   Simulation time:  4572.00 ns  
+********************************
+$finish called from file "../hdl/tb.sv", line 223.
+$finish at simulation time           4572.00 ns
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 4572000 ps
+CPU Time:      0.230 seconds;       Data structure size:   0.0Mb
+Wed Aug  6 18:27:03 2025
+CPU time: .257 seconds in simulation

@@ -1,4 +1,4 @@
-@nWave rc file Version 1.0
+@verdi rc file Version 1.0
 [Library]
 work = ./work
 [Annotation]
@@ -113,7 +113,7 @@ Branch = 1
 [DesignTree]
 IfShowModule = {TRUE, FALSE}
 [DisabledMessages]
-version = Verdi_T-2022.06
+version = Verdi_W-2024.09-SP2
 [Emacs]
 EmacsFont = "Clean 14"
 EmacsBG = white
@@ -223,8 +223,10 @@ Selection-LineWidth = 1
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-nWaveOpenFsdbDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\""
-nWaveRestoreRCDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/novas.rc\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/signal.rc\""
+nWaveRestoreRCDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/novas.rc\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/signal.rc\"" "\"/home/patata0717/ic_contest/IC\
+_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/signal.rc\""
+nWaveOpenFsdbDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Cubic_ver3.fsdb\"" "\"/home/patata071\
+7/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/Bicubic_ver1.fsdb\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\""
 [Form]
 version = Verdi_W-2024.09-SP2
 [General]
@@ -233,11 +235,12 @@ TclAutoSource =
 cmd_enter_form = FALSE
 SyncBrowserDir = TRUE
 FindBarVisible = 
-recent_commands_Verdi = hbInvokeWave
-recent_commands_nWave = nextEvent,previousEvent,zoomOut,zoomIn,reread,getSignal,digitalFUDec,digitalFBin,digitalFHex,digitalFOct
 ColorTheme = classic
-prevColorTheme = classic
 version = Verdi_W-2024.09-SP2
+recent_commands_nSchema = schPinNameVis,schPortNameVis
+recent_commands_Verdi = hbInvokeWave,schCreateWindowByScopeGroup,hbImpDsg
+recent_commands_nWave = getSignal,reread,zoomOut,zoomIn,editCut,openFile,scrollDown,restoreSignal,nextEvent,previousEvent
+prevColorTheme = classic
 SignalCaseInSensitive = FALSE
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
@@ -270,11 +273,12 @@ windowLayout = 0 0 804 500 182 214 804 148
 import_filter = *.v; *.vc; *.f
 designTreeFont = *-adobe-courier-medium-r-*-*-12-*-*-*-*-*-iso8859-*
 import_filter_vhdl = *.vhd; *.vhdl; *.f
-import_default_language = Verilog
 import_filter_verilog = *.v; *.vc; *.f
 simulation_file_type = 
 PrefetchViewableAnnot = TRUE
 ShowFileListView = FALSE
+import_default_language = Verilog
+import_from = source
 [Hier]
 filterTimeout = 1500
 [ImportLiberty]
@@ -387,13 +391,14 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-restoreSigDlg = 452,226,551,438
-unknownSave_SaveSignal(s)NotFound = 422,235,590,340
-unknownSave = 497,323,461,245
-openFileDlg = 427,204,602,483
-qWaveSignalDialog = 320,198,800,479
 QwWarnMsgDlg = 410,285,600,250
-QwUserAskDlg = 548,309,324,125
+unknownSave_SaveSignal(s)NotFound = 414,227,590,340
+unknownSave = 489,315,461,245
+restoreSigDlg = 444,218,551,438
+importDesignForm = 370,158,715,574
+openFileDlg = 427,204,602,483
+qWaveSignalDialog = 328,206,800,479
+QwUserAskDlg = 556,317,324,125
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -507,10 +512,13 @@ ohSimType = VerilogXL
 nLineSize = 1024
 [Test]
 verbose_progress = FALSE
+[TestBenchBrowser]
+-showUVMDynamicHierTreeWin = FALSE
 [Text]
 hdlTypeName = blue4
 hdlLibrary = blue4
 viewport = 396 392 445 487
+textHvlDriverLoad = ID_BLUE3
 hdlOther = ID_BLACK
 hdlComment = ID_GRAY1
 hdlKeyword = ID_BLUE5
@@ -589,9 +597,8 @@ pdmlCommand = ID_BLACK
 pdmlMacro = ID_BLACK
 font = COURIER12
 annotFont = FIXED12
-textHvlDriverLoad = ID_BLUE3
 [Text.1]
-viewport = 0 23 1440 829 45
+viewport = 8 31 1440 829 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -682,44 +689,44 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = "Severity"
 width = 60
 visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Type"
-width = 60
-visualIndex = 4
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
+name = "Block's First Line"
+width = 120
+visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = "Message"
 width = 2000
 visualIndex = 5
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Time"
 width = 60
 visualIndex = 0
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
 name = "Code"
 width = 60
 visualIndex = 3
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+name = "Type"
+width = 60
+visualIndex = 4
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
@@ -799,8 +806,8 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 320 198 800 479 165 387 393 91
-viewPort = 8 31 1440 731 126 65
+getSignalForm = 328 206 800 479 165 387 393 91
+viewPort = 0 25 1440 707 164 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -966,8 +973,11 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\""
-RecentFile2 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/signal.rc\""
+RecentFile1 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\""
+RecentFile2 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/Bicubic_ver1.fsdb\""
+RecentFile3 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/signal.rc\""
+RecentFile4 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/signal.rc\""
+RecentFile5 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Cubic_ver3.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
@@ -1077,7 +1087,7 @@ OutputPinStatus = 2
 RevisedComponentColor = ID_BLUE5
 SpareCellColor = ID_RED5
 UserName = patata0717
-CommentFormat = Novas ECO updated by ${UserName} ${Date} ${Time}
+CommentFormat = Novas ECO updated by ${UserName} ${Date} ${Time} 
 PrefixN = eco_n
 PrefixP = eco_p
 PrefixI = eco_i
@@ -1191,8 +1201,9 @@ plan_fillColor_warning = orange
 plan_fillColor_error = red
 plan_fillColor_invalid = #F0DCDB
 plan_fillColor_subplan = lightgray
+[rtla]
+RtlaDbPath = 
 [schematics]
-viewport = 178 262 638 516
 schBackgroundColor = black lineSolid
 schBackgroundColor_qt = #000000 qt_solidLine 1
 schBodyColor = ID_ORANGE6 lineSolid
@@ -1265,6 +1276,7 @@ schFillCmtColor = ID_YELLOW4 fill_solid
 pre_select = True
 ShowPassThroughNet = False
 ComputedAnnotColor = ID_PURPLE5
+viewport = 0 25 1440 707
 [schematics_print]
 Signature = FALSE
 DesignName = PCU
@@ -1341,7 +1353,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 1440 731 126 65
+viewPort = 0 25 1440 707 164 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

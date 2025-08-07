@@ -1,0 +1,6 @@
+{"vcs1":{"timestamp_begin":1754467116.417199712, "rt":0.50, "ut":0.08, "st":0.02}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1754467116.217204751}
+{"VCS_COMP_START_TIME": 1754467116.217204751}
+{"VCS_COMP_END_TIME": 1754467116.948485025}
+{"VCS_USER_OPTIONS": "-R -sverilog -full64 -f hdl.f +define+P1 +access+r +vcs+fsdbon +fsdb+mda +fsdbfile+Bicubic.fsdb +notimingcheck"}
+{"vcs1": {"peak_mem": 284848}}
