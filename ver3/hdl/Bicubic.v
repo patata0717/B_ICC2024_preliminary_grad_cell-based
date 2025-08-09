@@ -166,8 +166,26 @@ always @* begin
     end
 end
 
-// combinatial for control(state, coord_h, coord_v, cycle_cnt, cycle_cnt_lv2, mode, line_shift, DONE)
-// cycle 0
+// cycle -1
+// combinatial for control(cycle_cnt)
+always @* begin
+    if (state == `INIT) begin
+        if (cycle_cnt == 3'd7) begin
+            cycle_cnt_next = 3'd0;
+        end else begin
+            cycle_cnt_next = cycle_cnt + 1;
+        end
+    end else begin // state == `RUN
+        if (cycle_cnt == 3'd4) begin
+            cycle_cnt_next = 3'd0;
+        end else begin
+            cycle_cnt_next = cycle_cnt + 1;
+        end
+    end
+end
+
+// cycle -1
+// combinatial for control(state, coord_h, coord_v, cycle_cnt_lv2, mode, line_shift, DONE)
 always @* begin
     if (state == `INIT) begin
         coord_h_next = coord_h;
@@ -175,15 +193,12 @@ always @* begin
         mode_next = mode;
         DONE_next = DONE;
         if (cycle_cnt_lv2 == TW + TH - 2 - 1 && cycle_cnt == 3'd7) begin
-            cycle_cnt_next = 3'd0;
             cycle_cnt_lv2_next = 8'd0;
             state_next = `RUN;
         end else if (cycle_cnt == 3'd7) begin
-            cycle_cnt_next = 3'd0;
             cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
             state_next = `INIT;
         end else begin
-            cycle_cnt_next = cycle_cnt + 1;
             cycle_cnt_lv2_next = cycle_cnt_lv2;
             state_next = `INIT;
         end
@@ -193,11 +208,10 @@ always @* begin
         line_shift = 0;
         DONE_next = DONE;
         state_next = `RUN;
-        if (coord_v == 7'd0 && cycle_cnt == 3'd4) begin          // 5 cycle
-            cycle_cnt_next = 3'd0;
+        if (coord_v == 7'd0 && cycle_cnt == 3'd3) begin          // 5 cycle
             mode_next = `H;
             coord_v_next = coord_v + 1;
-        end else if (coord_v == 7'd1 && cycle_cnt == 3'd4) begin // 25 cycle
+        end else if (coord_v == 7'd1 && cycle_cnt == 3'd3) begin // 25 cycle
             case (cycle_cnt_lv2) // 4H1V
                 8'd0: begin
                     cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
@@ -234,12 +248,11 @@ always @* begin
                     coord_v_next = 7'dx;
                 end
             endcase
-            cycle_cnt_next = 3'd0;
-        end else if (coord_v == TH - 1 && cycle_cnt == 3'd4) begin // 5 cycle
+        end else if (coord_v == TH - 1 && cycle_cnt == 3'd3) begin // 5 cycle
             DONE_next = 1'd1;
             mode_next = `H;
             coord_v_next = coord_v + 1;
-        end else if (cycle_cnt == 3'd4) begin                    // 2 to TH - 2, 10 cycle
+        end else if (cycle_cnt == 3'd3) begin                    // 2 to TH - 2, 10 cycle
             case (cycle_cnt_lv2)
                 3'd0: begin
                     cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
@@ -257,16 +270,14 @@ always @* begin
                     coord_v_next = 7'dx;
                 end
             endcase
-            cycle_cnt_next = 3'd0;
-        end else begin  // not last cycle
+        end else begin
             coord_v_next = coord_v;
             mode_next = mode;
-            cycle_cnt_next = cycle_cnt + 1;
         end
     end
 end
 
-// cycle 1
+// cycle 0
 // combinational for rem_v and quot_v, also, quot_h
 always @* begin
     quot_h = 7'd0;
@@ -274,7 +285,7 @@ always @* begin
         rem_v_next = 7'd0;
         quot_v_next = 7'd0;
     end else begin // state == `RUN
-        if (cycle_cnt == 3'd0) begin
+        if (cycle_cnt == 3'd4) begin
             if (rem_v + (SH - 1) >= (TH - 1)) begin
                 rem_v_next = rem_v + (SH - 1) - (TH - 1);
                 quot_v_next = quot_v + 1;
@@ -291,13 +302,13 @@ end
 
 /* --- X path --- */
 
-// cycle 2
+// cycle 1
 // combinational for next_rem_v
 always @* begin
     if (state == `INIT) begin
         next_rem_v_next = 7'd0;
     end else begin // state == `RUN
-        if (cycle_cnt == 3'd1) begin
+        if (cycle_cnt == 3'd0) begin
             if (rem_v + (SH - 1) >= (TH - 1)) begin
                 next_rem_v_next = rem_v + (SH - 1) - (TH - 1);
             end else begin
@@ -309,7 +320,7 @@ always @* begin
     end
 end
 
-// cycle 2
+// cycle 1
 // combinational for SRAM_addr, SRAM_data_i, WEN, CEN, fetch frac x
 // SRAM(HOLD, WRITE, READ)
 
@@ -357,7 +368,7 @@ always @* begin
         if (mode == `H) begin
             SRAM_addr = {7'd100, 7'd14}; // 14/27
             SRAM_CEN = `ENABLE; SRAM_WEN = `READ;
-        end else if (mode == `V && cycle_cnt == 3'd0) begin
+        end else if (mode == `V && cycle_cnt == 3'd4) begin // write back
             SRAM_addr = {prev_coord_v, prev_coord_h};
             SRAM_CEN = `ENABLE; SRAM_WEN = `WRITE;
         end else begin // V
