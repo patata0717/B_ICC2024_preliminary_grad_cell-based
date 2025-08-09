@@ -41,7 +41,6 @@ reg [6:0] next_rem_h, next_rem_h_next;
 reg [6:0] next_rem_v, next_rem_v_next;
 reg [2:0] cycle_cnt, cycle_cnt_next;
 reg [7:0] cycle_cnt_lv2, cycle_cnt_lv2_next; // 0 to TW + TH
-reg signed [2:0] line_shift, line_shift_next; // -1, 0, 1, 2
 reg       mode, mode_next;
 reg [7:0] P_buf [0:3];
 reg [7:0] P_buf_next [0:3];
@@ -52,6 +51,7 @@ reg state, state_next;
 // reg [23:0] X_h, X_h_next;
 
 // wire
+reg signed [2:0] line_shift; // -1, 0, 1, 2
 wire [7:0] ROM_data_o;
 wire [7:0] SRAM_data_o;
 reg [13:0] SRAM_addr;
@@ -127,12 +127,12 @@ ResultSRAM u_ResultSRAM (
 // combinational for divider
 always @* begin
     if (state == `INIT) begin
-        if (cycle_cnt_lv2 < TH) begin
-            divider = TH - 1;
-        end else if (cycle_cnt_lv2 >= TH && cycle_cnt_lv2 < TH + TW) begin
+        if (cycle_cnt_lv2 < TW - 1) begin
             divider = TW - 1;
+        end else if (cycle_cnt_lv2 >= TW - 1 && cycle_cnt_lv2 < TH + TW - 2) begin
+            divider = TH - 1;
         end else begin
-            divider = 7'd0;
+            divider = 7'dx;
         end
     end else begin
         divider = 7'd0;
@@ -142,18 +142,24 @@ end
 // combinational for dividend
 always @* begin
     if (state == `INIT) begin
-        if (cycle_cnt_lv2 < TH) begin
+        if (cycle_cnt_lv2 < TW - 1) begin
             if (cycle_cnt == 3'd7) begin
-                dividend = cycle_cnt_lv2 + 1;
+                if (cycle_cnt_lv2 == TW - 2) begin
+                    dividend = 0;
+                end else begin
+                    dividend = cycle_cnt_lv2 + 1;
+                end
             end else begin
                 dividend = cycle_cnt_lv2;
             end
-        end else if (cycle_cnt_lv2 >= TH && cycle_cnt_lv2 < TH + TW) begin
+        end else if (cycle_cnt_lv2 >= TW - 1 && cycle_cnt_lv2 < TH + TW - 2) begin
             if (cycle_cnt == 3'd7) begin
-                dividend = cycle_cnt_lv2 - TH + 1;
+                dividend = cycle_cnt_lv2 - (TW - 1) + 1;
             end else begin
-                dividend = cycle_cnt_lv2 - TH;
+                dividend = cycle_cnt_lv2 - (TW - 1);
             end
+        end else begin
+            dividend = 7'dx;
         end
     end else begin
         dividend = 7'd0;
@@ -167,9 +173,8 @@ always @* begin
         coord_h_next = coord_h;
         coord_v_next = coord_v;
         mode_next = mode;
-        line_shift_next = line_shift;
         DONE_next = DONE;
-        if (cycle_cnt_lv2 == TW + TH && cycle_cnt == 3'd7) begin
+        if (cycle_cnt_lv2 == TW + TH - 2 - 1 && cycle_cnt == 3'd7) begin
             cycle_cnt_next = 3'd0;
             cycle_cnt_lv2_next = 8'd0;
             state_next = `RUN;
@@ -185,39 +190,38 @@ always @* begin
     end else begin // state == `RUN
         coord_h_next = 7'd1; // fix at col 2
         cycle_cnt_lv2_next = cycle_cnt_lv2;
-        line_shift_next = 0;
+        line_shift = 0;
         DONE_next = DONE;
         state_next = `RUN;
         if (coord_v == 7'd0 && cycle_cnt == 3'd4) begin          // 5 cycle
             cycle_cnt_next = 3'd0;
             mode_next = `H;
             coord_v_next = coord_v + 1;
-            line_shift_next = -1;
         end else if (coord_v == 7'd1 && cycle_cnt == 3'd4) begin // 25 cycle
             case (cycle_cnt_lv2) // 4H1V
                 8'd0: begin
                     cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
                     mode_next = `H;
                     coord_v_next = coord_v;
-                    line_shift_next = 0;
+                    line_shift = -1;
                 end
                 8'd1: begin
                     cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
                     mode_next = `H;
                     coord_v_next = coord_v;
-                    line_shift_next = 1;
+                    line_shift = 0;
                 end
                 8'd2: begin
                     cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
                     mode_next = `H;
                     coord_v_next = coord_v;
-                    line_shift_next = 2;
+                    line_shift = 1;
                 end
                 8'd3: begin
                     cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
                     mode_next = `V;
                     coord_v_next = coord_v;
-                    line_shift_next = 0;
+                    line_shift = 2;
                 end
                 8'd4: begin
                     cycle_cnt_lv2_next = 8'd0;
@@ -263,21 +267,26 @@ always @* begin
 end
 
 // cycle 1
-// combinational for rem_v and quot_v
+// combinational for rem_v and quot_v, also, quot_h
 always @* begin
-    if (cycle_cnt == 3'd0) begin
-        if (rem_v + (SH - 1) >= (TH - 1)) begin
-            rem_v_next = rem_v + (SH - 1) - (TH - 1);
-            quot_v_next = quot_v + 1;
+    quot_h = 7'd0;
+    if (state == `INIT) begin
+        rem_v_next = 7'd0;
+        quot_v_next = 7'd0;
+    end else begin // state == `RUN
+        if (cycle_cnt == 3'd0) begin
+            if (rem_v + (SH - 1) >= (TH - 1)) begin
+                rem_v_next = rem_v + (SH - 1) - (TH - 1);
+                quot_v_next = quot_v + 1;
+            end else begin
+                rem_v_next = rem_v + (SH - 1);
+                quot_v_next = quot_v;
+            end
         end else begin
-            rem_v_next = rem_v + (SH - 1);
+            rem_v_next = rem_v;
             quot_v_next = quot_v;
         end
-    end else begin
-        rem_v_next = rem_v;
-        quot_v_next = quot_v;
     end
-    quot_h = 7'd1;
 end
 
 /* --- X path --- */
@@ -285,14 +294,18 @@ end
 // cycle 2
 // combinational for next_rem_v
 always @* begin
-    if (cycle_cnt == 3'd1) begin
-        if (rem_v + (SW - 1) >= (TW - 1)) begin
-            next_rem_v_next = rem_v + (SW - 1) - (TW - 1);
+    if (state == `INIT) begin
+        next_rem_v_next = 7'd0;
+    end else begin // state == `RUN
+        if (cycle_cnt == 3'd1) begin
+            if (rem_v + (SH - 1) >= (TH - 1)) begin
+                next_rem_v_next = rem_v + (SH - 1) - (TH - 1);
+            end else begin
+                next_rem_v_next = next_rem_v + (SH - 1);
+            end
         end else begin
-            next_rem_v_next = next_rem_v + (SW - 1);
+            next_rem_v_next = next_rem_v;
         end
-    end else begin
-        next_rem_v_next = next_rem_v;
     end
 end
 
@@ -303,11 +316,11 @@ end
 // combinational for calc_addr
 always @* begin
     if (state == `INIT) begin
-        if (cycle_cnt_lv2 >= TH) begin
+        if (cycle_cnt_lv2 >= TW - 1) begin
             if (cycle_cnt == 3'd7) begin
-                calc_addr = cycle_cnt_lv2 - TH;
+                calc_addr = cycle_cnt_lv2 - (TW - 1);
             end else begin
-                calc_addr = cycle_cnt_lv2 - TH;
+                calc_addr = cycle_cnt_lv2 - (TW - 1);
             end
         end else begin
             if (cycle_cnt == 3'd7) begin
@@ -322,7 +335,7 @@ end
 always @* begin
     if (state == `INIT) begin
         SRAM_data_i = frac_val;
-        if (cycle_cnt_lv2 >= TH) begin
+        if (cycle_cnt_lv2 >= TW - 1) begin
             if (cycle_cnt == 3'd7) begin
                 SRAM_addr = {7'd101, calc_addr};
                 SRAM_CEN = `ENABLE; SRAM_WEN = `WRITE; // write
@@ -377,49 +390,72 @@ end
 
 // cycle 1234
 // combinational for ROM_addr(mode, line_shift, cycle_cnt)
+reg [6:0] ROM_addr_v;
+reg [6:0] ROM_addr_h;
+
 always @* begin
-    if (mode == `H) begin
-        case (cycle_cnt)
-            3'd0: begin
-                ROM_addr = {quot_v + line_shift + V0, quot_h - 1 + H0};
-            end
-            3'd1: begin
-                ROM_addr = {quot_v + line_shift + V0, quot_h + 0 + H0};
-            end
-            3'd2: begin
-                ROM_addr = {quot_v + line_shift + V0, quot_h + 1 + H0};
-            end
-            3'd3: begin
-                ROM_addr = {quot_v + line_shift + V0, quot_h + 2 + H0};
-            end
-            3'd4: begin
-                ROM_addr = {quot_v + line_shift + V0, quot_h + 2 + H0};
-            end
-            default: begin
-                ROM_addr = {7'dx, 7'dx};
-            end
-        endcase
-    end else begin // V
-        case (cycle_cnt)
-            3'd0: begin
-                ROM_addr = {quot_v - 1 + V0, quot_h + line_shift + H0};
-            end
-            3'd1: begin
-                ROM_addr = {quot_v + V0, quot_h + line_shift + H0};
-            end
-            3'd2: begin
-                ROM_addr = {quot_v + 1 + V0, quot_h + line_shift + H0};
-            end
-            3'd3: begin
-                ROM_addr = {quot_v + 2 + V0, quot_h + line_shift + H0};
-            end
-            3'd4: begin
-                ROM_addr = {quot_v + 2 + V0, quot_h + line_shift + H0};
-            end
-            default: begin
-                ROM_addr = {7'dx, 7'dx};
-            end
-        endcase
+    if (state == `INIT) begin
+        ROM_addr = 14'd0;
+    end else if (state == `RUN) begin
+        if (mode == `H) begin
+            case (cycle_cnt)
+                3'd0: begin
+                    ROM_addr = 14'dx;
+                end
+                3'd1: begin
+                    ROM_addr_v = {quot_v + line_shift + V0};
+                    ROM_addr_h = {quot_h - 1 + H0};
+                    ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                end
+                3'd2: begin
+                    ROM_addr_v = {quot_v + line_shift + V0};
+                    ROM_addr_h = {quot_h + 0 + H0};
+                    ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                end
+                3'd3: begin
+                    ROM_addr_v = {quot_v + line_shift + V0};
+                    ROM_addr_h = {quot_h + 1 + H0};
+                    ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                end
+                3'd4: begin
+                    ROM_addr_v = {quot_v + line_shift + V0};
+                    ROM_addr_h = {quot_h + 2 + H0};
+                    ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                end
+                default: begin
+                    ROM_addr = 14'dx;
+                end
+            endcase
+        end else begin // V
+            case (cycle_cnt)
+                3'd0: begin
+                    ROM_addr = 14'dx;
+                end
+                3'd1: begin
+                    ROM_addr_v = {quot_v - 1 + V0};
+                    ROM_addr_h = {quot_h + H0};
+                    ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                end
+                3'd2: begin
+                    ROM_addr_v = {quot_v + 0 + V0};
+                    ROM_addr_h = {quot_h + H0};
+                    ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                end
+                3'd3: begin
+                    ROM_addr_v = {quot_v + 1 + V0};
+                    ROM_addr_h = {quot_h + H0};
+                    ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                end
+                3'd4: begin
+                    ROM_addr_v = {quot_v + 2 + V0};
+                    ROM_addr_h = {quot_h + H0};
+                    ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                end
+                default: begin
+                    ROM_addr = 14'dx;
+                end
+            endcase
+        end
     end
 end
 
@@ -480,7 +516,6 @@ always @(posedge CLK) begin
         cycle_cnt <= 3'd0;
         cycle_cnt_lv2 <= 8'd0;
         mode <= `H;
-        line_shift <= 0;
         P_buf[0] <= 8'd0;
         P_buf[1] <= 8'd0;
         P_buf[2] <= 8'd0;
@@ -502,7 +537,6 @@ always @(posedge CLK) begin
         cycle_cnt <= cycle_cnt_next;
         cycle_cnt_lv2 <= cycle_cnt_lv2_next;
         mode <= mode_next;
-        line_shift <= line_shift_next;
         P_buf[0] <= P_buf_next[0];
         P_buf[1] <= P_buf_next[1];
         P_buf[2] <= P_buf_next[2];

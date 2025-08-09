@@ -273,7 +273,30 @@ task score;
             $write("%c[1;34m%2d%c[0m",27,j,27);
         `endif
         for (i=0;i<TW;i=i+1) begin // modified
-            idx=j*TH+i;   // modified
+            idx=j*128+i;   // modified
+            pv=u_Bicubic.u_ResultSRAM.mem[idx];
+            if ((pv === golden1[pat_n][idx]) || (pv === golden2[pat_n][idx])) begin
+                $write(" %2x",pv);
+                //$write(" %2x",golden1[pat_n][idx]);
+            end
+            else begin
+                `ifdef USECOLOR
+                $write("%c[1;31m %2x%c[0m",27,pv,27);
+                `else
+                $write(">%2x",pv);
+                `endif
+                error_pixels=error_pixels+1;
+            end
+        end
+        $write("\n");
+    end
+    $display("---- error count %d",error_pixels);
+    for(j=100;j<102;j=j+1) begin // modified
+        `ifdef USECOLOR
+            $write("%c[1;34m%2d%c[0m",27,j,27);
+        `endif
+        for (i=0;i<30;i=i+1) begin // modified
+            idx=j*128+i;   // modified
             pv=u_Bicubic.u_ResultSRAM.mem[idx];
             if ((pv === golden1[pat_n][idx]) || (pv === golden2[pat_n][idx])) begin
                 $write(" %2x",pv);

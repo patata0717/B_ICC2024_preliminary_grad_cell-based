@@ -1,5 +1,5 @@
 #RTL simulation, single pattern
-vcs -R -sverilog tb.sv Bicubic.v -v ImgROM.v -v ResultSRAM.v +define+P1 +access+r +vcs+fsdbon +fsdb+mda +fsdbfile+Bicubic.fsdb +notimingcheck
+vcs -R -sverilog tb.sv Bicubic.v Divider.v -v ImgROM.v -v ResultSRAM.v +define+P1 +access+r +vcs+fsdbon +fsdb+mda +fsdbfile+Bicubic.fsdb +notimingcheck
 
 #RTL simulation, all pattern
 #vcs -R -sverilog tb.sv Bicubic.v  -v ImgROM.v -v ResultSRAM.v +access+r +vcs+fsdbon +fsdb+mda +fsdbfile+Bicubic.fsdb +notimingcheck

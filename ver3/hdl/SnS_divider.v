@@ -19,7 +19,7 @@ reg [7:0] qoutient;
 
 // wire
 wire [7:0] remainder_shift = remainder << 1;
-wire       isGE      = (remainder_shift >= {1'b0, divider});  
+wire       isGE      = (cycle_cnt == 3'd7) ? 1'd0 : (remainder_shift >= {1'b0, divider});  
 wire [7:0] remainder_next  = (cycle_cnt == 3'd7) ? dividend
                                                  : isGE ? (remainder_shift - {1'b0, divider})
                                                         : remainder_shift;
