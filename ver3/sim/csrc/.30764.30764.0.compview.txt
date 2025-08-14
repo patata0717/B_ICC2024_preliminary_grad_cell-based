@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1754827198.560880210, "rt":0.63, "ut":0.06, "st":0.03}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1754827198.429281168}
+{"VCS_COMP_START_TIME": 1754827198.429281168}
+{"VCS_COMP_END_TIME": 1754827200.014078788}
+{"VCS_USER_OPTIONS": "-R -full64 test_Divider.v ../hdl/SnS_divider.v -P /usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/novas.tab /usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/pli.a"}

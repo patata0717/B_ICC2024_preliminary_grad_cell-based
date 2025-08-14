@@ -11,7 +11,7 @@ module tb_Divider;
   wire [7:0]  frac_val;
 
   // Instantiate the DUT
-  Divider dut (
+  SnS_divider dut (
     .clk       (clk),
     .rst       (rst),
     .cycle_cnt (cycle_cnt),
@@ -39,27 +39,28 @@ initial begin
     rst       = 1;
     cycle_cnt = 3'd0;
     dividend  = 7'd0;
-    divider   = 7'd27;
+    divider   = 7'd21;
 
-    #20;
+    #27;
     rst = 0;             // release reset
-
+    @(posedge clk);
     // Step through 8 cycles
-    for (j = 1; j <= 27; j = j + 1) begin
+    for (j = 1; j <= 21; j = j + 1) begin
       #70;
       dividend = j;
       #10;
-      divider = 7'd27;
-      $display("%d/27 = %d", j - 1, frac_val);
+      divider = 7'd21;
+      $display("%d/21 = %d", j - 1, frac_val);
     end
     #80
-    $display("27/27 = %d", frac_val);
+    $display("21/21 = %d", frac_val);
     $finish;
 end
 
 initial begin
   #20;
-  for (i = 0; i < 8 * 27; i = i + 1) begin
+  @(posedge clk);
+  for (i = 0; i < 8 * 21; i = i + 1) begin
     cycle_cnt = i[2:0]; // cycle_cnt should be 3 bits
     #10;
   end

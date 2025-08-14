@@ -48,7 +48,7 @@
 XLOCALEDIR=/usr/cad/synopsys/icc2/2024.09-sp2//etc/locale
 XILINX_VIVADO=/tools/Xilinx/Vivado/2020.2
 XILINX_HLS=/tools/Xilinx/Vitis_HLS/2020.2
-XDG_SESSION_ID=15646
+XDG_SESSION_ID=17887
 XDG_RUNTIME_DIR=/run/user/1005
 XDG_DATA_DIRS=/home/patata0717/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VMR_MODE_FLAG=64
@@ -72,8 +72,8 @@ SYN_MAN_DIR=/usr/cad/synopsys/vcs/2024.09-sp2/doc/man
 SYNOPSYS_LC_ROOT=/usr/cad/synopsys/lc/cur
 SYNOPSYS=/usr/cad/synopsys/formality/cur
 SSH_TTY=/dev/pts/2
-SSH_CONNECTION=140.116.226.70 55128 140.116.226.74 22
-SSH_CLIENT=140.116.226.70 55128 22
+SSH_CONNECTION=140.116.226.70 57031 140.116.226.74 22
+SSH_CLIENT=140.116.226.70 57031 22
 SNPS_VCS_PYTHON3=/usr/cad/synopsys/vcs/2024.09-sp2/linux64/bin/Python3/bin/python3
 SNPS_VCS_CLANG_PATH=/usr/cad/synopsys/vcs/2024.09-sp2/linux64/clang
 SNPS_INTERNAL_VCS_LINUX_OS=linux
@@ -112,10 +112,10 @@ CALIBRE_2025_1_ENABLE_DEPRECATED_RHEL7=3
 1754566400 ./tb.sv
 1754465989 ../hdl/ResultSRAM.v
 1754465989 ../hdl/ImgROM.v
-1754631798 ../hdl/Bicubic.v
-1754625719 ../hdl/SnS_divider.v
-1754467227 ../hdl/Cubic_engine.v
-1754476236 hdl.f
+1755160629 ../hdl/Bicubic.v
+1755046207 ../hdl/SnS_divider.v
+1755116844 ../hdl/Cubic_engine.v
+1754729817 hdl.f
 1741065587 /usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/verdi.tab
 1740888368 /usr/cad/synopsys/vcs/2024.09-sp2/linux64/lib/vcsdp_lite.tab
 4
@@ -123,5 +123,5 @@ CALIBRE_2025_1_ENABLE_DEPRECATED_RHEL7=3
 1740889567 /usr/cad/synopsys/vcs/2024.09-sp2/linux64/lib/liberrorinf.so
 1740889560 /usr/cad/synopsys/vcs/2024.09-sp2/linux64/lib/libsnpsmalloc.so
 1740889556 /usr/cad/synopsys/vcs/2024.09-sp2/linux64/lib/libvfs.so
-1754631809 simv.daidir
+1755160633 simv.daidir
 -1 partitionlib

@@ -219,14 +219,14 @@ always @(posedge clk) begin
         X_ROM[2] <= 8'd171;
         X_ROM[3] <= 8'd255;
 */
-        X_ROM_H[0] <= 8'd118;
-        X_ROM_H[1] <= 8'd153;
-        X_ROM_H[2] <= 8'd198;
-        X_ROM_H[3] <= 8'd255;
-        X_ROM_V[0] <= 8'd40;
-        X_ROM_V[1] <= 8'd74;
-        X_ROM_V[2] <= 8'd137;
-        X_ROM_V[3] <= 8'd255;
+        X_ROM_H[0] <= 8'h71;
+        X_ROM_H[1] <= 8'h95;
+        X_ROM_H[2] <= 8'hc3;
+        X_ROM_H[3] <= 8'hff;
+        X_ROM_V[0] <= 8'h00;
+        X_ROM_V[1] <= 8'h00;
+        X_ROM_V[2] <= 8'h9;
+        X_ROM_V[3] <= 8'hff;
         C_col0_ROM[0] <= 4'b1111; C_col1_ROM[0] <= 4'b0011; C_col2_ROM[0] <= 4'b1101; C_col3_ROM[0] <= 4'b0001; // [-0.5 , +1.0 , -0.5 ,  0.0]
         C_col0_ROM[1] <= 4'b0010; C_col1_ROM[1] <= 4'b1011; C_col2_ROM[1] <= 4'b0100; C_col3_ROM[1] <= 4'b1111; // [+1.5 , -2.5 ,  0.0 , +1.0]
         C_col0_ROM[2] <= 4'b1111; C_col1_ROM[2] <= 4'b0000; C_col2_ROM[2] <= 4'b0001; C_col3_ROM[2] <= 4'b0000; // [-1.5 , +2.0 , +0.5 ,  0.0]

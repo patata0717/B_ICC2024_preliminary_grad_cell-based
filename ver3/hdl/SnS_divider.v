@@ -18,11 +18,10 @@ reg [7:0] remainder;
 reg [7:0] qoutient;
 
 // wire
-wire [7:0] remainder_shift = remainder << 1;
-wire       isGE      = (cycle_cnt == 3'd7) ? 1'd0 : (remainder_shift >= {1'b0, divider});  
-wire [7:0] remainder_next  = (cycle_cnt == 3'd7) ? dividend
-                                                 : isGE ? (remainder_shift - {1'b0, divider})
-                                                        : remainder_shift;
+wire [7:0] remainder_shift = (cycle_cnt == 3'd7) ? {dividend, 1'b0} : (remainder << 1);
+wire       isGE            = (remainder_shift >= {1'b0, divider});
+wire [7:0] remainder_next  = isGE ? (remainder_shift - {1'b0, divider})
+                                  : remainder_shift;
 // wire [7:0] qoutient_next   = (cycle_cnt == 3'd7) ? {7'd0, isGE} : {qoutient[6:0], isGE};
 wire [7:0] qoutient_next   = {qoutient[6:0], isGE};
 assign frac_val = qoutient;

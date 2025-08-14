@@ -199,10 +199,18 @@ StickSet-FillColor = ID_PURPLE6
 StickSet-TextColor = ID_BLACK
 [FSM_Dlg-Print]
 Orientation = Landscape
+[Form]
+version = Verdi_W-2024.09-SP2
 [General]
 autoSaveSession = FALSE
 TclAutoSource = 
 cmd_enter_form = FALSE
+ColorTheme = classic
+prevColorTheme = classic
+SyncBrowserDir = TRUE
+version = Verdi_W-2024.09-SP2
+recent_commands_Verdi = hbInvokeWave
+recent_commands_nWave = zoomOut,restoreSignal,openFile
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
 [Globals]
@@ -238,6 +246,7 @@ import_default_language = Verilog
 import_filter_verilog = *.v; *.vc; *.f
 simulation_file_type = 
 PrefetchViewableAnnot = TRUE
+ShowFileListView = FALSE
 [Hier]
 filterTimeout = 1500
 [ImportLiberty]
@@ -293,15 +302,60 @@ srcShow = 1
 instShow = 0
 containerWidth = 1280
 containerHeight = 800
+[OldFontRC]
+HB_designTreeFont = *-adobe-courier-medium-r-*-*-12-*-*-*-*-*-iso8859-*
+Text_font = COURIER12
+nMemory_font = Fixed 14
 [OtherEditor]
 cmd1 = "xterm -font 9x15 -fg black -bg gray -e"
 name = "vi"
 options = "+${CurLine} ${CurFullFileName}"
+[Power]
+PowerDownInstance = ID_GRAY1
+RetentionSignal = ID_YELLOW2
+IsolationSignal = ID_RED6
+LevelShiftedSignal = ID_GREEN6
+PowerSwitchObject = ID_ORANGE5
+AlwaysOnObject = ID_GREEN5
+PowerNet = ID_RED2
+GroundNet = ID_RED2
+SimulationOnly = ID_CYAN3
+SRSN/SPA = ID_CYAN3
+CNSSignal = ID_CYAN3
+RPTRSignal = ID_CYAN3
+AcknowledgeSignal = ID_CYAN3
+BoundaryPort = ID_CYAN3
+DisplayInstrumentedCell = TRUE
+ShowCmdByFile = FALSE
+ShowPstAnnot = FALSE
+ShowIsoSymbol = TRUE
+ExtractIsoSameNets = FALSE
+AnnotateSignal = TRUE
+HighlightPowerObject = TRUE
+HighlightPowerDomain = TRUE
+TraceThroughInstruLowPower = TRUE
+BrightenPowerColorInSchematicWindow = FALSE
+ShowAlias = FALSE
+ShowVoltage = TRUE
+MatchTreeNodesCaseInsensitive = FALSE
+SearchHBNodeDynamically = FALSE
+ContinueTracingSupplyOrLogicNet = FALSE
 [Print]
 PrinterName = lp
 FileName = test.ps
 PaperSize = A4 - 210x297 (mm)
 ColorPrint = FALSE
+[QtDialog]
+openFileDlg = 339,139,602,483
+restoreSigDlg = 364,162,551,438
+[Safety]
+RegisterObject = ID_RED4
+CoreObject = ID_ORANGE5
+SafeFSMObject = ID_YELLOW7
+ErrorCorrectionObject = ID_GREEN5
+ErrorObject = ID_GRAY5
+AnnotateSignal = TRUE
+HighlightSafetyObject = TRUE
 [Session Cache]
 1 = string (session file name)
 2 = string (session file name)
@@ -340,6 +394,41 @@ simType = {vcssv, xl, nc, vcs, mti, mti_vlog, vhnc, scs, mixnc}
 thirdpartyIdx = -1
 iscCmdSep = FALSE
 NoAppendOption = False
+[SimulationPlus]
+xlPath = verilog
+xlOption = 
+ncPath = ncsim
+ncOption = -f ncsim.args
+vcsPath = simv
+vcsOption = 
+mti_vlogPath = vsim
+mti_vlogOption = novas_vlog
+mtiPath = vsim
+mtiOption = 
+vhncPath = ncsim
+vhncOption = -log debussy.nc.log
+speedsimPath = verilog
+speedsimOption = 
+mixncPath = ncsim
+mixncOption = -log debussy.mixnc.log
+scsPath = scsim
+scsOption = 
+vcs_mixPath = simv
+vcs_mixOption = -vhdlrun "-vhpi debussy:FSDBDumpCmd"
+scs_mixPath = scsim
+scs_mixOption = -vhpi debussy:FSDBDumpCmd
+vcs_svPath = simv
+vcs_svOption = 
+simType = vcssv
+thirdpartyIdx = -1
+interactiveDebugging = FALSE
+KeepBreakPoints = FALSE
+iscCmdSep = FALSE
+ScsDebugAll = FALSE
+NoAppendOption = FALSE
+invokeSimPath = work
+[SimulationPlus2]
+eventDumpUnfinish = FALSE
 [Source]
 wordWrapOn = TRUE
 viewReuse = TRUE
@@ -363,6 +452,9 @@ annotateOnStructInstDecl = FALSE
 annotateFSMStateLimitNum = -1
 annotateFSMLimitNum = -1
 restoredItemsLimitNum = 100000
+[SourceVHDL]
+vhSimType = ModelSim
+ohSimType = VerilogXL
 [TclShell]
 nLineSize = 1024
 [Test]
@@ -488,6 +580,58 @@ Button4 = "Next Event" "$db_step(1);\n"
 Button3 = "Next ? Time" "#${Arg:Next Time} $stop;.\n"
 Button2 = "Next 1000 Time" "#1000 $stop;.\n"
 Button1 = "Dump All Signals" "$fsdbDumpvars;\n"
+[VIA]
+viaLogViewerDefaultRuleOneSearchForm = "share/VIA/Apps/PredefinedRules/Misc/Onesearch_rule.rc"
+[VIA.oneSearch.preference]
+DefaultDisplayTimeUnit = "1.000000ns"
+DefaultLogTimeUnit = "1.000000ns"
+[VIA.oneSearch.preference.vgifColumnSettingRC]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
+parRuleSets = ""
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
+name = "Severity"
+width = 60
+visualIndex = 2
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
+name = "Block's First Line"
+width = 120
+visualIndex = 1
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+name = "Message"
+width = 2000
+visualIndex = 5
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = "Time"
+width = 60
+visualIndex = 0
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Code"
+width = 60
+visualIndex = 3
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+name = "Type"
+width = 60
+visualIndex = 4
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.ruleHistory]
+/usr/cad/synopsys/verdi/2024.09-sp2/share/VIA/Apps/PredefinedRules/Misc/Onesearch_rule.rc = 
 [Vi]
 ViFont = "Clean 14"
 ViBG = white
@@ -543,7 +687,6 @@ NetRegisterSignal = FALSE
 VerilogVHDLSignal = FALSE
 LabelMarker = TRUE
 ResolveSymbolicLink = TRUE
-SyncBrowserDir = TRUE
 TipInSignalWin = FALSE
 TipInCurveWin = FALSE
 DisplayLSBsFirst = FALSE
@@ -671,6 +814,14 @@ LineBreakWithScope = FALSE
 StopAfterCompileOption = -i
 [fusa]
 tooltip_summary = TRUE
+Name_Show = TRUE
+Coverage_Show = TRUE
+Test_Cov_Show = TRUE
+Fault_Cov_Show = TRUE
+Undetected_Show = TRUE
+Num_of_Fault_Show = TRUE
+Num_of_Displayed_Fault_Show = FALSE
+Num_of_Inst_Show = TRUE
 [hvpsetting]
 importExcelXMLOptions = 
 use_test_loca_as_source = FALSE
@@ -849,6 +1000,16 @@ margin_bottom = 0.80
 margin_left = 0.50
 margin_right = 0.50
 margin_unit = inches
+[spiceDebug]
+ThroughNet = ID_YELLOW5
+InstrumentSig = ID_GREEN5
+InterfaceElement = ID_GREEN5
+Run-timeInterfaceElement = ID_BLUE5
+RTVSSCSig = ID_BLUE7
+HighlightThroughNet = TRUE
+HighlightInterfaceElement = TRUE
+HighlightRuntimeInterfaceElement = TRUE
+HighlightSameNet = TRUE
 [surefire]
 TPLanguage = Verilog
 TPName = SureFire
@@ -859,6 +1020,8 @@ LineBreakWithScope = TRUE
 StopAfterCompileOption = -tcl
 [turboSchema_Printer_Options]
 Orientation = Landscape
+[turbo_library]
+bdb_load_scope = 
 [vdCovFilteringSearchesStrings]
 keepLastUsedFiltersMaxNum = 10
 [verisity]

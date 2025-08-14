@@ -8,7 +8,7 @@ module Cubic_engine (
     input  [23:0] X_in,  // Q0.8
     input   [7:0] P_in,  // Q8.0
     input   [2:0] cycle_cnt,
-    output  [7:0] out
+    output reg [7:0] out
 );
 
 // mem
@@ -21,6 +21,7 @@ reg signed [3:0] C_col3_ROM [0:3]; // signed Q2.1
 reg       [7:0] X   [0:3], X_next  [0:3]; // Q0.8
 reg       [7:0] P   [0:3], P_next  [0:3]; // Q8.0
 reg signed [12:0] XC [0:3], XC_next [0:3]; // signed Q2.8 * 4 = 13 bit
+reg       [7:0] XCP, XCP_next; // Q8.0
 
 // wire                         signed   Q0.8        signed Q2.1   = 13 bit
 wire signed [11:0] XC0_prod0 = ($signed({1'b0, X[0]}) * C_col0_ROM[0]);
@@ -58,8 +59,16 @@ wire        [7:0]  XCP_sum_round_shift_clamp = (XCP_sum_round_shift <  13'sd0   
                                              : (XCP_sum_round_shift >  13'sd255 ) ? 8'd255
                                              : XCP_sum_round_shift[7:0];
                                              
-assign out = XCP_sum_round_shift_clamp; // Q8.0
+assign out = XCP;
 
+// combinational for XCP
+always @* begin
+    if (cycle_cnt == 3'd0) begin
+        XCP_next = XCP_sum_round_shift_clamp; // Q8.0
+    end else begin
+        XCP_next = XCP; // no change
+    end
+end
 
 // combinational for X
 always @(*) begin
@@ -132,10 +141,12 @@ always @(posedge clk) begin
         X[0] <= 8'd0; X[1] <= 8'd0; X[2] <= 8'd0; X[3] <= 8'd255;
         P[0] <= 8'd0; P[1] <= 8'd0; P[2] <= 8'd0; P[3] <= 8'd0;
         XC[0] <= 13'd0; XC[1] <= 13'd0; XC[2] <= 13'd0; XC[3] <= 13'd0;
+        XCP <= 8'd0;
     end else begin
         X[0] <= X_next[0]; X[1] <= X_next[1]; X[2] <= X_next[2]; X[3] <= X_next[3];
         P[0] <= P_next[0]; P[1] <= P_next[1]; P[2] <= P_next[2]; P[3] <= P_next[3];
         XC[0] <= XC_next[0]; XC[1] <= XC_next[1]; XC[2] <= XC_next[2]; XC[3] <= XC_next[3];
+        XCP <= XCP_next;
     end
 end
 

@@ -122,14 +122,14 @@ end
 // sequential for mem
 always @(posedge clk) begin
     if (rst) begin
-        P_ROM[0] <= 8'h2e;    // P(-1)
-        P_ROM[1] <= 8'h2f;    // P(0)
-        P_ROM[2] <= 8'h2e;    // P(1)
-        P_ROM[3] <= 8'h0c;    // P(2)
-        X_ROM[0] <= 8'd76;   // 1    =  255/256 
-        X_ROM[1] <= 8'd114;   // 2/3  =  171/256 
-        X_ROM[2] <= 8'd171;   // 4/9  =  114/256 
-        X_ROM[3] <= 8'd255;    // 8/27 =   76/256 
+        P_ROM[0] <= 8'h3e;    // P(-1)
+        P_ROM[1] <= 8'h17;    // P(0)
+        P_ROM[2] <= 8'h55;    // P(1)
+        P_ROM[3] <= 8'h2b;    // P(2)
+        X_ROM[0] <= 8'h71;    // x3
+        X_ROM[1] <= 8'h95;    // x2
+        X_ROM[2] <= 8'hc3;    // x
+        X_ROM[3] <= 8'hff;    // 1
         C_col0_ROM[0] <= 4'b1111; C_col1_ROM[0] <= 4'b0011; C_col2_ROM[0] <= 4'b1101; C_col3_ROM[0] <= 4'b0001; // [-0.5 , +1.0 , -0.5 ,  0.0]
         C_col0_ROM[1] <= 4'b0010; C_col1_ROM[1] <= 4'b1011; C_col2_ROM[1] <= 4'b0100; C_col3_ROM[1] <= 4'b1111; // [+1.5 , -2.5 ,  0.0 , +1.0]
         C_col0_ROM[2] <= 4'b1111; C_col1_ROM[2] <= 4'b0000; C_col2_ROM[2] <= 4'b0001; C_col3_ROM[2] <= 4'b0000; // [-1.5 , +2.0 , +0.5 ,  0.0]

@@ -1,0 +1,6 @@
+{"vcs1":{"timestamp_begin":1754825537.616127086, "rt":0.47, "ut":0.07, "st":0.03}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1754825537.492295015}
+{"VCS_COMP_START_TIME": 1754825537.492295015}
+{"VCS_COMP_END_TIME": 1754825538.124872795}
+{"VCS_USER_OPTIONS": "-R -full64 test_Divider.v ../hdl/SnS_divider.v"}
+{"vcs1": {"peak_mem": 285568}}
