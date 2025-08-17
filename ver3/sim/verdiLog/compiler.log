@@ -8,14 +8,14 @@ Bicubic
 
 
 *Error* view Cubic_engine is not defined for instance cubic_engine
-"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v", 83: 
+"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v", 89: 
 
 *Error* view SnS_divider is not defined for instance sns_divider
-"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v", 92: 
+"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v", 98: 
 
 *Error* view ImgROM is not defined for instance u_ImgROM
-"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v", 101: 
+"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v", 107: 
 
 *Error* view ResultSRAM is not defined for instance u_ResultSRAM
-"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v", 111: 
+"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v", 117: 
 Total	4 error(s),   0 warning(s)

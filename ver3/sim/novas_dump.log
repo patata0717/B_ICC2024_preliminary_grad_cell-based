@@ -161,7 +161,7 @@ REMOTEHOST=140.116.226.70
 MANPATH=/usr/cad/synopsys/synthesis/2024.09-sp2/doc/syn/man:/usr/cad/synopsys/lc/2024.09-sp2/doc/lc/man:/usr/cad/synopsys/vcs/2024.09-sp2/doc/man
 SYNOPSYS_LC_ROOT=/usr/cad/synopsys/lc/cur
 SNPS_VCS_INTERNAL_MAKE_OPT=
-XDG_SESSION_ID=17887
+XDG_SESSION_ID=18732
 SALT_LICENSE_SERVER=1717@lshc
 HOSTNAME=vlsilab.es.ncku.edu.tw
 XLOCALEDIR=/usr/cad/synopsys/icc2/2024.09-sp2//etc/locale
@@ -174,21 +174,21 @@ TERM=xterm
 SHELL=/bin/bash
 HOST=vlsilab.es.ncku.edu.tw
 HISTSIZE=1000
-SSH_CLIENT=140.116.226.70 57031 22
+SSH_CLIENT=140.116.226.70 59825 22
 SELINUX_USE_CURRENT_RANGE=
 CALIBRE_2025_1_ENABLE_DEPRECATED_RHEL7=3
 VCS_PYTHON3=/usr/cad/synopsys/vcs/2024.09-sp2/linux64/bin/Python3/bin/python3
 QTDIR=/usr/lib64/qt-3.3
 MGC_LOCATION_MAP=NO_MAP
 QTINC=/usr/lib64/qt-3.3/include
-SSH_TTY=/dev/pts/2
+SSH_TTY=/dev/pts/8
 LC_ALL=C
-SNPS_VCS_INTERNAL_ROOT_PID=8042
+SNPS_VCS_INTERNAL_ROOT_PID=21805
 QT_GRAPHICSSYSTEM_CHECKED=1
 USER=patata0717
 GROUP=patata0717
 LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
-LD_LIBRARY_PATH=/usr/cad/synopsys/vcs/2024.09-sp2/lib:/usr/cad/synopsys/vcs/2024.09-sp2/linux64/lib:::::::::::/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64::/lib64:/usr/lib64:/usr/local/lib64:/usr/cad/synopsys/verdi/2024.09-sp2/etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/::::/lib64:/usr/lib64:/usr/local/lib64:/lib64:/usr/lib64:/usr/local/lib64
+LD_LIBRARY_PATH=/usr/cad/synopsys/vcs/2024.09-sp2/lib:/usr/cad/synopsys/vcs/2024.09-sp2/linux64/lib:::::::::::/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64::/lib64:/usr/lib64:/usr/local/lib64:/usr/cad/synopsys/verdi/2024.09-sp2/etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/::::/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/lib/64bit:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/lib64:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/lib::/lib64:/usr/lib64:/usr/local/lib64:/lib64:/usr/lib64:/usr/local/lib64
 VCS_INTERNAL_CONVERTEDLIBS=
 SCRIPT_NAME=vcs
 VCS_MX_HOME_INTERNAL=1
@@ -198,9 +198,9 @@ CALIBRE_2025_2_ENABLE_DEPRECATED_RHEL7=6
 OVA_UUM=0
 VCS_MODE_FLAG=64
 MAIL=/var/spool/mail/patata0717
-PATH=.:/tools/Xilinx/Vitis_HLS/2020.2/bin:/tools/Xilinx/Model_Composer/2020.2/bin:/tools/Xilinx/Vivado/2020.2/bin:/usr/cad/mentor/calibre/aoj_cal_2024.4_12.9/bin:/usr/cad/mentor/Questa_Sim/2024.3/questasim/bin:/usr/cad/mentor/Questa_VIP/2024.3/bin:/usr/cad/synopsys/icc2/2024.09-sp2//bin:/usr/cad/synopsys/tmax/2024.09-sp2//vui/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vtran/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vgen/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vcap/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//testmax/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//idq/cur/linux64/iddq/bin:/usr/cad/synopsys/tmax/2024.09-sp2//dftview/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//ale/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//bin:/usr/cad/cadence/JASPER/jasper_2024.03p002/bin:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/bin:/usr/cad/synopsys/primetime/2024.09-sp2//amd64/syn/bin:/usr/cad/synopsys/primetime/2024.09-sp2//primeclosure/cur/amd64/syn/bin:/usr/cad/synopsys/formality/2024.09-sp2//amd64/fm/bin:/usr/cad/synopsys/vcs/2024.09-sp2/bin:/usr/cad/synopsys/vcs/2024.09-sp2/vcfca/bin:/usr/cad/synopsys/vcs/2024.09-sp2/amd64/bin:/usr/cad/synopsys/verdi/2024.09-sp2/bin:/usr/cad/synopsys/lc/2024.09-sp2/bin:/usr/cad/synopsys/synthesis/2024.09-sp2/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/opt/riscv/bin:/opt/automake-1.16.1/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+PATH=.:/tools/Xilinx/Vitis_HLS/2020.2/bin:/tools/Xilinx/Model_Composer/2020.2/bin:/tools/Xilinx/Vivado/2020.2/bin:/usr/cad/mentor/calibre/aoj_cal_2024.4_12.9/bin:/usr/cad/mentor/Questa_Sim/2024.3/questasim/bin:/usr/cad/mentor/Questa_VIP/2024.3/bin:/usr/cad/synopsys/icc2/2024.09-sp2//bin:/usr/cad/synopsys/tmax/2024.09-sp2//vui/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vtran/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vgen/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vcap/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//testmax/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//idq/cur/linux64/iddq/bin:/usr/cad/synopsys/tmax/2024.09-sp2//dftview/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//ale/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//bin:/usr/cad/cadence/JASPER/jasper_2024.03p002/bin:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/bin:/usr/cad/synopsys/primetime/2024.09-sp2//amd64/syn/bin:/usr/cad/synopsys/primetime/2024.09-sp2//primeclosure/cur/amd64/syn/bin:/usr/cad/synopsys/formality/2024.09-sp2//amd64/fm/bin:/usr/cad/synopsys/vcs/2024.09-sp2/bin:/usr/cad/synopsys/vcs/2024.09-sp2/vcfca/bin:/usr/cad/synopsys/vcs/2024.09-sp2/amd64/bin:/usr/cad/synopsys/verdi/2024.09-sp2/bin:/usr/cad/synopsys/lc/2024.09-sp2/bin:/usr/cad/synopsys/synthesis/2024.09-sp2/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/bin/64bit:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/bin:/opt/riscv/bin:/opt/automake-1.16.1/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 SALT_LICENSE_FILE=1717@lshc
-SNPS_VCS_INTERNAL_CURR_PID=8042
+SNPS_VCS_INTERNAL_CURR_PID=21805
 VERDI_HOME=/usr/cad/synopsys/verdi/2024.09-sp2
 CALIBRE_HOME=/usr/cad/mentor/calibre/aoj_cal_2024.4_12.9
 PWD=/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim
@@ -217,7 +217,7 @@ SYNOPSYS=/usr/cad/synopsys/formality/cur
 XILINX_VIVADO=/tools/Xilinx/Vivado/2020.2
 HISTCONTROL=ignoredups
 VCS_ARG_ADDED_FOR_TMP=1
-SNPS_VCS_TMPDIR=/tmp/vcs_20250814083710_8042
+SNPS_VCS_TMPDIR=/tmp/vcs_20250817082821_21805
 RISCV=/opt/riscv
 SHLVL=4
 HOME=/home/patata0717
@@ -233,14 +233,14 @@ LOGNAME=patata0717
 MACHTYPE=x86_64
 SNPS_VCS_INTERNAL_MAKE=make
 QTLIB=/usr/lib64/qt-3.3/lib
-SNPS_VCS_INTERNAL_ROOT_START_TIME=1755160630.353199942
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1755419301.581507012
 XDG_DATA_DIRS=/home/patata0717/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
-SSH_CONNECTION=140.116.226.70 57031 140.116.226.74 22
+SSH_CONNECTION=140.116.226.70 59825 140.116.226.74 22
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 SHLIB_PATH=/usr/cad/synopsys/verdi/2024.09-sp2/etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/:
 sysc_uni_pwd=/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim
 XDG_RUNTIME_DIR=/run/user/1005
-DISPLAY=localhost:11.0
+DISPLAY=localhost:13.0
 VCS_ARCH=linux64
 SYN_MAN_DIR=/usr/cad/synopsys/vcs/2024.09-sp2/doc/man
 TOOL_HOME=/usr/cad/synopsys/vcs/2024.09-sp2/linux64
@@ -259,8 +259,8 @@ argv[3]=+fsdb+mda
 argv[4]=+fsdbfile+Bicubic.fsdb
 argv[5]=+notimingcheck
 260 profile - 100
-          CPU/Mem usage: 0.020 sys,  0.150 user,  231.00M mem
-261 Elapsed time:    0:00:01    Thu Aug 14 16:37:13 2025
+          CPU/Mem usage: 0.030 sys,  0.110 user,  231.03M mem
+261 Elapsed time:    0:00:00    Sun Aug 17 16:28:23 2025
 262 User CPU time used: 0 seconds
 263 System CPU time used: 0 seconds
 264 pliAppInit
@@ -295,57 +295,57 @@ argv[5]=+notimingcheck
 293 *Verdi* : Enable +mda dumping.
 294 *Verdi* : End of traversing.
 295 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.030 sys,  0.160 user,  330.81M mem
-                   incr: 0.000 sys,  0.000 user,  9.96M mem
-                   accu: 0.000 sys,  0.000 user,  9.96M mem
-              accu incr: 0.000 sys,  0.000 user,  9.96M mem
+          CPU/Mem usage: 0.040 sys,  0.110 user,  331.05M mem
+                   incr: 0.010 sys,  0.000 user,  10.16M mem
+                   accu: 0.010 sys,  0.000 user,  10.16M mem
+              accu incr: 0.010 sys,  0.000 user,  10.16M mem
 
-          Count usage: 2202 var,  122 idcode,  113 callback
-                 incr: 2202 var,  122 idcode,  113 callback
-                 accu: 2202 var,  122 idcode,  113 callback
-            accu incr: 2202 var,  122 idcode,  113 callback
+          Count usage: 2206 var,  131 idcode,  118 callback
+                 incr: 2206 var,  131 idcode,  118 callback
+                 accu: 2206 var,  131 idcode,  118 callback
+            accu incr: 2206 var,  131 idcode,  118 callback
 296 Idcode  0 - bc1:0  mda:2078
-297 Elapsed time:    0:00:01    Thu Aug 14 16:37:13 2025
+297 Elapsed time:    0:00:01    Sun Aug 17 16:28:24 2025
 298 User CPU time used: 0 seconds
 299 System CPU time used: 0 seconds
 300 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.030 sys,  0.160 user,  330.81M mem
+          CPU/Mem usage: 0.040 sys,  0.110 user,  331.05M mem
                    incr: 0.000 sys,  0.000 user,  0.00M mem
-                   accu: 0.000 sys,  0.000 user,  9.96M mem
+                   accu: 0.010 sys,  0.000 user,  10.16M mem
               accu incr: 0.000 sys,  0.000 user,  0.00M mem
 
-          Count usage: 2202 var,  122 idcode,  113 callback
+          Count usage: 2206 var,  131 idcode,  118 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 2202 var,  122 idcode,  113 callback
+                 accu: 2206 var,  131 idcode,  118 callback
             accu incr: 0 var,  0 idcode,  0 callback
 301 Idcode  0 - bc1:0  mda:2078
-302 Elapsed time:    0:00:01    Thu Aug 14 16:37:13 2025
+302 Elapsed time:    0:00:01    Sun Aug 17 16:28:24 2025
 303 User CPU time used: 0 seconds
 304 System CPU time used: 0 seconds
-305 End of simulation at 5380000
-306 Memory usage: 330.818 M
+305 End of simulation at 4900000
+306 Memory usage: 331.051 M
 307 Maximum resident set size: 81 MB
 308 Hard page faults: 0
-309 Soft page faults: 31651
-310 Elapsed time:    0:00:01    Thu Aug 14 16:37:13 2025
+309 Soft page faults: 31654
+310 Elapsed time:    0:00:01    Sun Aug 17 16:28:24 2025
 311 User CPU time used: 0 seconds
 312 System CPU time used: 0 seconds
 313 Begin FSDB profile info:
-314 FSDB Writer : bc1(1520) bcn(36698) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.129049) io wait(0.000000) theadpool wait(0.000000)
+314 FSDB Writer : bc1(1408) bcn(33220) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.135289) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
 315 End FSDB profile info
-316 FSDB closed. Name: Bicubic.fsdb Size: 31521
+316 FSDB closed. Name: Bicubic.fsdb Size: 31859
 317 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-318                      - BlockUsed:1 Acquire:0 BufferUsed:497892
+318                      - BlockUsed:1 Acquire:0 BufferUsed:454473
 319                      - Flush:2 Expand:0 ProducerWait:0 ConsumerWait:0
-320                      - MainProducerTime:0.225047335 TotalConsumerTime:0.000000000
-321                      - ElapsedTime:0.698723000
-322 Producer   0 profile - BlockUsed:2 Acquire:0 BufferUsed:497892
+320                      - MainProducerTime:0.184788609 TotalConsumerTime:0.000000000
+321                      - ElapsedTime:0.676591000
+322 Producer   0 profile - BlockUsed:2 Acquire:0 BufferUsed:454473
 323 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
-324                      - BlockUsed:2 Acquire:0 BufferUsed:497892
+324                      - BlockUsed:2 Acquire:0 BufferUsed:454473
 325 SimExit
-326 Elapsed time:    0:00:01    Thu Aug 14 16:37:13 2025
+326 Elapsed time:    0:00:01    Sun Aug 17 16:28:24 2025
 327 User CPU time used: 0 seconds
 328 System CPU time used: 0 seconds
 329 Sim process exit

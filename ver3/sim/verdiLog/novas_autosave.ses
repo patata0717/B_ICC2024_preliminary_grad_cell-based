@@ -25,13 +25,14 @@ fdb_proj =
 fdb_campaign = 
 fdb_tool = 
 [hb]
-postSimFile = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb
-syncTime = 95000
 viewport = 0 23 1440 829 0 0 299 1438
+activeNode = "Bicubic"
+activeScope = "Bicubic"
+activeFile = "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 0
+sourceBeginLine = 82
 baMode = False
 srcLineNum = True
 AutoWrap = True
@@ -48,16 +49,22 @@ DnDtraceCrossHierOnly = True
 leadingZero = False
 signalPane = False
 SourceVerticalScrollLines = 5
+Scope1 = "Bicubic"
+multipleSelection = 1 97 2 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
-[nMemoryManager]
-WaveformFile = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb
-UserActionNum = 0
-nMemWindowNum = 0
+[hb.design]
+importCmd = "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v" 
+workPath = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl
+invokeDir = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim
+[hb.sourceTab.1]
+scope = Bicubic
+File = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/hdl/Bicubic.v
+Line = 83
 [wave.0]
-viewPort = 0 25 1440 731 164 65
+viewPort = 0 25 1440 326 126 65
 primaryWindow = TRUE
-SessionFile = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/verdiLog/novas_autosave.ses.wave.0
+Empty = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
 hierarchicalName = FALSE
 waveformToolTip = FALSE

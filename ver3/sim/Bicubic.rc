@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 542572.000000
-cursor 0.000000
-marker 0.000000
+zoom 3173805.532107 3716377.532107
+cursor 3332000.000000
+marker 3372000.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 0
+top 14
 ; marker line index
-markerPos 3
+markerPos 8
 
 ; event list
 ; addEvent event_name event_expression
@@ -50,7 +50,14 @@ activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_pre
 addSignal -h 15 /testfixture/u_Bicubic/CLK
 addSignal -h 15 -UNSIGNED -HEX -holdScope cycle_cnt[2:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope cycle_cnt_lv2[7:0]
+addSignal -h 15 -holdScope next_mode_p1
+addSignal -h 15 -holdScope next_mode
 addSignal -h 15 -holdScope mode
+addSignal -h 15 -holdScope prev_mode
+addSignal -h 15 -UNSIGNED -HEX -holdScope next_rem_v_p1[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope next_rem_v[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rem_v[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope quot_v[6:0]
 addSignal -h 15 -holdScope state
 addSignal -h 15 -UNSIGNED -HEX -holdScope coord_h[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope coord_v[6:0]
@@ -68,6 +75,11 @@ addSignal -h 15 -UNSIGNED -HEX -holdScope divider[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope qoutient[7:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope remainder[7:0]
 addGroup "Cubic_engine"
+addSignal -expanded -h 15 /testfixture/u_Bicubic/P_buf[0:3]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P_buf[0][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P_buf[1][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P_buf[2][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope P_buf[3][7:0]
 addSignal -h 15 -UNSIGNED -HEX /testfixture/u_Bicubic/cubic_engine/X_in[23:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope P_in[7:0]
 addSignal -expanded -h 15 -holdScope X[0:3]
@@ -100,6 +112,7 @@ SCOPE_LIST_BEGIN
 "/testfixture/READ_PATTERN"
 "/testfixture/u_Bicubic"
 "/testfixture/u_Bicubic/cubic_engine"
+"/testfixture/u_Bicubic/sns_divider"
 SCOPE_LIST_END
 
 GETSIGNALFORM_SCOPE_HIERARCHY_END
