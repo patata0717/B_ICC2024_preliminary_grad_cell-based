@@ -235,13 +235,13 @@ TclAutoSource =
 cmd_enter_form = FALSE
 SyncBrowserDir = TRUE
 FindBarVisible = 
-ColorTheme = classic
-version = Verdi_W-2024.09-SP2
-recent_commands_nWave = saveSignal,reread,getSignal,openFile,editCut,zoomIn,zoomOut,restoreSignal,cycleChangeColor,scrollUp
 recent_commands_nSchema = schPopViewUp,schPushViewIn,schPinNameVis,schPortNameVis
-recent_commands_Verdi = hbInvokeWave,schCreateWindowByScopeGroup,hbImpDsg
-prevColorTheme = classic
 SignalCaseInSensitive = FALSE
+ColorTheme = classic
+prevColorTheme = classic
+version = Verdi_W-2024.09-SP2
+recent_commands_Verdi = hbInvokeWave,schCreateWindowByScopeGroup,hbImpDsg
+recent_commands_nWave = saveSignal,reread,getSignal,editCut,zoomOut,zoomIn,restoreSignal,openFile,cycleChangeColor,scrollUp
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
 [Globals]
@@ -276,9 +276,9 @@ import_filter_vhdl = *.vhd; *.vhdl; *.f
 import_filter_verilog = *.v; *.vc; *.f
 simulation_file_type = 
 PrefetchViewableAnnot = TRUE
-ShowFileListView = FALSE
 import_default_language = Verilog
 import_from = source
+ShowFileListView = FALSE
 [Hier]
 filterTimeout = 1500
 [ImportLiberty]
@@ -393,14 +393,14 @@ savePropDtl = TRUE
 [QtDialog]
 unknownSave_SaveSignal(s)NotFound = 414,227,590,340
 QwInfoMsgDlg = 335,285,750,250
-QwWarnMsgDlg = 410,285,600,250
-unknownSave = 489,315,461,245
-restoreSigDlg = 452,226,551,438
-openFileDlg = 427,204,602,483
-qWaveSignalDialog = 328,206,800,479
-saveSigDlg = 444,244,551,386
 importDesignForm = 362,150,715,574
-QwUserAskDlg = 548,329,324,121
+openFileDlg = 419,196,602,483
+restoreSigDlg = 444,218,551,438
+QwWarnMsgDlg = 410,285,600,250
+qWaveSignalDialog = 320,198,800,479
+unknownSave = 489,315,461,245
+QwUserAskDlg = 343,283,734,121
+saveSigDlg = 444,244,551,386
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -684,51 +684,51 @@ Button1 = "Dump All Signals" "$fsdbDumpvars;\n"
 [VIA]
 viaLogViewerDefaultRuleOneSearchForm = "share/VIA/Apps/PredefinedRules/Misc/Onesearch_rule.rc"
 [VIA.oneSearch.preference]
+isOneSearchVisible = TRUE
 DefaultDisplayTimeUnit = "1.000000ns"
 DefaultLogTimeUnit = "1.000000ns"
-isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC]
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Severity"
-width = 60
-visualIndex = 2
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = "Block's First Line"
 width = 120
 visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Code"
-width = 60
-visualIndex = 3
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = "Type"
 width = 60
 visualIndex = 4
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = "Message"
 width = 2000
 visualIndex = 5
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Time"
 width = 60
 visualIndex = 0
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Code"
+width = 60
+visualIndex = 3
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+name = "Severity"
+width = 60
+visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
@@ -808,7 +808,6 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 328 206 800 479 165 387 393 91
 viewPort = 0 25 1440 326 126 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
@@ -988,18 +987,18 @@ group_name_font = -f COURIER12 -c ID_GREEN5
 ruler_value_font = -f COURIER12 -c ID_CYAN5
 analog_ruler_value_font = -f COURIER12 -c ID_CYAN5
 comment_string_font = -f COURIER12 -c ID_RED5
-getsignal_form_font = -f COURIER12 
+getsignal_form_font = -f COURIER12
 SigsCheckNum = on 1000
 filter_synthesized_net = off n
 filterOutNet = on
 exclude_signal_with_prefix = off n
 synthesizeNetOnly = on
-filter_synthesized_instance = off 
+filter_synthesized_instance = off
 filterOutInstance = on
 showGroupTree = TRUE
 hierGroupDelim = /
 MsgSeverityColor = {y \"Severity\"==\"1\" ID_RED5} {y \"Severity\"==\"2\" ID_RED6} {y \"Severity\"==\"3\" ID_RED7} {y \"Severity\"==\"4\" ID_RED8} {y \"Severity\"==\"5\" ID_ORANGE5} {y \"Severity\"==\"6\" ID_ORANGE6} {y \"Severity\"==\"7\" ID_ORANGE7} {y \"Severity\"==\"8\" \
-ID_GREEN7} {y \"Severity\"==\"9\" ID_GREEN6} {y \"Severity\"==\"10\" ID_GREEN5} 
+ID_GREEN7} {y \"Severity\"==\"9\" ID_GREEN6} {y \"Severity\"==\"10\" ID_GREEN5}
 waveDblClkActiveTrace = on
 SEQShowComparisonIcon = TRUE
 SEQAddDriverLoadInSameGroup = TRUE
@@ -1012,6 +1011,7 @@ maskFsaCoreRule = TRUE
 maskFsaSfsmRule = TRUE
 maskFsaEcrRule = TRUE
 maskTPropagation = TRUE
+getSignalForm = 320 198 800 479 165 387 393 91
 [cov_hier_name_column]
 justify = TRUE
 [coverageColors]
@@ -1089,7 +1089,7 @@ OutputPinStatus = 2
 RevisedComponentColor = ID_BLUE5
 SpareCellColor = ID_RED5
 UserName = patata0717
-CommentFormat = Novas ECO updated by ${UserName} ${Date} ${Time} 
+CommentFormat = Novas ECO updated by ${UserName} ${Date} ${Time}
 PrefixN = eco_n
 PrefixP = eco_p
 PrefixI = eco_i

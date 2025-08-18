@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 3173805.532107 3716377.532107
-cursor 3332000.000000
+zoom 4595417.722000 4949000.000000
+cursor 4692000.000000
 marker 3372000.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 14
+top 0
 ; marker line index
-markerPos 8
+markerPos 4
 
 ; event list
 ; addEvent event_name event_expression
@@ -50,17 +50,15 @@ activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_pre
 addSignal -h 15 /testfixture/u_Bicubic/CLK
 addSignal -h 15 -UNSIGNED -HEX -holdScope cycle_cnt[2:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope cycle_cnt_lv2[7:0]
-addSignal -h 15 -holdScope next_mode_p1
 addSignal -h 15 -holdScope next_mode
 addSignal -h 15 -holdScope mode
 addSignal -h 15 -holdScope prev_mode
-addSignal -h 15 -UNSIGNED -HEX -holdScope next_rem_v_p1[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope next_rem_v[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope rem_v[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope quot_v[6:0]
 addSignal -h 15 -holdScope state
-addSignal -h 15 -UNSIGNED -HEX -holdScope coord_h[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope coord_v[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope prev_coord_v[6:0]
 addGroup "SRAM/ROM"
 addSignal -h 15 /testfixture/u_Bicubic/SRAM_CEN
 addSignal -h 15 -holdScope SRAM_WEN

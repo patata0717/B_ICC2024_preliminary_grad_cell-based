@@ -9,3 +9,5 @@ All other use, reproduction, or distribution of this software is strictly prohib
 
 
 failed to create compose table
+The X11 connection broke (error 1). Did the X11 server die?
+The X11 connection broke: I/O error (code 1)
