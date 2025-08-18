@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1754827586.821548514, "rt":0.93, "ut":0.10, "st":0.07}}
+{"vcselab":{"timestamp_begin":1754827587.781610948, "rt":0.76, "ut":0.15, "st":0.01}}
+{"link":{"timestamp_begin":1754827588.567707139, "rt":0.12, "ut":0.08, "st":0.04}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1754827586.689202414}
+{"VCS_COMP_START_TIME": 1754827586.689202414}
+{"VCS_COMP_END_TIME": 1754827589.520159240}
+{"VCS_USER_OPTIONS": "-R -full64 test_Divider.v ../hdl/SnS_divider.v -P /usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/novas.tab /usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/pli.a"}
+{"vcs1": {"peak_mem": 297608}}
+{"vcselab": {"peak_mem": 157464}}
