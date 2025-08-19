@@ -1,9 +1,7 @@
 `timescale 1ns/10ps
 // ver4
 // (H0 V0) = (81 18)，(SW SH) = (17 15)，(TW TH)=(22 28)
-// try to replace mode, next mode as wire
-// mode should follow next_mode
-// rem also
+// P_buf_next is not a good design, should fix
 
 // state
 `define INIT 1'b0
@@ -37,7 +35,7 @@ reg [6:0] coord_v, coord_v_next;
 reg [6:0] prev_coord_h, prev_coord_h_next;
 reg [6:0] prev_coord_v, prev_coord_v_next;
 reg                DONE_next;
-reg [6:0] quot_h, quot_h_next; // fixed
+reg [6:0] quot_h, quot_h_next;
 reg [6:0] quot_v, quot_v_next;
 reg [6:0] rem_h, rem_h_next;
 reg [6:0] rem_v, rem_v_next;
@@ -54,7 +52,6 @@ reg [7:0] x1, x1_next;
 reg [7:0] x2, x2_next;
 reg [7:0] x3, x3_next;
 reg state, state_next;
-// reg [23:0] X_h, X_h_next;
 
 // wire
 reg signed [2:0] line_shift; // -1, 0, 1, 2
@@ -75,7 +72,8 @@ wire V_valid = (state == `RUN);
 wire [23:0] X_in = (X_valid) ? {x1, x2, x3} : 24'd0;
 wire  [7:0] P_in = (V_valid) ?  
                        (mode == `V) ?                
-                           (cycle_cnt == 3'd1) ? P_buf_next[0] :     // 1 → use P_buf[0]
+                           (cycle_cnt == 3'd0) ? 8'd0:          // 0 → IDLE
+                           (cycle_cnt == 3'd1) ? P_buf_next[0] :// 1 → use P_buf[0]
                            (cycle_cnt == 3'd2) ? P_buf[1] :     // 2 → use P_buf[1]
                            (cycle_cnt == 3'd3) ? P_buf[2] :     // 3 → use P_buf[2]
                            (cycle_cnt == 3'd4) ? P_buf[3] :     // 4 → use P_buf[3]
@@ -266,15 +264,15 @@ end
 // preempt mode 5 cycles
 always @* begin
     if (state == `INIT) begin
-        if (cycle_cnt_lv2 == TH + TW - 3 && cycle_cnt == 3'd7) begin
+        if (cycle_cnt_lv2 == TH + TW - 4 && cycle_cnt == 3'd7) begin
             next_mode_next = `V;
         end else begin
-            next_mode_next = 1'dx;
+            next_mode_next = next_mode;
         end
     end else begin // state == `RUN
         if (cycle_cnt == 3'd4) begin
             if (coord_h == 7'd0 || coord_h == TW - 1) begin
-                if (coord_v == TH - 1) begin
+                if (coord_v == TH - 2) begin
                     next_mode_next = `H;
                 end else begin
                     next_mode_next = next_mode;
@@ -385,14 +383,20 @@ end
 
 // combinational for quot_v, quot_h
 always @* begin
-    quot_h = 7'd0;
+    quot_v_next = quot_v;
+    quot_h_next = quot_h;
     if (state == `INIT) begin
-        quot_v_next = 7'd0;
+        //
     end else begin // state == `RUN
         if (cycle_cnt == 3'd4) begin
             if (coord_h == 7'd0 || coord_h == TW - 1) begin
                 if (coord_v == TH - 1) begin
                     quot_v_next = 7'd0;
+                    if (rem_h + (SW - 1) >= (TW - 1)) begin
+                        quot_h_next = quot_h + 1;
+                    end else begin
+                        quot_h_next = quot_h;
+                    end
                 end else begin
                     if (rem_v + (SH - 1) >= (TH - 1)) begin
                         quot_v_next = quot_v + 1;
@@ -473,8 +477,25 @@ always @* begin
     end
 end
 
+// combinational for rem_h
+always @* begin
+    if (state == `INIT) begin
+        rem_h_next = rem_h;
+    end else begin
+        if (cycle_cnt == 3'd4 && coord_v == TH - 1) begin
+            if (rem_h + (SW - 1) >= (TW - 1)) begin
+                rem_h_next = rem_h + (SW - 1) - (TW - 1);
+            end else begin
+                rem_h_next = rem_h + (SW - 1);
+            end
+        end else begin
+            rem_h_next = rem_h;
+        end
+    end
+end
+
 // cycle 1
-// combinational for SRAM_addr, SRAM_data_i, WEN, CEN, fetch frac x
+// combinational for SRAM_addr, SRAM_data_i, WEN, CEN, temp
 // SRAM(HOLD, WRITE, READ)
 
 // combinational for calc_addr
@@ -522,9 +543,31 @@ always @* begin
             end
         end
     end else begin // state == `RUN
-        SRAM_data_i = cubic_val;
+        SRAM_data_i = cubic_val; // default
         if (coord_h == 7'd0 || coord_h == TW - 1) begin
-            if (cycle_cnt == 3'd0) begin
+            if (prev_coord_v == 7'd0) begin // direct gives value from ROM
+                if (cycle_cnt == 3'd0) begin
+                    SRAM_addr = {7'd101, next_rem_v};
+                    SRAM_CEN = `ENABLE; SRAM_WEN = `READ;  // read
+                end else if (cycle_cnt == 3'd1) begin
+                    SRAM_data_i = P_buf[1];
+                    SRAM_addr = {prev_coord_v, prev_coord_h};
+                    SRAM_CEN = `ENABLE; SRAM_WEN = `WRITE; // write back
+                end else begin
+                    SRAM_addr = 14'd0;
+                    SRAM_CEN = `DISABLE; SRAM_WEN = `READ; // hold
+                end
+            end else begin
+                if (cycle_cnt == 3'd0) begin
+                    SRAM_addr = {7'd101, next_rem_v};
+                    SRAM_CEN = `ENABLE; SRAM_WEN = `READ;  // read
+                end else if (cycle_cnt == 3'd1) begin
+                    SRAM_addr = {prev_coord_v, prev_coord_h};
+                    SRAM_CEN = `ENABLE; SRAM_WEN = `WRITE; // write back
+                end else begin
+                    SRAM_addr = 14'd0;
+                    SRAM_CEN = `DISABLE; SRAM_WEN = `READ; // hold
+                end
             end
         end else begin // coord_h = 1~TW-2
             if (cycle_cnt == 3'd0) begin
@@ -536,10 +579,11 @@ always @* begin
                     SRAM_CEN = `ENABLE; SRAM_WEN = `READ;  // read
                 end
             end else if (cycle_cnt == 3'd1) begin
-                if (prev_coord_v == 7'd0) begin
+                if (prev_coord_v == TH - 1) begin // last col
+                    SRAM_data_i = x3;
                     SRAM_addr = {prev_coord_v, prev_coord_h};
                     SRAM_CEN = `ENABLE; SRAM_WEN = `WRITE; // write back
-                end else if (prev_coord_v == TH - 1) begin
+                end else if (prev_coord_v == 7'd0) begin
                     SRAM_addr = {prev_coord_v, prev_coord_h};
                     SRAM_CEN = `ENABLE; SRAM_WEN = `WRITE; // write back
                 end else begin
@@ -574,7 +618,7 @@ end
 // cycle 3
 // combinational for x
 always @* begin
-    if (cycle_cnt == 3'd1) begin
+    if (state == `RUN && cycle_cnt == 3'd1) begin
         x1_next = SRAM_data_o;
     end else begin
         x1_next = x1;
@@ -590,8 +634,15 @@ end
 
 // cycle 0
 // combinational for x3
+// also, hide last col sram_data_i val, for convinience
 always @* begin
-    x3_next = x2_x_raw_round[15:8];
+    if (prev_coord_v == TH - 2) begin
+        x3_next = P_buf[1];
+    end else if (prev_coord_v == TH - 1 && cycle_cnt == 3'd0) begin
+        x3_next = P_buf[1];
+    end else begin
+        x3_next = x2_x_raw_round[15:8];
+    end
 end
 
 /* --- P path --- */
@@ -606,69 +657,104 @@ always @* begin
     ROM_addr_v = 7'd0;
     ROM_addr_h = 7'd0;
     signed_temp = 8'd0;
+    ROM_addr = 14'd0;
     if (state == `INIT) begin
-        ROM_addr = 14'd0;
+        // hold
     end else begin // state == `RUN
-        if (mode == `H) begin
-            signed_temp = $signed({1'b0, quot_v}) + line_shift + $signed({1'b0, V0}) + 2;
-            ROM_addr_v = signed_temp[6:0];
-            if (coord_v > 7'd1 && coord_v < TH - 1) begin
+        if (coord_h == 7'd0 || coord_h == TH - 1) begin
+            if (coord_v == 7'd0) begin
                 case (cycle_cnt)
                     3'd0: begin
-                        ROM_addr_h = quot_h - 1 + H0;
+                        ROM_addr_v = coord_v + V0 - 1;
+                        ROM_addr_h = coord_h + H0;
                         ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
                     end
                     3'd1: begin
-                        ROM_addr_h = quot_h + 0 + H0;
+                        ROM_addr_v = coord_v + V0;
+                        ROM_addr_h = coord_h + H0;
                         ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
                     end
                     3'd2: begin
-                        ROM_addr_h = quot_h + 1 + H0;
+                        ROM_addr_v = coord_v + V0 + 1;
+                        ROM_addr_h = coord_h + H0;
                         ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
                     end
                     3'd3: begin
-                        ROM_addr_h = quot_h + 2 + H0;
+                        ROM_addr_v = quot_v + V0 + 2;
+                        ROM_addr_h = coord_h + H0;
                         ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
                     end
-                    3'd4: begin
-                        ROM_addr = 14'd0;
-                    end
                     default: begin
-                        ROM_addr = 14'dx;
+                        ROM_addr = 14'd0; // hold
                     end
                 endcase
             end else begin
-                signed_temp = $signed({1'b0, quot_v}) + line_shift + $signed({1'b0, V0});
-                ROM_addr_v = signed_temp[6:0];
-                case (cycle_cnt)
-                    3'd0: begin
-                        ROM_addr_h = quot_h - 1 + H0;
-                        ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
-                    end
-                    3'd1: begin
-                        ROM_addr_h = quot_h + 0 + H0;
-                        ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
-                    end
-                    3'd2: begin
-                        ROM_addr_h = quot_h + 1 + H0;
-                        ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
-                    end
-                    3'd3: begin
-                        ROM_addr_h = quot_h + 2 + H0;
-                        ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
-                    end
-                    3'd4: begin
-                        ROM_addr = 14'd0;
-                    end
-                    default: begin
-                        ROM_addr = 14'dx;
-                    end
-                endcase
+                ROM_addr_v = quot_v + V0 + 2;
+                ROM_addr_h = coord_h + H0;
+                ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
             end
-        end else begin // V
-            ROM_addr_v = 7'd0;
-            ROM_addr_h = 7'd0;
-            ROM_addr   = 14'd0;
+        end else begin
+            if (mode == `H) begin
+                signed_temp = $signed({1'b0, quot_v}) + line_shift + $signed({1'b0, V0}) + 2;
+                ROM_addr_v = signed_temp[6:0];
+                if (coord_v > 7'd1 && coord_v < TH - 1) begin
+                    case (cycle_cnt)
+                        3'd0: begin
+                            ROM_addr_h = quot_h - 1 + H0;
+                            ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                        end
+                        3'd1: begin
+                            ROM_addr_h = quot_h + 0 + H0;
+                            ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                        end
+                        3'd2: begin
+                            ROM_addr_h = quot_h + 1 + H0;
+                            ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                        end
+                        3'd3: begin
+                            ROM_addr_h = quot_h + 2 + H0;
+                            ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                        end
+                        3'd4: begin
+                            ROM_addr = 14'd0;
+                        end
+                        default: begin
+                            ROM_addr = 14'dx;
+                        end
+                    endcase
+                end else begin
+                    signed_temp = $signed({1'b0, quot_v}) + line_shift + $signed({1'b0, V0});
+                    ROM_addr_v = signed_temp[6:0];
+                    case (cycle_cnt)
+                        3'd0: begin
+                            ROM_addr_h = quot_h - 1 + H0;
+                            ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                        end
+                        3'd1: begin
+                            ROM_addr_h = quot_h + 0 + H0;
+                            ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                        end
+                        3'd2: begin
+                            ROM_addr_h = quot_h + 1 + H0;
+                            ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                        end
+                        3'd3: begin
+                            ROM_addr_h = quot_h + 2 + H0;
+                            ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
+                        end
+                        3'd4: begin
+                            ROM_addr = 14'd0;
+                        end
+                        default: begin
+                            ROM_addr = 14'dx;
+                        end
+                    endcase
+                end
+            end else begin // V
+                ROM_addr_v = 7'd0;
+                ROM_addr_h = 7'd0;
+                ROM_addr   = 14'd0;
+            end
         end
     end
 end
@@ -679,40 +765,77 @@ always @* begin
     P_buf_next[1] = P_buf[1];
     P_buf_next[2] = P_buf[2];
     P_buf_next[3] = P_buf[3];
-    if (prev_mode == `H && cycle_cnt == 3'd1) begin // write back
-        if (coord_v == 7'd0) begin
-            // hold
-        end else if (coord_v == 7'd1) begin
-            case (cycle_cnt_lv2)
-                8'd0: begin
-                    // hold
+    if (state == `INIT) begin
+        // hold
+    end else begin
+        if (coord_h == 7'd0 || coord_h == TW - 1) begin
+            if (coord_v == 7'd0) begin
+                case (cycle_cnt)
+                    3'd1: P_buf_next[0] = ROM_data_o;
+                    3'd2: P_buf_next[1] = ROM_data_o;
+                    3'd3: P_buf_next[2] = ROM_data_o;
+                    3'd4: P_buf_next[3] = ROM_data_o;
+                    default: begin
+                        P_buf_next[0] = P_buf[0]; P_buf_next[1] = P_buf[1]; P_buf_next[2] = P_buf[2]; P_buf_next[3] = P_buf[3];
+                    end
+                endcase
+            end else begin
+                if (cycle_cnt == 3'd1 && ((next_rem_v > rem_v) || (next_rem_v == 7'd0))) begin // not carry
+                    P_buf_next[3] = ROM_data_o;
+                    P_buf_next[2] = P_buf[3];
+                    P_buf_next[1] = P_buf[2];
+                    P_buf_next[0] = P_buf[1];
+                end else begin
+                    P_buf_next[3] = P_buf[3];
+                    P_buf_next[2] = P_buf[2];
+                    P_buf_next[1] = P_buf[1];
+                    P_buf_next[0] = P_buf[0];
                 end
-                8'd1: begin
-                    P_buf_next[0] = cubic_val;
+            end
+        end else begin
+            if (coord_v == 7'd0) begin
+                P_buf_next[0] = 8'd0;
+                P_buf_next[1] = 8'd0;
+                P_buf_next[2] = 8'd0;
+                P_buf_next[3] = 8'd0;
+            end else begin
+                if (prev_mode == `H && cycle_cnt == 3'd1) begin // write back
+                    if (coord_v == 7'd0) begin
+                        // hold
+                    end else if (coord_v == 7'd1) begin
+                        case (cycle_cnt_lv2)
+                            8'd0: begin
+                                // hold
+                            end
+                            8'd1: begin
+                                P_buf_next[0] = cubic_val;
+                            end
+                            8'd2: begin
+                                P_buf_next[1] = cubic_val;
+                            end
+                            8'd3: begin
+                                P_buf_next[2] = cubic_val;
+                            end
+                            8'd4: begin
+                                P_buf_next[3] = cubic_val;
+                            end
+                            default: begin
+                                P_buf_next[0] = 8'dx;
+                                P_buf_next[1] = 8'dx;
+                                P_buf_next[2] = 8'dx;
+                                P_buf_next[3] = 8'dx;
+                            end
+                        endcase
+                    end else if (coord_v == TH - 1) begin
+                        // hold
+                    end else begin // shift
+                        P_buf_next[3] = cubic_val;
+                        P_buf_next[2] = P_buf[3];
+                        P_buf_next[1] = P_buf[2];
+                        P_buf_next[0] = P_buf[1];
+                    end
                 end
-                8'd2: begin
-                    P_buf_next[1] = cubic_val;
-                end
-                8'd3: begin
-                    P_buf_next[2] = cubic_val;
-                end
-                8'd4: begin
-                    P_buf_next[3] = cubic_val;
-                end
-                default: begin
-                    P_buf_next[0] = 8'dx;
-                    P_buf_next[1] = 8'dx;
-                    P_buf_next[2] = 8'dx;
-                    P_buf_next[3] = 8'dx;
-                end
-            endcase
-        end else if (coord_v == TH - 1) begin
-            // hold
-        end else begin // shift
-            P_buf_next[3] = cubic_val;
-            P_buf_next[2] = P_buf[3];
-            P_buf_next[1] = P_buf[2];
-            P_buf_next[0] = P_buf[1];
+            end
         end
     end
 end
@@ -727,9 +850,9 @@ always @(posedge CLK) begin
         DONE <= 1'b0;
         quot_h <= 7'd0;
         quot_v <= 7'd0;
-        rem_h <= 7'd14;
+        rem_h <= 7'd0;
         rem_v <= 7'd0;
-        next_rem_h <= 7'd14;
+        next_rem_h <= 7'd0;
         next_rem_v <= 7'd0;
         cycle_cnt <= 3'd0;
         cycle_cnt_lv2 <= 8'd0;

@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 3911827.322129 5326156.434129
-cursor 3092000.000000
+zoom 7566289.062500 8856914.062500
+cursor 4252000.000000
 marker 3372000.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 3372000.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 13
+markerPos 9
 
 ; event list
 ; addEvent event_name event_expression
@@ -55,6 +55,7 @@ addSignal -h 15 -holdScope mode
 addSignal -h 15 -holdScope prev_mode
 addSignal -h 15 -UNSIGNED -HEX -holdScope next_rem_v[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope rem_v[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope quot_h[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope quot_v[6:0]
 addSignal -h 15 -holdScope state
 addSignal -h 15 -UNSIGNED -HEX -holdScope coord_h[6:0]
@@ -67,7 +68,8 @@ addSignal -h 15 -holdScope SRAM_WEN
 addSignal -h 15 -UNSIGNED -HEX -holdScope SRAM_addr[13:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope SRAM_data_i[7:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope SRAM_data_o[7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_addr[13:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_addr_h[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_addr_v[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_data_o[7:0]
 addGroup "Divider"
 addSignal -h 15 -UNSIGNED -HEX /testfixture/u_Bicubic/sns_divider/dividend[6:0]

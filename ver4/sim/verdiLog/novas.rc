@@ -227,7 +227,8 @@ nWaveOpenFsdbDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_
 7/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/Bicubic_ver1.fsdb\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\"" "\"/home/patata0717/ic_contest/IC_conte\
 st/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb\""
 nWaveRestoreRCDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/novas.rc\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/signal.rc\"" "\"/home/patata0717/ic_contest/IC\
-_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/signal.rc\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.rc\""
+_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/signal.rc\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.rc\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_pr\
+eliminary_grad_cell-based/ver4/sim/Bicubic.rc\""
 [Form]
 version = Verdi_W-2024.09-SP2
 [General]
@@ -240,7 +241,7 @@ recent_commands_nSchema = schPopViewUp,schPushViewIn,schPinNameVis,schPortNameVi
 ColorTheme = classic
 version = Verdi_W-2024.09-SP2
 recent_commands_Verdi = hbInvokeWave,nsFullScreen,schCreateWindowByScopeGroup,hbImpDsg
-recent_commands_nWave = zoomOut,restoreSignal,cycleChangeColor,openFile,getSignal,saveSignal,reread,zoomIn,editCut,scrollUp
+recent_commands_nWave = reread,zoomOut,zoomIn,editCut,openFile,getSignal,saveSignal,restoreSignal,zoomAll,cycleChangeColor
 prevColorTheme = classic
 SignalCaseInSensitive = FALSE
 [GlobalProp]
@@ -397,11 +398,12 @@ QwInfoMsgDlg = 335,285,750,250
 importDesignForm = 362,150,715,574
 QwWarnMsgDlg = 410,285,600,250
 unknownSave = 489,315,461,245
-saveSigDlg = 444,244,551,386
-qWaveSignalDialog = 328,206,800,479
-openFileDlg = 427,204,602,483
+tipViewerDlg = 511,281,398,259
 restoreSigDlg = 452,226,551,438
-QwUserAskDlg = 556,317,324,125
+saveSigDlg = 444,244,551,386
+qWaveSignalDialog = 320,198,800,479
+openFileDlg = 427,204,602,483
+QwUserAskDlg = 548,309,324,125
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -601,7 +603,7 @@ pdmlMacro = ID_BLACK
 font = COURIER12
 annotFont = FIXED12
 [Text.1]
-viewport = 8 31 1440 829 45
+viewport = 0 23 1440 829 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -692,44 +694,44 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Code"
-width = 60
-visualIndex = 3
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = "Type"
-width = 60
-visualIndex = 4
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Message"
-width = 2000
-visualIndex = 5
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Block's First Line"
 width = 120
 visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = "Severity"
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
+name = "Time"
 width = 60
-visualIndex = 2
+visualIndex = 0
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+name = "Code"
+width = 60
+visualIndex = 3
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = "Type"
+width = 60
+visualIndex = 4
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Message"
+width = 2000
+visualIndex = 5
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
-name = "Time"
+name = "Severity"
 width = 60
-visualIndex = 0
+visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
@@ -809,7 +811,7 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
-getSignalForm = 328 206 800 479 165 387 393 91
+getSignalForm = 320 198 800 479 165 387 393 91
 viewPort = 0 25 1440 731 153 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
@@ -976,11 +978,11 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.rc\""
-RecentFile2 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\""
-RecentFile3 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb\""
-RecentFile4 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\""
-RecentFile5 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/signal.rc\""
+RecentFile1 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.rc\""
+RecentFile2 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb\""
+RecentFile3 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.rc\""
+RecentFile4 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\""
+RecentFile5 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
