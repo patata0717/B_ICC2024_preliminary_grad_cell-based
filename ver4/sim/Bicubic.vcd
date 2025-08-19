@@ -1,5 +1,5 @@
 $date
-	Tue Aug 19 16:50:05 2025
+	Tue Aug 19 17:11:24 2025
 $end
 
 $version
@@ -108,6 +108,7 @@ $var reg 1 h SRAM_WEN $end
 $var reg 1 i SRAM_CEN $end
 $var reg 7 j calc_addr [6:0] $end
 $var wire 8 k frac_val [7:0] $end
+$var wire 8 k frac_8_val [7:0] $end
 $var wire 8 l cubic_val [7:0] $end
 $var wire 16 m x_x_raw_round [15:0] $end
 $var wire 16 n x2_x_raw_round [15:0] $end

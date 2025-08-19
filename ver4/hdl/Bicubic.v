@@ -17,7 +17,7 @@
 `define WRITE 1'b0
 `define READ 1'b1
 
-module Bicubic (
+module Bicubic #(parameter CYCLE = 8) (
     input CLK,
     input RST,
     input [6:0] V0,
@@ -63,7 +63,8 @@ reg [7:0] SRAM_data_i;
 reg ROM_CEN;
 reg SRAM_WEN, SRAM_CEN;
 reg [6:0] calc_addr;
-wire [7:0] frac_val; // Q0.8 * 2
+wire [CYCLE-1:0] frac_val; // Q0.8 * 2
+wire [7:0] frac_8_val = frac_val[CYCLE-1:CYCLE-8];
 wire [7:0] cubic_val;
 wire [15:0] x_x_raw_round = x1 * x1 + 16'h0080;
 wire [15:0] x2_x_raw_round = x2 * x1 + 16'h0080;;
@@ -143,7 +144,7 @@ end
 always @* begin
     if (state == `INIT) begin
         if (cycle_cnt_lv2 < TW - 1) begin
-            if (cycle_cnt == 3'd7) begin
+            if (cycle_cnt == CYCLE - 1) begin
                 if (cycle_cnt_lv2 == TW - 2) begin
                     dividend = 0;
                 end else begin
@@ -153,16 +154,16 @@ always @* begin
                 dividend = cycle_cnt_lv2;
             end
         end else if (cycle_cnt_lv2 >= TW - 1 && cycle_cnt_lv2 < TH + TW - 2) begin
-            if (cycle_cnt == 3'd7) begin
+            if (cycle_cnt == CYCLE - 1) begin
                 dividend = cycle_cnt_lv2 - (TW - 1) + 1;
             end else begin
                 dividend = cycle_cnt_lv2 - (TW - 1);
             end
         end else begin
-            dividend = 7'dx;
+            dividend = {CYCLE-1{1'b0}};
         end
     end else begin
-        dividend = 7'd0;
+        dividend = {CYCLE-1{1'b0}};
     end
 end
 
@@ -170,11 +171,11 @@ end
 // combinational for control(state, cycle_cnt, cycle_cnt_lv2)
 always @* begin
     if (state == `INIT) begin
-        if (cycle_cnt_lv2 == TW + TH - 2 - 1 && cycle_cnt == 3'd7) begin
+        if (cycle_cnt_lv2 == TW + TH - 2 - 1 && cycle_cnt == CYCLE - 1) begin
             state_next = `RUN;
             cycle_cnt_lv2_next = 8'd0;
             cycle_cnt_next = 3'd0;
-        end else if (cycle_cnt == 3'd7) begin
+        end else if (cycle_cnt == CYCLE - 1) begin
             state_next = `INIT;
             cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
             cycle_cnt_next = 3'd0;
@@ -264,7 +265,7 @@ end
 // preempt mode 5 cycles
 always @* begin
     if (state == `INIT) begin
-        if (cycle_cnt_lv2 == TH + TW - 4 && cycle_cnt == 3'd7) begin
+        if (cycle_cnt_lv2 == TH + TW - 4 && cycle_cnt == CYCLE - 1) begin
             next_mode_next = `V;
         end else begin
             next_mode_next = next_mode;
@@ -310,7 +311,7 @@ end
 // delay mode 5 cycles
 always @* begin
     if (state == `INIT) begin
-        if (cycle_cnt == 3'd7) begin
+        if (cycle_cnt == CYCLE - 1) begin
             mode_next = next_mode;
             prev_mode_next = mode;
         end else begin
@@ -429,7 +430,7 @@ end
 // combinational for next_rem_v
 always @* begin
     if (state == `INIT) begin
-        if (cycle_cnt_lv2 == TW + TH - 3 && cycle_cnt == 3'd7) begin
+        if (cycle_cnt_lv2 == TW + TH - 3 && cycle_cnt == CYCLE - 1) begin
             next_rem_v_next = next_rem_v + (SH - 1);
         end else begin
             next_rem_v_next = next_rem_v;
@@ -502,13 +503,13 @@ end
 always @* begin
     if (state == `INIT) begin
         if (cycle_cnt_lv2 >= TW - 1) begin
-            if (cycle_cnt == 3'd7) begin
+            if (cycle_cnt == CYCLE - 1) begin
                 calc_addr = cycle_cnt_lv2 - (TW - 1);
             end else begin
                 calc_addr = cycle_cnt_lv2 - (TW - 1);
             end
         end else begin
-            if (cycle_cnt == 3'd7) begin
+            if (cycle_cnt == CYCLE - 1) begin
                 calc_addr = cycle_cnt_lv2;
             end else begin
                 calc_addr = cycle_cnt_lv2;
@@ -521,12 +522,12 @@ end
 
 always @* begin
     if (state == `INIT) begin
-        SRAM_data_i = frac_val;
+        SRAM_data_i = frac_8_val;
         if (cycle_cnt_lv2 == (TW - 1) + (TH - 1)) begin
             SRAM_addr = {7'd100, 7'd16}; // 16/21
             SRAM_CEN = `ENABLE; SRAM_WEN = `READ;  // read
         end else if (cycle_cnt_lv2 >= TW - 1) begin
-            if (cycle_cnt == 3'd7) begin
+            if (cycle_cnt == CYCLE - 1) begin
                 SRAM_addr = {7'd101, calc_addr};
                 SRAM_CEN = `ENABLE; SRAM_WEN = `WRITE; // write
             end else begin
@@ -534,7 +535,7 @@ always @* begin
                 SRAM_CEN = `DISABLE; SRAM_WEN = `WRITE; // hold
             end
         end else begin
-            if (cycle_cnt == 3'd7) begin
+            if (cycle_cnt == CYCLE - 1) begin
                 SRAM_addr = {7'd100, calc_addr};
                 SRAM_CEN = `ENABLE; SRAM_WEN = `WRITE; // write
             end else begin

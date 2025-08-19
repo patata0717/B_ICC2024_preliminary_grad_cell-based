@@ -3,33 +3,32 @@
 // rounding to floor
 
 
-module SnS_divider (
+module SnS_divider #(parameter CYCLE = 8) (
     input clk,
     input rst,
     input [2:0] cycle_cnt,
     input [6:0] divider,
     input [6:0] dividend,
-    output [7:0] frac_val // Q0.8
+    output [CYCLE-1:0] frac_val // Q0.8
 );
 
 
 // registers
-reg [7:0] remainder;
-reg [7:0] qoutient;
+reg [CYCLE-1:0] remainder;
+reg [CYCLE-1:0] qoutient;
 
 // wire
-wire [7:0] remainder_shift = (cycle_cnt == 3'd7) ? {dividend, 1'b0} : (remainder << 1);
+wire [CYCLE-1:0] remainder_shift = (cycle_cnt == CYCLE - 1) ? {dividend, 1'b0} : (remainder << 1);
 wire       isGE            = (remainder_shift >= {1'b0, divider});
-wire [7:0] remainder_next  = isGE ? (remainder_shift - {1'b0, divider})
+wire [CYCLE-1:0] remainder_next  = isGE ? (remainder_shift - {1'b0, divider})
                                   : remainder_shift;
-// wire [7:0] qoutient_next   = (cycle_cnt == 3'd7) ? {7'd0, isGE} : {qoutient[6:0], isGE};
-wire [7:0] qoutient_next   = {qoutient[6:0], isGE};
+wire [CYCLE-1:0] qoutient_next   = {qoutient[CYCLE-2:0], isGE};
 assign frac_val = qoutient;
 
 always @(posedge clk) begin
     if (rst) begin
         remainder  <= dividend;
-        qoutient   <= 8'd0;    
+        qoutient   <= {CYCLE-1{1'b0}};
     end else begin
         remainder  <= remainder_next; 
         qoutient   <= qoutient_next;

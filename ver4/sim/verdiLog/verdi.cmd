@@ -894,3 +894,231 @@ wvCloseDetailsViewDlg -win $_nWave2 -streamLevel
 wvCloseFilterColorizeDlg -win $_nWave2
 wvGetSignalClose -win $_nWave2
 wvReloadFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvCloseGetStreamsDialog -win $_nWave2
+wvAttrOrderConfigDlg -win $_nWave2 -close
+wvCloseDetailsViewDlg -win $_nWave2
+wvCloseDetailsViewDlg -win $_nWave2 -streamLevel
+wvCloseFilterColorizeDlg -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvCloseGetStreamsDialog -win $_nWave2
+wvAttrOrderConfigDlg -win $_nWave2 -close
+wvCloseDetailsViewDlg -win $_nWave2
+wvCloseDetailsViewDlg -win $_nWave2 -streamLevel
+wvCloseFilterColorizeDlg -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvCloseGetStreamsDialog -win $_nWave2
+wvAttrOrderConfigDlg -win $_nWave2 -close
+wvCloseDetailsViewDlg -win $_nWave2
+wvCloseDetailsViewDlg -win $_nWave2 -streamLevel
+wvCloseFilterColorizeDlg -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvCloseGetStreamsDialog -win $_nWave2
+wvAttrOrderConfigDlg -win $_nWave2 -close
+wvCloseDetailsViewDlg -win $_nWave2
+wvCloseDetailsViewDlg -win $_nWave2 -streamLevel
+wvCloseFilterColorizeDlg -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvScrollDown -win $_nWave2 6
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvDisplayGridCount -win $_nWave2 -off
+wvCloseGetStreamsDialog -win $_nWave2
+wvAttrOrderConfigDlg -win $_nWave2 -close
+wvCloseDetailsViewDlg -win $_nWave2
+wvCloseDetailsViewDlg -win $_nWave2 -streamLevel
+wvCloseFilterColorizeDlg -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvDisplayGridCount -win $_nWave2 -off
+wvCloseGetStreamsDialog -win $_nWave2
+wvAttrOrderConfigDlg -win $_nWave2 -close
+wvCloseDetailsViewDlg -win $_nWave2
+wvCloseDetailsViewDlg -win $_nWave2 -streamLevel
+wvCloseFilterColorizeDlg -win $_nWave2
+wvGetSignalClose -win $_nWave2
+wvReloadFile -win $_nWave2
+wvGetSignalOpen -win $_nWave2
+wvGetSignalSetScope -win $_nWave2 "/testfixture/u_Bicubic"
+wvSetPosition -win $_nWave2 {("CTRL" 13)}
+wvSetPosition -win $_nWave2 {("CTRL" 13)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"CTRL" \
+{/testfixture/u_Bicubic/CLK} \
+{/testfixture/u_Bicubic/cycle_cnt\[2:0\]} \
+{/testfixture/u_Bicubic/cycle_cnt_lv2\[7:0\]} \
+{/testfixture/u_Bicubic/next_mode} \
+{/testfixture/u_Bicubic/mode} \
+{/testfixture/u_Bicubic/prev_mode} \
+{/testfixture/u_Bicubic/next_rem_v\[6:0\]} \
+{/testfixture/u_Bicubic/rem_v\[6:0\]} \
+{/testfixture/u_Bicubic/quot_v\[6:0\]} \
+{/testfixture/u_Bicubic/x1\[7:0\]} \
+{/testfixture/u_Bicubic/x2\[7:0\]} \
+{/testfixture/u_Bicubic/x3\[7:0\]} \
+{/testfixture/u_Bicubic/cycle_cnt\[3:0\]} \
+{/testfixture/u_Bicubic/state} \
+{/testfixture/u_Bicubic/coord_h\[6:0\]} \
+{/testfixture/u_Bicubic/coord_v\[6:0\]} \
+{/testfixture/u_Bicubic/prev_coord_h\[6:0\]} \
+{/testfixture/u_Bicubic/prev_coord_v\[6:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"SRAM/ROM" \
+{/testfixture/u_Bicubic/SRAM_CEN} \
+{/testfixture/u_Bicubic/SRAM_WEN} \
+{/testfixture/u_Bicubic/SRAM_addr\[13:0\]} \
+{/testfixture/u_Bicubic/SRAM_data_i\[7:0\]} \
+{/testfixture/u_Bicubic/SRAM_data_o\[7:0\]} \
+{/testfixture/u_Bicubic/ROM_addr_h\[6:0\]} \
+{/testfixture/u_Bicubic/ROM_addr_v\[6:0\]} \
+{/testfixture/u_Bicubic/ROM_data_o\[7:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"Divider" \
+{/testfixture/u_Bicubic/sns_divider/dividend\[6:0\]} \
+{/testfixture/u_Bicubic/sns_divider/divider\[6:0\]} \
+{/testfixture/u_Bicubic/sns_divider/qoutient\[7:0\]} \
+{/testfixture/u_Bicubic/sns_divider/remainder\[7:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"Cubic_engine" \
+{/testfixture/u_Bicubic/P_buf\[0:3\]} \
+{/testfixture/u_Bicubic/P_buf\[0\]\[7:0\]} \
+{/testfixture/u_Bicubic/P_buf\[1\]\[7:0\]} \
+{/testfixture/u_Bicubic/P_buf\[2\]\[7:0\]} \
+{/testfixture/u_Bicubic/P_buf\[3\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/X_in\[23:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/P_in\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/X\[0:3\]} \
+{/testfixture/u_Bicubic/cubic_engine/X\[0\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/X\[1\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/X\[2\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/X\[3\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/P\[0:3\]} \
+{/testfixture/u_Bicubic/cubic_engine/P\[0\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/P\[1\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/P\[2\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/P\[3\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/out\[7:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "CTRL" 13 )} 
+wvSetPosition -win $_nWave2 {("CTRL" 13)}
+wvSetPosition -win $_nWave2 {("CTRL" 13)}
+wvSetPosition -win $_nWave2 {("CTRL" 13)}
+wvAddSignal -win $_nWave2 -clear
+wvAddSignal -win $_nWave2 -group {"CTRL" \
+{/testfixture/u_Bicubic/CLK} \
+{/testfixture/u_Bicubic/cycle_cnt\[2:0\]} \
+{/testfixture/u_Bicubic/cycle_cnt_lv2\[7:0\]} \
+{/testfixture/u_Bicubic/next_mode} \
+{/testfixture/u_Bicubic/mode} \
+{/testfixture/u_Bicubic/prev_mode} \
+{/testfixture/u_Bicubic/next_rem_v\[6:0\]} \
+{/testfixture/u_Bicubic/rem_v\[6:0\]} \
+{/testfixture/u_Bicubic/quot_v\[6:0\]} \
+{/testfixture/u_Bicubic/x1\[7:0\]} \
+{/testfixture/u_Bicubic/x2\[7:0\]} \
+{/testfixture/u_Bicubic/x3\[7:0\]} \
+{/testfixture/u_Bicubic/cycle_cnt\[3:0\]} \
+{/testfixture/u_Bicubic/state} \
+{/testfixture/u_Bicubic/coord_h\[6:0\]} \
+{/testfixture/u_Bicubic/coord_v\[6:0\]} \
+{/testfixture/u_Bicubic/prev_coord_h\[6:0\]} \
+{/testfixture/u_Bicubic/prev_coord_v\[6:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"SRAM/ROM" \
+{/testfixture/u_Bicubic/SRAM_CEN} \
+{/testfixture/u_Bicubic/SRAM_WEN} \
+{/testfixture/u_Bicubic/SRAM_addr\[13:0\]} \
+{/testfixture/u_Bicubic/SRAM_data_i\[7:0\]} \
+{/testfixture/u_Bicubic/SRAM_data_o\[7:0\]} \
+{/testfixture/u_Bicubic/ROM_addr_h\[6:0\]} \
+{/testfixture/u_Bicubic/ROM_addr_v\[6:0\]} \
+{/testfixture/u_Bicubic/ROM_data_o\[7:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"Divider" \
+{/testfixture/u_Bicubic/sns_divider/dividend\[6:0\]} \
+{/testfixture/u_Bicubic/sns_divider/divider\[6:0\]} \
+{/testfixture/u_Bicubic/sns_divider/qoutient\[7:0\]} \
+{/testfixture/u_Bicubic/sns_divider/remainder\[7:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"Cubic_engine" \
+{/testfixture/u_Bicubic/P_buf\[0:3\]} \
+{/testfixture/u_Bicubic/P_buf\[0\]\[7:0\]} \
+{/testfixture/u_Bicubic/P_buf\[1\]\[7:0\]} \
+{/testfixture/u_Bicubic/P_buf\[2\]\[7:0\]} \
+{/testfixture/u_Bicubic/P_buf\[3\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/X_in\[23:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/P_in\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/X\[0:3\]} \
+{/testfixture/u_Bicubic/cubic_engine/X\[0\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/X\[1\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/X\[2\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/X\[3\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/P\[0:3\]} \
+{/testfixture/u_Bicubic/cubic_engine/P\[0\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/P\[1\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/P\[2\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/P\[3\]\[7:0\]} \
+{/testfixture/u_Bicubic/cubic_engine/out\[7:0\]} \
+}
+wvAddSignal -win $_nWave2 -group {"G2" \
+}
+wvSelectSignal -win $_nWave2 {( "CTRL" 13 )} 
+wvSetPosition -win $_nWave2 {("CTRL" 13)}
+wvGetSignalClose -win $_nWave2
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollUp -win $_nWave2 1
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvScrollDown -win $_nWave2 0
+wvSetPosition -win $_nWave2 {("CTRL" 10)}
+wvSetPosition -win $_nWave2 {("CTRL" 8)}
+wvSetPosition -win $_nWave2 {("CTRL" 6)}
+wvSetPosition -win $_nWave2 {("CTRL" 5)}
+wvSetPosition -win $_nWave2 {("CTRL" 4)}
+wvSetPosition -win $_nWave2 {("CTRL" 3)}
+wvSetPosition -win $_nWave2 {("CTRL" 2)}
+wvMoveSelected -win $_nWave2
+wvSetPosition -win $_nWave2 {("CTRL" 2)}
+wvSetPosition -win $_nWave2 {("CTRL" 3)}
+wvSelectSignal -win $_nWave2 {( "CTRL" 2 )} 
+wvCut -win $_nWave2
+wvSetPosition -win $_nWave2 {("CTRL" 3)}
+wvSetPosition -win $_nWave2 {("CTRL" 2)}
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
+wvScrollDown -win $_nWave2 1
