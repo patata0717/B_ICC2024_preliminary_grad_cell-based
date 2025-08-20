@@ -6,7 +6,7 @@ viewPort 0 25 1440 731 153 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb"
+openDirFile -d / "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 3953116.555083 4598429.055083
-cursor 4212000.000000
+zoom 3130989.882038 3484572.160038
+cursor 4692000.000000
 marker 3372000.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 18
+top 0
 ; marker line index
-markerPos 32
+markerPos 4
 
 ; event list
 ; addEvent event_name event_expression
@@ -46,7 +46,7 @@ curSTATUS ByChange
 
 
 addGroup "CTRL"
-activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb"
+activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb"
 addSignal -h 15 /testfixture/u_Bicubic/CLK
 addSignal -h 15 -UNSIGNED -HEX -holdScope cycle_cnt[2:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope cycle_cnt_lv2[7:0]
@@ -57,23 +57,17 @@ addSignal -h 15 -UNSIGNED -HEX -holdScope next_rem_v[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope rem_v[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope quot_v[6:0]
 addSignal -h 15 -holdScope state
-addSignal -h 15 -UNSIGNED -HEX -holdScope coord_h[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope coord_v[6:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope prev_coord_h[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope prev_coord_v[6:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope x3[7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope x2[7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope x1[7:0]
 addGroup "SRAM/ROM"
 addSignal -h 15 /testfixture/u_Bicubic/SRAM_CEN
 addSignal -h 15 -holdScope SRAM_WEN
 addSignal -h 15 -UNSIGNED -HEX -holdScope SRAM_addr[13:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope SRAM_data_i[7:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope SRAM_data_o[7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_addr_h[6:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_addr_v[6:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_addr[13:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_data_o[7:0]
-addGroup "Divider" -e FALSE
+addGroup "Divider"
 addSignal -h 15 -UNSIGNED -HEX /testfixture/u_Bicubic/sns_divider/dividend[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope divider[6:0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope qoutient[7:0]
@@ -101,7 +95,7 @@ addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm
-activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb"
+activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb"
 
 GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close

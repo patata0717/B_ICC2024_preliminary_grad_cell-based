@@ -241,7 +241,7 @@ recent_commands_nSchema = schPopViewUp,schPushViewIn,schPinNameVis,schPortNameVi
 ColorTheme = classic
 version = Verdi_W-2024.09-SP2
 recent_commands_Verdi = hbInvokeWave,nsFullScreen,schCreateWindowByScopeGroup,hbImpDsg
-recent_commands_nWave = reread,zoomOut,zoomIn,editCut,openFile,getSignal,saveSignal,restoreSignal,zoomAll,cycleChangeColor
+recent_commands_nWave = restoreSignal,getSignal,openFile,reread,zoomOut,zoomIn,editCut,saveSignal,zoomAll,cycleChangeColor
 prevColorTheme = classic
 SignalCaseInSensitive = FALSE
 [GlobalProp]
@@ -399,11 +399,11 @@ importDesignForm = 362,150,715,574
 QwWarnMsgDlg = 410,285,600,250
 unknownSave = 489,315,461,245
 tipViewerDlg = 511,281,398,259
-restoreSigDlg = 452,226,551,438
 saveSigDlg = 444,244,551,386
+openFileDlg = 419,196,602,483
 qWaveSignalDialog = 320,198,800,479
-openFileDlg = 427,204,602,483
-QwUserAskDlg = 548,309,324,125
+restoreSigDlg = 444,218,551,438
+QwUserAskDlg = 548,322,324,125
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -701,31 +701,31 @@ isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
+name = "Message"
+width = 2000
+visualIndex = 5
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = "Time"
 width = 60
 visualIndex = 0
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Code"
 width = 60
 visualIndex = 3
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
 name = "Type"
 width = 60
 visualIndex = 4
 isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = "Message"
-width = 2000
-visualIndex = 5
-isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
@@ -978,10 +978,10 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.rc\""
-RecentFile2 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb\""
-RecentFile3 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.rc\""
-RecentFile4 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\""
+RecentFile1 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.rc\""
+RecentFile2 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\""
+RecentFile3 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.rc\""
+RecentFile4 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb\""
 RecentFile5 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5

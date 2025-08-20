@@ -19,7 +19,7 @@ Async open disabled.
 [PERF]VCChain decompress count : 1
 [PERF]VC decompress count : 0
 [PERF]VCChain decompress count : 1
-[PERF]VC decompress count : 0
+[PERF]VC decompress count : 1
 [PERF]VCChain decompress count : 1
 [READSCOPE]ReadScopeTree calling time is 1
 [READSCOPE]ReadScope_PartialLoad calling time is 0
@@ -27,8 +27,8 @@ Async open disabled.
 [READSCOPE]Scope read count is 2
 [READSCOPE]Decompressed blk is 1
 [MAXCHAIN]Decompressed cnt 23
-[PERF]VC decompress count : 12
+[PERF]VC decompress count : 15
 [PERF]VCChain decompress count : 1
 [FSDBGate Info] start
-[FSDBGate Info] Total fhdb_compute_count = 26496
+[FSDBGate Info] Total fhdb_compute_count = 36400
 [FSDBGate Info] end

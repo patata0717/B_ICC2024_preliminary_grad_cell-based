@@ -25,8 +25,8 @@ fdb_proj =
 fdb_campaign = 
 fdb_tool = 
 [hb]
-postSimFile = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb
-syncTime = 4212000
+postSimFile = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb
+syncTime = 4692000
 viewport = 0 23 1440 829 0 0 299 1438
 interactiveMode = False
 viewType = Source
@@ -51,7 +51,7 @@ SourceVerticalScrollLines = 5
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [nMemoryManager]
-WaveformFile = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb
+WaveformFile = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
