@@ -295,7 +295,7 @@ task score;
         `ifdef USECOLOR
             $write("%c[1;34m%2d%c[0m",27,j,27);
         `endif
-        for (i=0;i<30;i=i+1) begin // modified
+        for (i=0;i<(TW>TH?TW-1:TH-1);i=i+1) begin // modified
             idx=j*128+i;   // modified
             pv=u_Bicubic.u_ResultSRAM.mem[idx];
             if ((pv === golden1[pat_n][idx]) || (pv === golden2[pat_n][idx])) begin
@@ -313,8 +313,6 @@ task score;
         end
         $write("\n");
     end
-    $display("---- error count %d",error_pixels);
-
     `endif
 endtask
 

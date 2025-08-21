@@ -1,41 +1,54 @@
 #!/usr/bin/env python3
 """
-diff.py — Compare a hex grid (stdin or interactive paste) with a pattern file and print a signed diff map.
+diff.py — Compare a pasted hex grid (with header + row numbers) against a pattern file,
+and print a signed diff map = (input − pattern).
 
 Run:
-  python3 diff.py               # paste your grid (including header + row numbers); press ENTER on a blank line to finish
-  python3 diff.py < input.txt   # or pipe/redirect from a file
+  python3 diff.py               # paste grid; ENTER on a blank line (or type END)
+  python3 diff.py < input.txt   # from a file
 
 Options:
-  --pattern ./pattern2          # default: ./pattern2
-  --plane 0|1                   # if pattern has two planes (default 0)
+  --pattern ./pattern2          # default path
+  --plane 0|1                   # if pattern has two W×H planes (default 0)
 
-Rules:
-- Your input tokens are hex bytes, e.g., '3a'. 'xx' is treated as missing.
-- We compute DIFF = (your input − pattern) and print signed decimals.
-- Defaults W×H = 22×28, but we override if the pattern contains:  TW TH <W> <H>
-
-Outputs:
-- Pretty diff map to stdout.
-- Also writes: diff_map.txt and diff_map.csv
+Pattern notes:
+- Defaults W×H = 22×28, overridden if the file contains:  TW TH <W> <H>
+- If it has W*H numbers → single plane; if 2*W*H → choose with --plane
 """
 
 import sys, re, argparse
 from pathlib import Path
-from typing import List, Tuple
 
-W_DEFAULT = 22
-H_DEFAULT = 28
+W_DEFAULT = 19
+H_DEFAULT = 19
+
+# --- helpers --------------------------------------------------------------
+
+HEX_BYTE_RE = re.compile(r'^[0-9A-Fa-f]{2}$')  # exactly two hex chars, e.g. 3a, 09, FF
+DEC_ONLY_RE = re.compile(r'^\d+$')
+
+def is_hex_byte(tok: str) -> bool:
+    """True if token is exactly two hex chars (e.g., 3a, 09)."""
+    return bool(HEX_BYTE_RE.fullmatch(tok))
+
+def looks_like_col_header(sline: str) -> bool:
+    """
+    True for a column-index header like '0  1  2 ...' (decimal-only tokens),
+    NOT hex pairs. We also require many tokens to avoid misfires.
+    """
+    toks = sline.split()
+    return len(toks) >= 8 and all(DEC_ONLY_RE.fullmatch(t) for t in toks)
+
+# --- CLI ------------------------------------------------------------------
 
 def parse_args():
     ap = argparse.ArgumentParser(add_help=False)
-    ap.add_argument("--pattern", default="./pattern2")
+    ap.add_argument("--pattern", default="./pattern1")
     ap.add_argument("--plane", type=int, default=0, choices=[0,1])
     ap.add_argument("--help", action="help", help="Show this help message and exit")
     return ap.parse_args()
 
 def read_input_text() -> str:
-    """Read from stdin; if TTY, read interactively until a blank line or 'END'."""
     if sys.stdin.isatty():
         print("(Paste your grid now. Press ENTER on an empty line to finish.)")
         lines, blanks = [], 0
@@ -47,7 +60,7 @@ def read_input_text() -> str:
                     break
                 if s == "":
                     blanks += 1
-                    if blanks >= 1:  # a single blank line terminates
+                    if blanks >= 1:
                         break
                 else:
                     blanks = 0
@@ -55,97 +68,76 @@ def read_input_text() -> str:
         except EOFError:
             pass
         return "\n".join(lines)
-    else:
-        return sys.stdin.read()
+    return sys.stdin.read()
 
 def load_pattern(path: str, W: int, H: int, plane: int):
-    """Load pattern numbers from file; prefer sizes from 'TW TH W H' header if present.
-       If there are 2*W*H numbers, '--plane' selects which half; else use the last W*H numbers.
-    """
     p = Path(path)
     if not p.exists():
         sys.exit(f"[ERROR] Pattern file not found: {p}")
     tokens = []
-    W_found, H_found = None, None
+    W_found = H_found = None
     with p.open("r", encoding="utf-8", errors="ignore") as f:
         for line in f:
             m = re.search(r'\bTW\s+TH\s+(\d+)\s+(\d+)\b', line)
             if m:
                 W_found, H_found = int(m.group(1)), int(m.group(2))
-            for tok in re.findall(r'-?\d+', line):  # collect all integers
-                tokens.append(int(tok))
+            tokens += [int(t) for t in re.findall(r'-?\d+', line)]
     W_use = W_found if W_found is not None else W
     H_use = H_found if H_found is not None else H
     need = W_use * H_use
     if len(tokens) < need:
-        sys.exit(f"[ERROR] Not enough numeric tokens in pattern. Have {len(tokens)}, need at least {need}.")
+        sys.exit(f"[ERROR] Not enough numeric tokens in pattern. Have {len(tokens)}, need {need}.")
     if len(tokens) >= 2*need:
-        data = tokens[-2*need:]                 # last two planes
+        data = tokens[-2*need:]  # last two planes
         block = data[plane*need:(plane+1)*need]
     else:
-        block = tokens[-need:]                  # last single plane
+        block = tokens[-need:]   # last single plane
     pat = [block[r*W_use:(r+1)*W_use] for r in range(H_use)]
     return pat, W_use, H_use
 
-def _looks_like_col_header(sline: str) -> bool:
-    """Return True if stripped line is a column-index header like '0  1  2 ...' (decimal tokens only)."""
-    toks = sline.split()
-    return len(toks) >= 8 and all(re.fullmatch(r'\d+', t) for t in toks)
-
-def parse_input_grid(stdin_text: str) -> List[List[int]]:
-    """Parse pasted grid with a numeric header row and per-row indices. 'xx' → None."""
-    rows: List[List[int]] = []
+def parse_input_grid(stdin_text: str):
+    """
+    Accepts:
+      - One header line of decimal column indices (skipped)
+      - Rows like ' 0 3a 4b ...' (first token decimal row index, rest 2-char hex or 'xx')
+      - Or rows without index if every token is a 2-char hex or 'xx'
+    """
+    rows = []
+    saw_header = False
     for raw in stdin_text.splitlines():
         sline = raw.strip()
         if not sline:
             continue
-        # Skip prompts and helper lines
-        if re.match(r'^\[?.*\$\s*python3?\s+diff\.py', sline):
-            continue
-        if "Paste your grid now" in sline:
-            continue
-        if re.match(r'^\[?.*\]\$\s*', sline):
-            continue
-        # Skip the column index header (decimal-only tokens)
-        if _looks_like_col_header(sline):
-            continue
+        # Skip prompts/help
+        if re.match(r'^\[?.*\$\s*python3?\s+diff\.py', sline): continue
+        if "Paste your grid now" in sline: continue
+        if re.match(r'^\[?.*\]\$\s*', sline): continue
 
         parts = sline.split()
-        # Row with leading row index
-        if len(parts) >= 2 and re.fullmatch(r'\d+', parts[0]):
-            vals = []
-            for tok in parts[1:]:
-                t = tok.strip()
-                if t.lower() == 'xx':
-                    vals.append(None)
-                else:
-                    try:
-                        vals.append(int(t, 16))
-                    except ValueError:
-                        vals.append(int(t))  # allow decimal fallback
-            rows.append(vals)
+
+        # 1) ROW WITH INDEX: "<row> <b0> <b1> ...", where each <bi> is exactly 2 hex chars or 'xx'
+        if len(parts) >= 2 and DEC_ONLY_RE.fullmatch(parts[0]):
+            tail = parts[1:]
+            if all(is_hex_byte(t) or t.lower() == 'xx' for t in tail):
+                rows.append([None if t.lower() == 'xx' else int(t, 16) for t in tail])
+                continue
+
+        # 2) Skip at most ONE decimal-only column header
+        if not saw_header and looks_like_col_header(sline):
+            saw_header = True
             continue
 
-        # Row without index: accept if tokens are hex-like or 'xx'
-        vals = []
-        ok = True
-        for tok in parts:
-            t = tok.strip()
-            if t.lower() == 'xx':
-                vals.append(None)
-            else:
-                try:
-                    vals.append(int(t, 16))
-                except ValueError:
-                    ok = False
-                    break
-        if ok and vals:
-            rows.append(vals)
+        # 3) ROW WITHOUT INDEX: all tokens must be exactly 2 hex chars or 'xx'
+        if all(is_hex_byte(t) or t.lower() == 'xx' for t in parts):
+            rows.append([None if t.lower() == 'xx' else int(t, 16) for t in parts])
+            continue
+
+        # else ignore unrelated lines
 
     if not rows:
         sys.exit("[ERROR] No grid rows parsed. Make sure you pasted the table.")
 
-    # Normalize width by padding trailing None
+    # Pad ragged rows to uniform width
     W = max(len(r) for r in rows)
     for r in rows:
         if len(r) < W:
@@ -174,30 +166,28 @@ def main():
             diff[y][x] = (a - b) if (a is not None) else None
 
     # Pretty print
-    def fmt_cell(v):
+    def fmt(v):
         if v is None: return "  ."
         s = f"{int(v):+d}"
         return s.rjust(3)
 
-    header = "    " + " ".join([str(x).rjust(3) for x in range(W_use)])
-    lines = [header]
-    for y in range(H_use):
-        line = str(y).rjust(3) + " " + " ".join(fmt_cell(v) for v in diff[y])
-        lines.append(line)
+    header = "    " + " ".join(str(x).rjust(3) for x in range(W_use))
+    lines = [header] + [
+        str(y).rjust(3) + " " + " ".join(fmt(v) for v in diff[y])
+        for y in range(H_use)
+    ]
     out_txt = "\n".join(lines)
     print(out_txt)
 
-    # Save artifacts
-    out_txt_path = Path("diff_map.txt")
-    out_csv_path = Path("diff_map.csv")
-    out_txt_path.write_text(out_txt, encoding="utf-8")
-    with out_csv_path.open("w", encoding="utf-8") as f:
+    # Save results
+    Path("diff_map.txt").write_text(out_txt, encoding="utf-8")
+    with Path("diff_map.csv").open("w", encoding="utf-8") as f:
         f.write("," + ",".join(str(x) for x in range(W_use)) + "\n")
         for y in range(H_use):
             row = ["" if diff[y][x] is None else str(int(diff[y][x])) for x in range(W_use)]
             f.write(f"{y}," + ",".join(row) + "\n")
-    print(f"\n[Saved] {out_txt_path}")
-    print(f"[Saved] {out_csv_path}")
+    print("\n[Saved] diff_map.txt")
+    print("[Saved] diff_map.csv")
 
 if __name__ == "__main__":
     main()

@@ -1,7 +1,15 @@
 `timescale 1ns/10ps
 // ver4
 // (H0 V0) = (81 18)，(SW SH) = (17 15)，(TW TH)=(22 28)
-// P_buf_next is not a good design, should fix
+/*
+0. tesr all testcase
+1. Divider and Bicubic can be parallel
+2. Cubic engine should be 4 mul 1 add
+3. SRAM address should set
+4. can pre-calulate x x1 x2 x3 solo
+5. turn next-curr-prev as wire
+*/
+
 
 // state
 `define INIT 1'b0
@@ -39,6 +47,7 @@ reg [6:0] quot_h, quot_h_next;
 reg [6:0] quot_v, quot_v_next;
 reg [6:0] rem_h, rem_h_next;
 reg [6:0] rem_v, rem_v_next;
+reg [6:0] prev_rem_v, prev_rem_v_next;
 reg [6:0] next_rem_h, next_rem_h_next;
 reg [6:0] next_rem_v, next_rem_v_next;
 reg [2:0] cycle_cnt, cycle_cnt_next;
@@ -219,7 +228,13 @@ always @* begin
                     end
                 end else begin // coord_v = 2~TH-2
                     case (cycle_cnt_lv2)
-                        8'd0: if (rem_v < (SH - 1)) cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
+                        8'd0: begin
+                            if (rem_v < (SH - 1) && coord_v != TH - 2) begin
+                                cycle_cnt_lv2_next = cycle_cnt_lv2 + 1;
+                            end else begin
+                                cycle_cnt_lv2_next = 8'd0;
+                            end
+                        end
                         8'd1: cycle_cnt_lv2_next = 8'd0;
                         default: cycle_cnt_lv2_next = 8'dx;
                     endcase
@@ -236,7 +251,7 @@ always @* begin
     if (state == `INIT) begin
         DONE_next = 1'b0;
     end else begin // state == `RUN
-        if (cycle_cnt == 3'd4 && coord_v == TH - 1 && coord_h == TW - 1) begin
+        if (cycle_cnt == 3'd4 && coord_h == TW) begin
             DONE_next = 1'b1;
         end else begin
             DONE_next = DONE;
@@ -308,6 +323,8 @@ always @* begin
                     next_mode_next = `V;
                 end else if (coord_v == TH - 2) begin
                     next_mode_next = `H;
+                end else if (coord_v == TH - 1 && coord_h == TW - 2 && cycle_cnt_lv2 == 8'd2) begin
+                    next_mode_next = `V;
                 end else begin
                     next_mode_next = next_mode;
                 end
@@ -482,7 +499,8 @@ always @* begin
                 if ((coord_v == 7'd0) ||
                     ((coord_v == 7'd1) && ((cycle_cnt_lv2 == 8'd3) || (cycle_cnt_lv2 == 8'd4 && next_mode == `V))) ||
                     ((coord_v > 7'd1 && coord_v < TH - 2) && (next_mode == `V)) ||
-                    ((coord_v == TH - 2)) && (mode == `H)) begin
+                    (coord_v == TH - 2 && mode == `H) ||
+                    ((coord_h == TW - 2) && (coord_v == TH - 1) && (cycle_cnt_lv2 == 8'd3))) begin
                     // rem/quot change with coord_v
                     if (next_rem_v + (SH - 1) >= (TH - 1)) begin
                         next_rem_v_next = next_rem_v + (SH - 1) - (TH - 1);
@@ -499,12 +517,14 @@ always @* begin
     end
 end
 
-// combinational for rem_v
+// combinational for rem_v, prev_rem_v
 always @* begin
     if (cycle_cnt == 3'd4) begin
         rem_v_next = next_rem_v;
+        prev_rem_v_next = rem_v;
     end else begin
         rem_v_next = rem_v;
+        prev_rem_v_next = prev_rem_v;
     end
 end
 
@@ -576,7 +596,11 @@ always @* begin
     end else begin // state == `RUN
         SRAM_data_i = cubic_val; // default
         if (coord_h == 7'd0 || coord_h == TW - 1) begin
-            if (prev_coord_v == 7'd0) begin // direct gives value from ROM
+            if (prev_coord_v == TH - 1 && cycle_cnt_lv2 == 8'd1) begin
+                SRAM_data_i = P_buf[2];
+                SRAM_addr = {prev_coord_v, prev_coord_h};
+                SRAM_CEN = `ENABLE; SRAM_WEN = `WRITE; // write back
+            end else if (prev_coord_v == 7'd0) begin // direct gives value from ROM
                 if (cycle_cnt == 3'd0) begin
                     SRAM_addr = {7'd101, next_rem_v};
                     SRAM_CEN = `ENABLE; SRAM_WEN = `READ;  // read
@@ -588,7 +612,7 @@ always @* begin
                     SRAM_addr = 14'd0;
                     SRAM_CEN = `DISABLE; SRAM_WEN = `READ; // hold
                 end
-            end else if (prev_coord_v == TH - 1 && (cycle_cnt_lv2 == 8'd2 || cycle_cnt_lv2 == 8'd3)) begin
+            end else if (prev_coord_v == TH - 1 && (cycle_cnt_lv2 == 8'd2 || cycle_cnt_lv2 == 8'd3 || coord_v == 7'd0)) begin
                 SRAM_addr = 14'd0;
                 SRAM_CEN = `DISABLE; SRAM_WEN = `READ; // hold
             end else begin
@@ -684,27 +708,27 @@ always @* begin
     if (state == `INIT) begin
         // hold
     end else begin // state == `RUN
-        if (coord_h == 7'd0 || coord_h == TH - 1) begin
+        if (coord_h == 7'd0 || coord_h == TW - 1) begin
             if (coord_v == 7'd0) begin
                 case (cycle_cnt)
                     3'd0: begin
-                        ROM_addr_v = coord_v + V0 - 1;
-                        ROM_addr_h = coord_h + H0;
+                        ROM_addr_v = quot_v + V0 - 1;
+                        ROM_addr_h = quot_h + H0;
                         ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
                     end
                     3'd1: begin
-                        ROM_addr_v = coord_v + V0;
-                        ROM_addr_h = coord_h + H0;
+                        ROM_addr_v = quot_v + V0;
+                        ROM_addr_h = quot_h + H0;
                         ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
                     end
                     3'd2: begin
-                        ROM_addr_v = coord_v + V0 + 1;
-                        ROM_addr_h = coord_h + H0;
+                        ROM_addr_v = quot_v + V0 + 1;
+                        ROM_addr_h = quot_h + H0;
                         ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
                     end
                     3'd3: begin
                         ROM_addr_v = quot_v + V0 + 2;
-                        ROM_addr_h = coord_h + H0;
+                        ROM_addr_h = quot_h + H0;
                         ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
                     end
                     default: begin
@@ -713,7 +737,7 @@ always @* begin
                 endcase
             end else begin
                 ROM_addr_v = quot_v + V0 + 2;
-                ROM_addr_h = coord_h + H0;
+                ROM_addr_h = quot_h + H0;
                 ROM_addr = ROM_addr_v * 100 + ROM_addr_h;
             end
         end else begin
@@ -808,7 +832,8 @@ always @* begin
                 P_buf_next[2] = P_buf[2];
                 P_buf_next[3] = P_buf[3];
             end else begin
-                if (cycle_cnt == 3'd1 && ((next_rem_v > rem_v) || (next_rem_v == 7'd0))) begin // not carry
+                // if (cycle_cnt == 3'd1 && ((next_rem_v > rem_v) || (next_rem_v == 7'd0))) begin // not carry
+                if (cycle_cnt == 3'd1 && rem_v < prev_rem_v) begin // carry
                     P_buf_next[3] = ROM_data_o;
                     P_buf_next[2] = P_buf[3];
                     P_buf_next[1] = P_buf[2];
@@ -880,6 +905,7 @@ always @(posedge CLK) begin
         quot_v <= 7'd0;
         rem_h <= 7'd0;
         rem_v <= 7'd0;
+        prev_rem_v <= 7'd0;
         next_rem_h <= 7'd0;
         next_rem_v <= 7'd0;
         cycle_cnt <= 3'd0;
@@ -905,6 +931,7 @@ always @(posedge CLK) begin
         quot_v <= quot_v_next;
         rem_h <= rem_h_next;
         rem_v <= rem_v_next;
+        prev_rem_v <= prev_rem_v_next;
         next_rem_h <= next_rem_h_next;
         next_rem_v <= next_rem_v_next;
         cycle_cnt <= cycle_cnt_next;
