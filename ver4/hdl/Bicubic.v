@@ -5,9 +5,10 @@
 0. tesr all testcase
 1. Divider and Bicubic can be parallel
 2. Cubic engine should be 4 mul 1 add
-3. SRAM address should set
+3. SRAM address should set correctly
 4. can pre-calulate x x1 x2 x3 solo
 5. turn next-curr-prev as wire
+6. dividre rem and quot share register
 */
 
 
@@ -320,7 +321,10 @@ always @* begin
                         end
                     end
                 end else if (coord_v == TH - 3) begin
-                    next_mode_next = `V;
+                    next_mode_next = (cycle_cnt_lv2 == 8'd0) ? (next_mode == `V) ? `H
+                                                                                 : `V
+                                                             : `V;
+                    // next_mode_next = `V;
                 end else if (coord_v == TH - 2) begin
                     next_mode_next = `H;
                 end else if (coord_v == TH - 1 && coord_h == TW - 2 && cycle_cnt_lv2 == 8'd2) begin
