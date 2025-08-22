@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1754475400.764655576, "rt":0.49, "ut":0.06, "st":0.03}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1754475400.563865552}
+{"VCS_COMP_START_TIME": 1754475400.563865552}
+{"VCS_COMP_END_TIME": 1754475402.528123890}
+{"VCS_USER_OPTIONS": "-R -sverilog -full64 -f hdl.f +define+P2 +access+r +vcs+fsdbon +fsdb+mda +fsdbfile+Bicubic.fsdb +notimingcheck"}

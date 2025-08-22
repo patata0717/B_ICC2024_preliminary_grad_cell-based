@@ -77,7 +77,7 @@ wire [CYCLE-1:0] frac_val; // Q0.8 * 2
 wire [7:0] frac_8_val = frac_val[CYCLE-1:CYCLE-8];
 wire [7:0] cubic_val;
 wire [15:0] x_x_raw_round = x1 * x1 + 16'h0080;
-wire [15:0] x2_x_raw_round = x2 * x1 + 16'h0080;;
+wire [15:0] x2_x_raw_round = x2 * x1 + 16'h0080;
 wire X_valid = (state == `RUN) && (cycle_cnt == 3'd0);
 wire V_valid = (state == `RUN);
 wire [23:0] X_in = (X_valid) ? {x1, x2, x3} : 24'd0;

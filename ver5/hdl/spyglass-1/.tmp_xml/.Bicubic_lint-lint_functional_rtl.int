@@ -1,0 +1,7 @@
+INPUT@@/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl/spyglass-1/lint/lint_functional_rtl/spyglass_reports@@/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl/spyglass-1/html_reports/data_files/@@Bicubic@@lint-lint_functional_rtl@@
+COPY@@/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl/spyglass-1/lint/lint_functional_rtl/spyglass_reports/moresimple.rpt@@data_files/Bicubic_lint-lint_functional_rtl_moresimple.rpt@@
+COPY@@/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl/spyglass-1/lint/lint_functional_rtl/spyglass_reports/no_msg_reporting_rules.rpt@@data_files/Bicubic_lint-lint_functional_rtl_no_msg_reporting_rules.rpt@@
+REGEN@@/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl/spyglass-1/lint/lint_functional_rtl/spyglass_reports/auto_verify.rpt@@data_files/Bicubic_lint-lint_functional_rtl_auto_verify.rpt.html@@
+REGEN@@/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl/spyglass-1/lint/lint_functional_rtl/spyglass_reports/ADV-LINT.rpt@@data_files/Bicubic_lint-lint_functional_rtl_ADV-LINT.rpt.html@@
+PROCESS@@auto-verify@@SpyGlass
+COPY@@/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl/spyglass-1/lint/lint_functional_rtl/spyglass.log@@data_files/Bicubic_lint-lint_functional_rtl_spyglass.log@@

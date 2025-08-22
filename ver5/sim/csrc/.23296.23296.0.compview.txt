@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1754830736.708642504, "rt":0.47, "ut":0.06, "st":0.03}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1754830736.560894540}
+{"VCS_COMP_START_TIME": 1754830736.560894540}
+{"VCS_COMP_END_TIME": 1754830738.608690069}
+{"VCS_USER_OPTIONS": "test_Divider.v ../hdl/SnS_divider.v -R -full64 -debug_access+all +v2k"}

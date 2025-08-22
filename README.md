@@ -6,6 +6,15 @@ Ver 3: Support bicubic for a whole column, preload 1/27, 2/27... in row 100, 1/2
 
 Ver 4: Support whole image
 
-Ver 5: Calculate frac itself
+Ver 5: Cubic engine datapath improve
 
-Shift and subract may not be the best way, using Newton-Raphson to calculate very accurate num, and add up should be better
+## How to run
+
+sim $> ./run_sim.sh
+
+(copy the whole matrix, including line number)
+
+python3 diff.py
+
+(W, H(line 22) in diff.py should be set, also, path of pattern(line 46))
+

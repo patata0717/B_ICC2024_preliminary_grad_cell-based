@@ -1,0 +1,84 @@
+Warning: Design 'Bicubic' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : qor
+Design : Bicubic
+Version: W-2024.09-SP2
+Date   : Fri Aug 22 17:00:28 2025
+****************************************
+
+
+  Timing Path Group 'CLK'
+  -----------------------------------
+  Levels of Logic:              23.00
+  Critical Path Length:          6.63
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:      8.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:               1286
+  Buf/Inv Cell Count:             256
+  Buf Cell Count:                  13
+  Inv Cell Count:                 243
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      1205
+  Sequential Cell Count:           81
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    10184.399969
+  Noncombinational Area:  2109.868231
+  Buf/Inv Area:            992.978988
+  Total Buffer Area:           118.82
+  Total Inverter Area:         874.16
+  Macro/Black Box Area:      0.000000
+  Net Area:             139207.365448
+  -----------------------------------
+  Cell Area:             12294.268199
+  Design Area:          151501.633647
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          1359
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: vlsilab.es.ncku.edu.tw
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    1.44
+  Logic Optimization:                  1.45
+  Mapping Optimization:                1.07
+  -----------------------------------------
+  Overall Compile Time:                8.78
+  Overall Compile Wall Clock Time:     9.03
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

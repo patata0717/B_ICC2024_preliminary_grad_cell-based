@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1754830111.721794807, "rt":0.63, "ut":0.13, "st":0.08}}
+{"vcselab":{"timestamp_begin":1754830112.386661459, "rt":0.59, "ut":0.19, "st":0.04}}
+{"link":{"timestamp_begin":1754830112.998487507, "rt":0.09, "ut":0.07, "st":0.02}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1754830111.573562776}
+{"VCS_COMP_START_TIME": 1754830111.573562776}
+{"VCS_COMP_END_TIME": 1754830114.183576362}
+{"VCS_USER_OPTIONS": "test_Divider.v ../hdl/SnS_divider.v -R -full64 -debug_access+all +v2k"}
+{"vcs1": {"peak_mem": 298272}}
+{"vcselab": {"peak_mem": 157496}}

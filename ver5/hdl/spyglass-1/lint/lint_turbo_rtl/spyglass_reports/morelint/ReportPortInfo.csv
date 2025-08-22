@@ -1,0 +1,20 @@
+Module Name,Module Type,Port Name,Direction,Width,Index,Comment Source,Comment 
+Bicubic,Top_Level,CLK,INPUT,1,-,-,-
+Bicubic,Top_Level,RST,INPUT,1,-,-,-
+Bicubic,Top_Level,V0,INPUT,7,[6:0],-,-
+Bicubic,Top_Level,H0,INPUT,7,[6:0],-,-
+Bicubic,Top_Level,SW,INPUT,5,[4:0],-,-
+Bicubic,Top_Level,SH,INPUT,5,[4:0],-,-
+Bicubic,Top_Level,TW,INPUT,6,[5:0],-,-
+Bicubic,Top_Level,TH,INPUT,6,[5:0],-,-
+Bicubic,Top_Level,DONE,OUTPUT,1,-,-,-
+ImgROM,Black Box,Q,INPUT,8,-,-,-
+ImgROM,Black Box,CLK,INPUT,1,-,-,-
+ImgROM,Black Box,CEN,INPUT,1,-,-,-
+ImgROM,Black Box,A,INPUT,14,-,-,-
+ResultSRAM,Black Box,Q,INPUT,8,-,-,-
+ResultSRAM,Black Box,CLK,INPUT,1,-,-,-
+ResultSRAM,Black Box,CEN,INPUT,1,-,-,-
+ResultSRAM,Black Box,WEN,INPUT,1,-,-,-
+ResultSRAM,Black Box,A,INPUT,14,-,-,-
+ResultSRAM,Black Box,D,INPUT,8,-,-,-

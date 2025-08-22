@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1755576686.394577898, "rt":0.71, "ut":0.25, "st":0.06}}
+{"vcselab":{"timestamp_begin":1755576687.133644746, "rt":0.81, "ut":0.15, "st":0.03}}
+{"link":{"timestamp_begin":1755576687.972669629, "rt":0.10, "ut":0.07, "st":0.03}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1755576686.193411350}
+{"VCS_COMP_START_TIME": 1755576686.193411350}
+{"VCS_COMP_END_TIME": 1755576690.328170071}
+{"VCS_USER_OPTIONS": "-R -sverilog -full64 -f hdl.f +define+P2 +access+r +vcs+fsdbon +fsdb+mda +fsdbfile+Bicubic.fsdb +notimingcheck"}
+{"vcs1": {"peak_mem": 304256}}
+{"vcselab": {"peak_mem": 173924}}

@@ -1,0 +1,42 @@
+5 "ErrorAnalyzeBBox" 2
+"BBoxEng"
+["ImgROM","BB_NO_MOD_DEF"]
+"BBoxEngAuxiInfo"
+["WORK","ImgROM","1"]
+6 "ErrorAnalyzeBBox" 2
+"BBoxEng"
+["ResultSRAM","BB_NO_MOD_DEF"]
+"BBoxEngAuxiInfo"
+["WORK","ResultSRAM","1"]
+-1 "Av_init01" 3
+"TEMPLATE"
+["lint/lint_functional_rtl"]
+"RULE_ORDER"
+[-1]
+"RULEGROUP"
+["auto-verify/SetUp"]
+-1 "DetectTopDesignUnits" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ElabSummary" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "ErrorAnalyzeBBox" 2
+"RULEGROUP"
+["Blackbox Resolution"]
+"BUILTIN"
+"1"
+-1 "InferBlackBox" 2
+"RULEGROUP"
+["Design Read"]
+"BUILTIN"
+"1"
+-1 "checkCMD_unset_option" 2
+"RULEGROUP"
+["Command-line read"]
+"BUILTIN"
+"1"

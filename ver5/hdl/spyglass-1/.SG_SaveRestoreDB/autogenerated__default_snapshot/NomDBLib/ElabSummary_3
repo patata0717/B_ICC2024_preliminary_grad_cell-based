@@ -1,0 +1,35 @@
+================================================================================
+Elaborated Name: 'Cubic_engine'
+    (RTL Design Unit name: 'Cubic_engine', Cubic_engine.v:7)
+     Parameters (Total: 0)
+     Instances (Total: 1): Bicubic.cubic_engine 
+
+================================================================================
+
+Elaborated Name: 'SnS_divider'
+    (RTL Design Unit name: 'SnS_divider', SnS_divider.v:6)
+     Parameters (Total: 1)
+         CYCLE = 8 (default: 8)
+     Instances (Total: 1): Bicubic.sns_divider 
+
+================================================================================
+
+Elaborated Name: 'ImgROM'
+    (RTL Design Unit name: 'ImgROM', N.A.:0)
+     Parameters (Total: 0)
+     Instances (Total: 1): Bicubic.u_ImgROM 
+
+================================================================================
+
+Elaborated Name: 'ResultSRAM'
+    (RTL Design Unit name: 'ResultSRAM', N.A.:0)
+     Parameters (Total: 0)
+     Instances (Total: 1): Bicubic.u_ResultSRAM 
+
+================================================================================
+
+Elaborated Name: 'Bicubic'
+    (RTL Design Unit name: 'Bicubic', Bicubic.v:29)
+     Parameters (Total: 1)
+         CYCLE = 8 (default: 8)
+================================================================================

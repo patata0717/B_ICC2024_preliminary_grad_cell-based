@@ -1,0 +1,54 @@
+read_file -type verilog {Cubic_engine.v Bicubic.v SnS_divider.v}
+# Started at 16:30:52, Completed at 16:30:53 (Elapsed time = 00:00:00.480)
+
+current_goal lint/lint_rtl -alltop
+# Started at 16:31:20, Completed at 16:31:21 (Elapsed time = 00:00:01.069)
+
+run_goal
+# Started at 16:31:21, Completed at 16:31:25 (Elapsed time = 00:00:03.610)
+
+current_goal lint/lint_rtl_enhanced -alltop
+# Started at 16:31:25, Completed at 16:31:27 (Elapsed time = 00:00:01.240)
+
+run_goal
+# Started at 16:31:27, Completed at 16:31:30 (Elapsed time = 00:00:03.679)
+
+current_goal lint/lint_turbo_rtl -alltop
+# Started at 16:31:30, Completed at 16:31:32 (Elapsed time = 00:00:01.260)
+
+run_goal
+# Started at 16:31:32, Completed at 16:31:36 (Elapsed time = 00:00:03.720)
+
+current_goal lint/lint_functional_rtl -alltop
+# Started at 16:31:36, Completed at 16:31:37 (Elapsed time = 00:00:00.879)
+
+run_goal
+# Started at 16:31:37, Completed at 16:31:38 (Elapsed time = 00:00:01.370)
+
+current_goal lint/lint_abstract -alltop
+# Started at 16:31:38, Completed at 16:31:39 (Elapsed time = 00:00:00.489)
+
+run_goal
+# Started at 16:31:39, Completed at 16:31:43 (Elapsed time = 00:00:03.590)
+
+current_goal adv_lint/adv_lint_struct -alltop
+# Started at 16:31:43, Completed at 16:31:44 (Elapsed time = 00:00:00.890)
+
+run_goal
+# Started at 16:31:44, Completed at 16:31:45 (Elapsed time = 00:00:01.349)
+
+current_goal adv_lint/adv_lint_verify -alltop
+# Started at 16:31:45, Completed at 16:31:46 (Elapsed time = 00:00:00.799)
+
+run_goal
+# Started at 16:31:46, Completed at 16:31:48 (Elapsed time = 00:00:01.330)
+
+current_goal lint/lint_rtl -alltop
+# Started at 16:31:48, Completed at 16:31:49 (Elapsed time = 00:00:01.240)
+
+current_goal lint/lint_turbo_rtl -alltop
+# Started at 16:33:00, Completed at 16:33:01 (Elapsed time = 00:00:01.480)
+
+run_goal
+# Started at 16:33:04, Completed at 16:33:10 (Elapsed time = 00:00:04.719)
+
