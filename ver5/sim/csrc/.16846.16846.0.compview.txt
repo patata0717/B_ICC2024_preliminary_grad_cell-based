@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1755961920.797198632, "rt":0.56, "ut":0.11, "st":0.06}}
+{"vcselab":{"timestamp_begin":1755961921.387807816, "rt":0.61, "ut":0.20, "st":0.03}}
+{"link":{"timestamp_begin":1755961922.025823512, "rt":0.09, "ut":0.07, "st":0.03}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1755961920.649054508}
+{"VCS_COMP_START_TIME": 1755961920.649054508}
+{"VCS_COMP_END_TIME": 1755961923.407261011}
+{"VCS_USER_OPTIONS": "../hdl/Cubic_engine.v test_Cubic_engine.v -R -full64 -debug_access+all +v2k"}
+{"vcs1": {"peak_mem": 302656}}
+{"vcselab": {"peak_mem": 157492}}

@@ -3,7 +3,7 @@
 Report : qor
 Design : Cubic_engine
 Version: W-2024.09-SP2
-Date   : Sat Aug 23 22:27:25 2025
+Date   : Sat Aug 23 23:20:23 2025
 ****************************************
 
 
@@ -25,34 +25,34 @@ Date   : Sat Aug 23 22:27:25 2025
   -----------------------------------
   Hierarchical Cell Count:          0
   Hierarchical Port Count:          0
-  Leaf Cell Count:               1326
-  Buf/Inv Cell Count:             169
-  Buf Cell Count:                  62
-  Inv Cell Count:                 107
+  Leaf Cell Count:               1202
+  Buf/Inv Cell Count:             159
+  Buf Cell Count:                  59
+  Inv Cell Count:                 100
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:      1184
-  Sequential Cell Count:          142
+  Combinational Cell Count:      1068
+  Sequential Cell Count:          134
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:    17810.818189
-  Noncombinational Area:  3428.748074
-  Buf/Inv Area:            880.950587
-  Total Buffer Area:           422.65
-  Total Inverter Area:         458.30
+  Combinational Area:    15933.493789
+  Noncombinational Area:  3225.060070
+  Buf/Inv Area:            833.423387
+  Total Buffer Area:           400.59
+  Total Inverter Area:         432.84
   Macro/Black Box Area:      0.000000
-  Net Area:             174300.867340
+  Net Area:             156614.115540
   -----------------------------------
-  Cell Area:             21239.566262
-  Design Area:          195540.433602
+  Cell Area:             19158.553859
+  Design Area:          175772.669399
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:          1655
+  Total Number of Nets:          1503
   Nets With Violations:             0
   Max Trans Violations:             0
   Max Cap Violations:               0
@@ -63,12 +63,12 @@ Date   : Sat Aug 23 22:27:25 2025
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                    0.46
-  Logic Optimization:                  0.29
-  Mapping Optimization:                0.95
+  Resource Sharing:                    0.42
+  Logic Optimization:                  0.26
+  Mapping Optimization:                0.88
   -----------------------------------------
-  Overall Compile Time:                4.64
-  Overall Compile Wall Clock Time:     4.89
+  Overall Compile Time:                4.43
+  Overall Compile Wall Clock Time:     4.67
 
   --------------------------------------------------------------------
 

@@ -194,21 +194,3 @@ if __name__ == "__main__":
 
 
 
-
-Number of ports:                           45
-Number of nets:                          1655
-Number of cells:                         1326
-Number of combinational cells:           1184
-Number of sequential cells:               142
-Number of macros/black boxes:               0
-Number of buf/inv:                        169
-Number of references:                      46
-
-Combinational area:              17810.818189
-Buf/Inv area:                      880.950587
-Noncombinational area:            3428.748074
-Macro/Black Box area:                0.000000
-Net Interconnect area:          174300.867340
-
-Total cell area:                 21239.566262
-Total area:                     195540.433602

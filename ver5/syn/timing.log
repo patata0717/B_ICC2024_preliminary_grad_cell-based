@@ -6,7 +6,7 @@ Report : timing
         -max_paths 1
 Design : Cubic_engine
 Version: W-2024.09-SP2
-Date   : Sat Aug 23 22:27:25 2025
+Date   : Sat Aug 23 23:20:23 2025
 ****************************************
 
 Operating Conditions: slow   Library: slow
@@ -25,8 +25,8 @@ Wire Load Model Mode: top
   -----------------------------------------------------------
   XCP_reg[7]/CK (DFFQX1)                   0.00       0.00 r
   XCP_reg[7]/Q (DFFQX1)                    0.44       0.44 r
-  U275/Y (INVX1)                           0.27       0.71 f
-  U274/Y (INVX12)                          0.68       1.38 r
+  U190/Y (INVX1)                           0.27       0.70 f
+  U189/Y (INVX12)                          0.68       1.38 r
   out[7] (out)                             0.00       1.38 r
   data arrival time                                   1.38
   -----------------------------------------------------------

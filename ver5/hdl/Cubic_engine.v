@@ -18,21 +18,21 @@ reg signed [3:0] C_col3_ROM [0:3];
 // registers
 reg        [7:0] X   [0:3], X_next  [0:3]; // Q0.8
 reg        [7:0] P   [0:3], P_next  [0:3]; // Q8.0
-reg signed [13:0] XC [0:3], XC_next [0:3]; // signed Q2.9 * 4
+reg signed [11:0] XC [0:3], XC_next [0:3]; // signed Q2.9
 reg        [7:0] XCP, XCP_next; // Q8.0
 
 // wire
-reg  signed [21:0] multiplier1;       // wide enough for XC*P (13x8 -> 21b)
-reg  signed [21:0] multiplier2;
-reg  signed [21:0] multiplier3;
-reg  signed [21:0] multiplier4;
-reg  signed [23:0] adder1;
+reg  signed [19:0] multiplier1;       // wide enough for XC*P (13x8 -> 21b)
+reg  signed [19:0] multiplier2;
+reg  signed [19:0] multiplier3;
+reg  signed [19:0] multiplier4;
+reg  signed [21:0] adder1;
 
 // Q14.9 -> Q14
 wire signed [12:0] XCP_round = (adder1 + adder1[8]) >> 9;
 // clamp to [0,255], Q14->Q8
-wire        [7:0]  XCP_round_clamp = (XCP_round < 15'sd0   ) ? 8'd0
-                                   : (XCP_round > 15'sd255 ) ? 8'd255
+wire        [7:0]  XCP_round_clamp = (XCP_round < 13'sd0   ) ? 8'd0
+                                   : (XCP_round > 13'sd255 ) ? 8'd255
                                    :  XCP_round[7:0];
 
 reg signed [11:0] p0, p1, p2, p3;
@@ -79,7 +79,7 @@ always @* begin
         end
         // ---- Compute XCP = sum_k XC[k]*P[k]
         3'd0: begin
-            // Q4.9 * Q8.0 = Q12.9
+            // Q2.9 * Q8.0 = Q12.9
             multiplier1 = (XC[0] * $signed({1'b0, P[0]}));
             multiplier2 = (XC[1] * $signed({1'b0, P[1]}));
             multiplier3 = (XC[2] * $signed({1'b0, P[2]}));
@@ -97,10 +97,10 @@ always @* out = XCP;
 always @* begin
     XC_next[0] = XC[0]; XC_next[1] = XC[1]; XC_next[2] = XC[2]; XC_next[3] = XC[3];
     case (cycle_cnt)
-        3'd1: XC_next[0] = adder1; 
-        3'd2: XC_next[1] = adder1; 
-        3'd3: XC_next[2] = adder1; 
-        3'd4: XC_next[3] = adder1; 
+        3'd1: XC_next[0] = adder1[11:0]; 
+        3'd2: XC_next[1] = adder1[11:0]; 
+        3'd3: XC_next[2] = adder1[11:0]; 
+        3'd4: XC_next[3] = adder1[11:0]; 
         default: ;
     endcase
 end
@@ -146,7 +146,7 @@ always @(posedge clk) begin
     if (rst) begin
         X[0] <= 8'd0; X[1] <= 8'd0; X[2] <= 8'd0; X[3] <= 8'd255;
         P[0] <= 8'd0; P[1] <= 8'd0; P[2] <= 8'd0; P[3] <= 8'd0;
-        XC[0] <= 14'd0; XC[1] <= 14'd0; XC[2] <= 14'd0; XC[3] <= 14'd0;
+        XC[0] <= 12'd0; XC[1] <= 14'd0; XC[2] <= 14'd0; XC[3] <= 14'd0;
         XCP <= 8'd0;
     end else begin
         X[0] <= X_next[0]; X[1] <= X_next[1]; X[2] <= X_next[2]; X[3] <= X_next[3];
