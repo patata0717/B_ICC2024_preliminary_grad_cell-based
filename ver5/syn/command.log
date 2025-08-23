@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version W-2024.09-SP2 for linux64 -- Nov 28, 2024
-#@ # Date:   Sat Aug 23 23:20:16 2025
+#@ # Date:   Sun Aug 24 00:33:57 2025
 #@ # Run by: patata0717@vlsilab.es.ncku.edu.tw
 #@ 
 
@@ -9251,39 +9251,31 @@ source /usr/cad/synopsys/synthesis/2024.09-sp2/admin/setup/.synopsys_dc.setup
 #@ 
 #@ # -- End source /usr/cad/synopsys/synthesis/2024.09-sp2/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/syn/dc_syn.tcl
-#@ # -- Starting source /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/syn/dc_syn.tcl
-
-#@ remove_design -all
-#@ 
-#@ set GTECH_DB  /cad/CBDK/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db
-#@ if {[file exists ../ImgROM_slow.db]}      { set IMG_ROM_DB ../ImgROM_slow.db }
-#@ if {[file exists ../ResultSRAM_slow.db]}  { set SRAM_DB    ../ResultSRAM_slow.db }
-#@ set_app_var target_library [list $GTECH_DB]
-#@ 
-#@ set link_list [concat "*" $target_library]
-#@ if {[info exists IMG_ROM_DB]} { set link_list [concat $link_list $IMG_ROM_DB] }
-#@ if {[info exists SRAM_DB]}    { set link_list [concat $link_list $SRAM_DB] }
-#@ set_app_var link_library $link_list
-#@ 
-#@ #Read All Files
-#@ read_file -format sverilog ../hdl/Cubic_engine.v
-#@ #read_file -format sverilog ../hdl/SnS_divider.v
-#@ #read_file -format sverilog ../hdl/Bicubic.v
-#@ #read_file -format sverilog ../hdl/ImgROM.v
-#@ #read_file -format sverilog ../hdl/ResultSRAM.v
-#@ 
-#@ elaborate Bicubic -architecture verilog -library DEFAULT
-#@ current_design Bicubic
-#@ link
-#@ 
-#@ #Setting Clock Constraints
-#@ source -echo -verbose Bicubic.sdc
+remove_design -all
+set GTECH_DB  /cad/CBDK/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db
+if {[file exists ../ImgROM_slow.db]}      { set IMG_ROM_DB ../ImgROM_slow.db }
+if {[file exists ../ResultSRAM_slow.db]}  { set SRAM_DB    ../ResultSRAM_slow.db }
+set_app_var target_library [list $GTECH_DB]
+set link_list [concat "*" $target_library]
+if {[info exists IMG_ROM_DB]} { set link_list [concat $link_list $IMG_ROM_DB] }
+if {[info exists SRAM_DB]}    { set link_list [concat $link_list $SRAM_DB] }
+set_app_var link_library $link_list
+#Read All Files
+read_file -format sverilog ../hdl/Cubic_engine.v
+read_file -format sverilog ../hdl/SnS_divider.v
+read_file -format sverilog ../hdl/Bicubic.v
+read_file -format sverilog ../hdl/ImgROM.v
+read_file -format sverilog ../hdl/ResultSRAM.v
+elaborate Bicubic -architecture verilog -library DEFAULT
+current_design Bicubic
+link
+#Setting Clock Constraints
+source -echo -verbose Bicubic.sdc
 #@ # -- Starting source Bicubic.sdc
 
 #@ # operating conditions and boundary conditions #
 #@ 
-#@ set cycle_time 8.0
+#@ set cycle_time 3.90
 #@ create_clock -name CLK  -period $cycle_time   [get_ports  CLK] 
 #@ 
 #@ set_dont_touch_network      [all_clocks]
@@ -9306,24 +9298,20 @@ source -echo -verbose /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024
 #@ 
 #@ # -- End source Bicubic.sdc
 
-#@ set_fix_hold                [all_clocks]
-#@ check_design
-#@ set high_fanout_net_threshold 0
-#@ uniquify
-#@ set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
-#@ #set_max_area 0
-#@ #Synthesis all design
-#@ #compile -map_effort high -area_effort high
-#@ #compile -map_effort high -area_effort high -inc
-#@ compile_ultra
-#@ 
-#@ write -format ddc     -hierarchy -output "Bicubic_syn.ddc"
-#@ write_sdf -version 1.0  Bicubic_syn.sdf
-#@ write -format verilog -hierarchy -output Bicubic_syn.v
-#@ report_area > area.log
-#@ report_timing > timing.log
-#@ report_qor   >  Bicubic_syn.qor
-#@ write_parasitics -output Bicubic_syn.spef
-#@ # -- End source /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/syn/dc_syn.tcl
-
-quit
+set_fix_hold                [all_clocks]
+check_design
+set high_fanout_net_threshold 0
+uniquify
+set_fix_multiple_port_nets -all -buffer_constants [get_designs *]
+#set_max_area 0
+#Synthesis all design
+#compile -map_effort high -area_effort high
+#compile -map_effort high -area_effort high -inc
+compile_ultra
+write -format ddc     -hierarchy -output "Bicubic_syn.ddc"
+write_sdf -version 1.0  Bicubic_syn.sdf
+write -format verilog -hierarchy -output Bicubic_syn.v
+report_area > area.log
+report_timing > timing.log
+report_qor   >  Bicubic_syn.qor
+write_parasitics -output Bicubic_syn.spef

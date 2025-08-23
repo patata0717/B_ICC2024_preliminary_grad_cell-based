@@ -1,18 +1,19 @@
+Warning: Design 'Bicubic' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : qor
-Design : Cubic_engine
+Design : Bicubic
 Version: W-2024.09-SP2
-Date   : Sat Aug 23 23:20:23 2025
+Date   : Sun Aug 24 00:34:28 2025
 ****************************************
 
 
-  Timing Path Group (none)
+  Timing Path Group 'CLK'
   -----------------------------------
-  Levels of Logic:               2.00
-  Critical Path Length:          1.38
-  Critical Path Slack:         uninit
-  Critical Path Clk Period:       n/a
+  Levels of Logic:              11.00
+  Critical Path Length:          3.54
+  Critical Path Slack:           0.00
+  Critical Path Clk Period:      3.90
   Total Negative Slack:          0.00
   No. of Violating Paths:        0.00
   Worst Hold Violation:          0.00
@@ -25,34 +26,34 @@ Date   : Sat Aug 23 23:20:23 2025
   -----------------------------------
   Hierarchical Cell Count:          0
   Hierarchical Port Count:          0
-  Leaf Cell Count:               1202
-  Buf/Inv Cell Count:             159
-  Buf Cell Count:                  59
-  Inv Cell Count:                 100
+  Leaf Cell Count:               2613
+  Buf/Inv Cell Count:             517
+  Buf Cell Count:                  54
+  Inv Cell Count:                 463
   CT Buf/Inv Cell Count:            0
-  Combinational Cell Count:      1068
-  Sequential Cell Count:          134
+  Combinational Cell Count:      2469
+  Sequential Cell Count:          144
   Macro Count:                      0
   -----------------------------------
 
 
   Area
   -----------------------------------
-  Combinational Area:    15933.493789
-  Noncombinational Area:  3225.060070
-  Buf/Inv Area:            833.423387
-  Total Buffer Area:           400.59
-  Total Inverter Area:         432.84
+  Combinational Area:    26019.444494
+  Noncombinational Area:  4494.715261
+  Buf/Inv Area:           3240.336573
+  Total Buffer Area:           661.99
+  Total Inverter Area:        2578.35
   Macro/Black Box Area:      0.000000
-  Net Area:             156614.115540
+  Net Area:             252001.268402
   -----------------------------------
-  Cell Area:             19158.553859
-  Design Area:          175772.669399
+  Cell Area:             30514.159755
+  Design Area:          282515.428158
 
 
   Design Rules
   -----------------------------------
-  Total Number of Nets:          1503
+  Total Number of Nets:          2734
   Nets With Violations:             0
   Max Trans Violations:             0
   Max Cap Violations:               0
@@ -63,12 +64,12 @@ Date   : Sat Aug 23 23:20:23 2025
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                    0.42
-  Logic Optimization:                  0.26
-  Mapping Optimization:                0.88
+  Resource Sharing:                    1.15
+  Logic Optimization:                  9.08
+  Mapping Optimization:               12.61
   -----------------------------------------
-  Overall Compile Time:                4.43
-  Overall Compile Wall Clock Time:     4.67
+  Overall Compile Time:               28.11
+  Overall Compile Wall Clock Time:    28.32
 
   --------------------------------------------------------------------
 

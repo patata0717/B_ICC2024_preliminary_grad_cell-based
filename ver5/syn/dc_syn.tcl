@@ -12,10 +12,10 @@ set_app_var link_library $link_list
 
 #Read All Files
 read_file -format sverilog ../hdl/Cubic_engine.v
-#read_file -format sverilog ../hdl/SnS_divider.v
-#read_file -format sverilog ../hdl/Bicubic.v
-#read_file -format sverilog ../hdl/ImgROM.v
-#read_file -format sverilog ../hdl/ResultSRAM.v
+read_file -format sverilog ../hdl/SnS_divider.v
+read_file -format sverilog ../hdl/Bicubic.v
+read_file -format sverilog ../hdl/ImgROM.v
+read_file -format sverilog ../hdl/ResultSRAM.v
 
 elaborate Bicubic -architecture verilog -library DEFAULT
 current_design Bicubic

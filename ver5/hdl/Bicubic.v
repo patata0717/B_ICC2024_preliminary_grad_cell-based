@@ -7,8 +7,7 @@
 2. Cubic engine should be 4 mul 1 add
 3. SRAM address should set correctly
 4. can pre-calulate x x1 x2 x3 solo
-5. turn next-curr-prev as wire
-6. dividre rem and quot share register
+6. divider rem and quot share register
 */
 
 
