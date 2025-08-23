@@ -4,7 +4,7 @@ Warning: Design 'Bicubic' has '2' unresolved references. For more detailed infor
 Report : qor
 Design : Bicubic
 Version: W-2024.09-SP2
-Date   : Sun Aug 24 00:34:28 2025
+Date   : Sun Aug 24 01:41:46 2025
 ****************************************
 
 
@@ -64,12 +64,12 @@ Date   : Sun Aug 24 00:34:28 2025
 
   Compile CPU Statistics
   -----------------------------------------
-  Resource Sharing:                    1.15
-  Logic Optimization:                  9.08
-  Mapping Optimization:               12.61
+  Resource Sharing:                    1.13
+  Logic Optimization:                  8.80
+  Mapping Optimization:               12.21
   -----------------------------------------
-  Overall Compile Time:               28.11
-  Overall Compile Wall Clock Time:    28.32
+  Overall Compile Time:               27.26
+  Overall Compile Wall Clock Time:    27.46
 
   --------------------------------------------------------------------
 

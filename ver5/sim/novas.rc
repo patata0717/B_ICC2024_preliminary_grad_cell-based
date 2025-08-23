@@ -223,12 +223,12 @@ Selection-LineWidth = 1
 [FSM_Dlg-Print]
 Orientation = Landscape
 [FileBrowser]
-nWaveOpenFsdbDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Cubic_ver3.fsdb\"" "\"/home/patata071\
-7/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/Bicubic_ver1.fsdb\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\"" "\"/home/patata0717/ic_contest/IC_conte\
-st/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb\""
 nWaveRestoreRCDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/novas.rc\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/signal.rc\"" "\"/home/patata0717/ic_contest/IC\
 _contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/signal.rc\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.rc\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_pr\
 eliminary_grad_cell-based/ver4/sim/Bicubic.rc\""
+nWaveOpenFsdbDirHistory = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Cubic_ver3.fsdb\"" "\"/home/patata071\
+7/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver1/sim/Bicubic_ver1.fsdb\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\"" "\"/home/patata0717/ic_contest/IC_conte\
+st/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb\"" "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/sim/Cubic_ver3.fsdb\""
 [Form]
 version = Verdi_W-2024.09-SP2
 [General]
@@ -238,12 +238,12 @@ cmd_enter_form = FALSE
 SyncBrowserDir = TRUE
 FindBarVisible = 
 recent_commands_nSchema = schPopViewUp,schPushViewIn,schPinNameVis,schPortNameVis
-SignalCaseInSensitive = FALSE
 ColorTheme = classic
-prevColorTheme = classic
 version = Verdi_W-2024.09-SP2
 recent_commands_Verdi = hbInvokeWave,nsFullScreen,schCreateWindowByScopeGroup,hbImpDsg
-recent_commands_nWave = reread,zoomIn,zoomOut,editCut,openFile,getSignal,windowTimeUnit,windowTimeUnit_2,restoreSignal,saveSignal
+recent_commands_nWave = reread,getSignal,editCut,zoomOut,zoomIn,openFile,windowTimeUnit,windowTimeUnit_2,restoreSignal,saveSignal
+prevColorTheme = classic
+SignalCaseInSensitive = FALSE
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
 [Globals]
@@ -398,13 +398,13 @@ QwInfoMsgDlg = 335,285,750,250
 importDesignForm = 362,150,715,574
 tipViewerDlg = 511,281,398,259
 saveSigDlg = 444,244,551,386
-QwUserAskDlg = 548,322,324,125
 restoreSigDlg = 452,226,551,438
 SetWindowTimeUnitDialog = 503,398,433,79
 unknownSave = 497,323,461,245
-qWaveSignalDialog = 320,198,800,479
-openFileDlg = 427,204,602,483
 QwWarnMsgDlg = 410,285,600,250
+openFileDlg = 419,196,602,483
+qWaveSignalDialog = 270,201,800,479
+QwUserAskDlg = 548,322,324,125
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -416,11 +416,11 @@ ErrorObject = ID_GRAY5
 AnnotateSignal = TRUE
 HighlightSafetyObject = TRUE
 [Session Cache]
-3 = string (session file name)
 4 = string (session file name)
 5 = string (session file name)
-1 = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/verdiLog/novas_autosave.ses
-2 = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/verdiLog/novas_autosave.ses
+1 = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/sim/verdiLog/novas_autosave.ses
+2 = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/verdiLog/novas_autosave.ses
+3 = /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/verdiLog/novas_autosave.ses
 [Simulation]
 scsPath = scsim
 scsOption = 
@@ -688,52 +688,52 @@ Button1 = "Dump All Signals" "$fsdbDumpvars;\n"
 [VIA]
 viaLogViewerDefaultRuleOneSearchForm = "share/VIA/Apps/PredefinedRules/Misc/Onesearch_rule.rc"
 [VIA.oneSearch.preference]
-isOneSearchVisible = TRUE
 DefaultDisplayTimeUnit = "1.000000ns"
 DefaultLogTimeUnit = "1.000000ns"
+isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC]
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Severity"
-width = 60
-visualIndex = 2
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = "Block's First Line"
 width = 120
 visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Type"
-width = 60
-visualIndex = 4
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
-name = "Message"
-width = 2000
-visualIndex = 5
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = "Time"
 width = 60
 visualIndex = 0
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = "Code"
 width = 60
 visualIndex = 3
 isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = "Severity"
+width = 60
+visualIndex = 2
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Type"
+width = 60
+visualIndex = 4
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+isColFilterColorCoding = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+name = "Message"
+width = 2000
+visualIndex = 5
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 isColFilterColorCoding = FALSE
 [VIA.ruleHistory]
@@ -812,6 +812,7 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
+getSignalForm = 270 201 800 479 165 387 393 91
 viewPort = 0 25 1440 731 153 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
@@ -978,11 +979,11 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.rc\""
-RecentFile2 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\""
-RecentFile3 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.rc\""
-RecentFile4 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb\""
-RecentFile5 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Divider_ver3.fsdb\""
+RecentFile1 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/sim/Cubic_ver3.fsdb\""
+RecentFile2 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.rc\""
+RecentFile3 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb\""
+RecentFile4 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.rc\""
+RecentFile5 = "\"/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/sim/Bicubic.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
@@ -991,18 +992,18 @@ group_name_font = -f COURIER12 -c ID_GREEN5
 ruler_value_font = -f COURIER12 -c ID_CYAN5
 analog_ruler_value_font = -f COURIER12 -c ID_CYAN5
 comment_string_font = -f COURIER12 -c ID_RED5
-getsignal_form_font = -f COURIER12
+getsignal_form_font = -f COURIER12 
 SigsCheckNum = on 1000
 filter_synthesized_net = off n
 filterOutNet = on
 exclude_signal_with_prefix = off n
 synthesizeNetOnly = on
-filter_synthesized_instance = off
+filter_synthesized_instance = off 
 filterOutInstance = on
 showGroupTree = TRUE
 hierGroupDelim = /
 MsgSeverityColor = {y \"Severity\"==\"1\" ID_RED5} {y \"Severity\"==\"2\" ID_RED6} {y \"Severity\"==\"3\" ID_RED7} {y \"Severity\"==\"4\" ID_RED8} {y \"Severity\"==\"5\" ID_ORANGE5} {y \"Severity\"==\"6\" ID_ORANGE6} {y \"Severity\"==\"7\" ID_ORANGE7} {y \"Severity\"==\"8\" \
-ID_GREEN7} {y \"Severity\"==\"9\" ID_GREEN6} {y \"Severity\"==\"10\" ID_GREEN5}
+ID_GREEN7} {y \"Severity\"==\"9\" ID_GREEN6} {y \"Severity\"==\"10\" ID_GREEN5} 
 waveDblClkActiveTrace = on
 SEQShowComparisonIcon = TRUE
 SEQAddDriverLoadInSameGroup = TRUE
@@ -1015,7 +1016,6 @@ maskFsaCoreRule = TRUE
 maskFsaSfsmRule = TRUE
 maskFsaEcrRule = TRUE
 maskTPropagation = TRUE
-getSignalForm = 320 198 800 479 165 387 393 91
 [cov_hier_name_column]
 justify = TRUE
 [coverageColors]
@@ -1093,7 +1093,7 @@ OutputPinStatus = 2
 RevisedComponentColor = ID_BLUE5
 SpareCellColor = ID_RED5
 UserName = patata0717
-CommentFormat = Novas ECO updated by ${UserName} ${Date} ${Time}
+CommentFormat = Novas ECO updated by ${UserName} ${Date} ${Time} 
 PrefixN = eco_n
 PrefixP = eco_p
 PrefixI = eco_i

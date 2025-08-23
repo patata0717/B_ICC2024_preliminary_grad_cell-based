@@ -6,7 +6,7 @@ viewPort 0 25 1440 731 153 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb"
+openDirFile -d / "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/sim/Cubic_ver3.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 3130989.882038 3484572.160038
-cursor 4692000.000000
-marker 3372000.000000
+zoom 0.000000 44000.000000
+cursor 0.000000
+marker 0.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 0
+top 13
 ; marker line index
-markerPos 4
+markerPos 40
 
 ; event list
 ; addEvent event_name event_expression
@@ -45,72 +45,64 @@ COMPLEX_EVENT_END
 curSTATUS ByChange
 
 
-addGroup "CTRL"
-activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb"
-addSignal -h 15 /testfixture/u_Bicubic/CLK
-addSignal -h 15 -UNSIGNED -HEX -holdScope cycle_cnt[2:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope cycle_cnt_lv2[7:0]
-addSignal -h 15 -holdScope next_mode
-addSignal -h 15 -holdScope mode
-addSignal -h 15 -holdScope prev_mode
-addSignal -h 15 -UNSIGNED -HEX -holdScope next_rem_v[6:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope rem_v[6:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope quot_v[6:0]
-addSignal -h 15 -holdScope state
-addSignal -h 15 -UNSIGNED -HEX -holdScope coord_v[6:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope prev_coord_v[6:0]
-addGroup "SRAM/ROM"
-addSignal -h 15 /testfixture/u_Bicubic/SRAM_CEN
-addSignal -h 15 -holdScope SRAM_WEN
-addSignal -h 15 -UNSIGNED -HEX -holdScope SRAM_addr[13:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope SRAM_data_i[7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope SRAM_data_o[7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_addr[13:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope ROM_data_o[7:0]
-addGroup "Divider"
-addSignal -h 15 -UNSIGNED -HEX /testfixture/u_Bicubic/sns_divider/dividend[6:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope divider[6:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope qoutient[7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope remainder[7:0]
-addGroup "Cubic_engine"
-addSignal -expanded -h 15 /testfixture/u_Bicubic/P_buf[0:3]
-addSignal -h 15 -UNSIGNED -HEX -holdScope P_buf[0][7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope P_buf[1][7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope P_buf[2][7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope P_buf[3][7:0]
-addSignal -h 15 -UNSIGNED -HEX /testfixture/u_Bicubic/cubic_engine/X_in[23:0]
+addGroup "G1"
+activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/sim/Cubic_ver3.fsdb"
+addSignal -h 15 /test_Cubic/CLK
 addSignal -h 15 -UNSIGNED -HEX -holdScope P_in[7:0]
-addSignal -expanded -h 15 -holdScope X[0:3]
-addSignal -h 15 -UNSIGNED -HEX -holdScope X[0][7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope X[1][7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope X[2][7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope X[3][7:0]
-addSignal -expanded -h 15 -holdScope P[0:3]
-addSignal -h 15 -UNSIGNED -HEX -holdScope P[0][7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope P[1][7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope P[2][7:0]
-addSignal -h 15 -UNSIGNED -HEX -holdScope P[3][7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope cycle_cnt[2:0]
+addSignal -h 15 /test_Cubic/cubic_engine/X[0:3]
+addSignal -h 15 -holdScope P[0:3]
+addSignal -expanded -h 15 -holdScope XC[0:3]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[0][13:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[1][13:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[2][13:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XC[3][13:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope XCP[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope multiplier1[21:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope multiplier2[21:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope multiplier3[21:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope multiplier4[21:0]
+addSignal -expanded -h 15 -UNSIGNED -HEX -holdScope adder1[23:0]
+addSignal -h 15 -holdScope adder1[23]
+addSignal -h 15 -holdScope adder1[22]
+addSignal -h 15 -holdScope adder1[21]
+addSignal -h 15 -holdScope adder1[20]
+addSignal -h 15 -holdScope adder1[19]
+addSignal -h 15 -holdScope adder1[18]
+addSignal -h 15 -holdScope adder1[17]
+addSignal -h 15 -holdScope adder1[16]
+addSignal -h 15 -holdScope adder1[15]
+addSignal -h 15 -holdScope adder1[14]
+addSignal -h 15 -holdScope adder1[13]
+addSignal -h 15 -holdScope adder1[12]
+addSignal -h 15 -holdScope adder1[11]
+addSignal -h 15 -holdScope adder1[10]
+addSignal -h 15 -holdScope adder1[9]
+addSignal -h 15 -holdScope adder1[8]
+addSignal -h 15 -holdScope adder1[7]
+addSignal -h 15 -holdScope adder1[6]
+addSignal -h 15 -holdScope adder1[5]
+addSignal -h 15 -holdScope adder1[4]
+addSignal -h 15 -holdScope adder1[3]
+addSignal -h 15 -holdScope adder1[2]
+addSignal -h 15 -holdScope adder1[1]
+addSignal -h 15 -holdScope adder1[0]
 addSignal -h 15 -UNSIGNED -HEX -holdScope out[7:0]
 addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm
-activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim/Bicubic.fsdb"
+activeDirFile "" "/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/sim/Cubic_ver3.fsdb"
 
 GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
 getSignalForm close
 
-"/testfixture"
-"/testfixture/u_Bicubic"
-"/testfixture/u_Bicubic/cubic_engine"
-"/testfixture/u_Bicubic/sns_divider"
+"/test_Cubic"
+"/test_Cubic/cubic_engine"
 
 SCOPE_LIST_BEGIN
-"/testfixture"
-"/testfixture/READ_PATTERN"
-"/testfixture/u_Bicubic"
-"/testfixture/u_Bicubic/cubic_engine"
-"/testfixture/u_Bicubic/sns_divider"
+"/test_Cubic"
+"/test_Cubic/cubic_engine"
 SCOPE_LIST_END
 
 GETSIGNALFORM_SCOPE_HIERARCHY_END

@@ -1,5 +1,5 @@
 `timescale 1ns/10ps
-`define CYCLE_TIME      8.0  
+`define CYCLE_TIME      3.9
 `define SDFFILE    "./Bicubic_syn.sdf"
 `define MAX_CYCLE_PER_PATTERN  50000
 `define PLOT_IMG

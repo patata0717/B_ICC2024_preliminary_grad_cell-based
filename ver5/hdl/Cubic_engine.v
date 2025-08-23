@@ -40,6 +40,7 @@ reg signed [11:0] p0, p1, p2, p3;
 // combinational for multiplier(multiplier, adder)
 always @* begin
     // ---- Compute XC[col_sel] = sum_i X[i]*C_col[col_sel][i]
+    p0 = 12'sd0; p1 = 12'sd0; p2 = 12'sd0; p3 = 12'sd0;
     case (cycle_cnt)
         3'd1: begin
             // Q0.8 * Q2.1 = Q2.9
@@ -87,7 +88,9 @@ always @* begin
             // Q12.9 * 4
             adder1 = multiplier1 + multiplier2 + multiplier3 + multiplier4;
         end
-        default: multiplier1 = 20'sd0; multiplier2 = 20'sd0; multiplier3 = 20'sd0; multiplier4 = 20'sd0; adder1 = 22'sd0;
+        default: begin
+            multiplier1 = 20'sd0; multiplier2 = 20'sd0; multiplier3 = 20'sd0; multiplier4 = 20'sd0; adder1 = 22'sd0;
+        end
     endcase
 end
 
