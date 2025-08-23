@@ -180,9 +180,7 @@ Option          Value             Origin  File                           LineNo
 -templatedir    /usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff CmdLine -                              -
 -turbo          <ON>              CmdFile $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff/lint/lint_turbo_rtl.spq 92
 -wdir           ./spyglass-1/lint/lint_turbo_rtl CmdLine -                              -
-<design_files>  Bicubic.v         APICall -                              -
-                Cubic_engine.v    APICall -                              -
-                SnS_divider.v     APICall -                              -
+<design_files>  Cubic_engine.v    APICall -                              -
 
 
 Rules Parameter

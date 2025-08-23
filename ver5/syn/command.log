@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version W-2024.09-SP2 for linux64 -- Nov 28, 2024
-#@ # Date:   Fri Aug 22 17:00:16 2025
+#@ # Date:   Sat Aug 23 22:27:12 2025
 #@ # Run by: patata0717@vlsilab.es.ncku.edu.tw
 #@ 
 
@@ -9256,7 +9256,6 @@ source -echo -verbose /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024
 
 #@ remove_design -all
 #@ 
-#@ 
 #@ set GTECH_DB  /cad/CBDK/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db
 #@ if {[file exists ../ImgROM_slow.db]}      { set IMG_ROM_DB ../ImgROM_slow.db }
 #@ if {[file exists ../ResultSRAM_slow.db]}  { set SRAM_DB    ../ResultSRAM_slow.db }
@@ -9269,10 +9268,10 @@ source -echo -verbose /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024
 #@ 
 #@ #Read All Files
 #@ read_file -format sverilog ../hdl/Cubic_engine.v
-#@ read_file -format sverilog ../hdl/SnS_divider.v
-#@ read_file -format sverilog ../hdl/Bicubic.v
-#@ read_file -format sverilog ../hdl/ImgROM.v
-#@ read_file -format sverilog ../hdl/ResultSRAM.v
+#@ #read_file -format sverilog ../hdl/SnS_divider.v
+#@ #read_file -format sverilog ../hdl/Bicubic.v
+#@ #read_file -format sverilog ../hdl/ImgROM.v
+#@ #read_file -format sverilog ../hdl/ResultSRAM.v
 #@ 
 #@ elaborate Bicubic -architecture verilog -library DEFAULT
 #@ current_design Bicubic
@@ -9327,5 +9326,4 @@ source -echo -verbose /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024
 #@ write_parasitics -output Bicubic_syn.spef
 #@ # -- End source /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/syn/dc_syn.tcl
 
-ls
 quit

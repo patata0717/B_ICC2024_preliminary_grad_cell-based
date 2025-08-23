@@ -1,0 +1,6 @@
+{"vcs1":{"timestamp_begin":1755957951.232340193, "rt":3.99, "ut":0.05, "st":0.04}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1755957951.091941485}
+{"VCS_COMP_START_TIME": 1755957951.091941485}
+{"VCS_COMP_END_TIME": 1755957955.261804088}
+{"VCS_USER_OPTIONS": "-R -full64 ../hdl/Cubic_engine.v test_Cubic_engine.v -debug_access+all+v2k"}
+{"vcs1": {"peak_mem": 284760}}

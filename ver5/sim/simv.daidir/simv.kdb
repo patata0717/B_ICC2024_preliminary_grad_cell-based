@@ -1,7 +1,7 @@
 rc file Version 1.0
 
 [Design]
-COMPILE_PATH=/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver3/sim
+COMPILE_PATH=/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/sim
 VCS_HOME=/usr/cad/synopsys/vcs/2024.09-sp2
 VERDI_HOME=/usr/cad/synopsys/verdi/2024.09-sp2
 SystemC=FALSE

@@ -1,7 +1,7 @@
 ##spyglass_version: SpyGlass_vW-2024.09-SP2
-##date: Fri Aug 22 16:39:59 2025
+##date: Sat Aug 23 22:23:18 2025
 ##user: patata0717
-##cwd: /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl
+##cwd: /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/hdl
 ##lang: verilog+vhdl
 ##args: -mSpyGlass::Compatibility::v2_7_3 -mSpyGlass::Compatibility::v2_7_3 -mSpyGlass::Compatibility::v2_7_3 -nl -lib WORK ./spyglass-1/WORK -dbdir './spyglass-1/.SG_SaveRestoreDB' -wdir './spyglass-1/lint/lint_rtl' -mixed -batch -rules='badimplicitSM1,badimplicitSM2,badimplicitSM4,BlockHeader,bothedges,STARC05-2.1.6.5,STARC05-2.3.1.2c,W421,W442a,W442b,W442c,W442f,sim_race02,W110a,W416,CheckDelayTimescale-ML,PragmaComments-ML,STARC05-2.10.2.3,STARC05-2.11.3.1,STARC05-2.3.1.5b,W215,W216,W289,W292,W293,W317,W352,W398,W422,W424,W426,W467,W480,W481a,W481b,W496a,W496b,W71,NoAssignX-ML,NoXInCase-ML,ParamWidthMismatch-ML,ReportPortInfo-ML,STARC05-2.1.3.1,STARC05-2.1.5.3,STARC05-2.2.3.3,STARC05-2.3.1.6,W110,W116,W122,W123,W19,W218,W240,W263,W337,W362,W486,W499,W502,W505,W66,InferLatch,RegInputOutput-ML,STARC05-2.3.4.1v,STARC05-2.5.1.7,STARC05-2.5.1.9,STARC05-2.10.3.2a,W336,W414,W450L,UndrivenInTerm-ML,BufClock,checkPinConnectedToSupply,CombLoop,FlopClockConstant,FlopEConst,FlopSRConst,LatchFeedback,STARC05-1.2.1.2,STARC05-1.3.1.3,STARC05-1.4.3.4,STARC05-2.1.4.5,STARC05-2.4.1.5,STARC05-2.5.1.2,W392,W415,STARC05-2.10.1.4a,STARC05-2.10.1.4b,W156,STARC05-2.3.3.1,W415a,W287b,W224,W287a,W528,mixedsenselist,W339a' -policy='openmore,starc,starc2005,erc,simulation,lint,latch,spyglass,morelint,timing' --goal_info 'lint/lint_rtl@' -templatedir '/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff' -projectwdir './spyglass-1' -overloadrules 'STARC05-2.1.6.5+severity=Warning,STARC05-2.3.1.2c+severity=Error,W421+severity=Error,sim_race02+severity=Warning,W416+severity=Error,PragmaComments-ML+severity=Data,STARC05-2.10.2.3+severity=Warning,STARC05-2.11.3.1+severity=Warning,STARC05-2.3.1.5b+severity=Error,W289+severity=Error,W293+severity=Error,W352+severity=Error,W398+severity=Error,W422+severity=Error,W71+severity=Error,ParamWidthMismatch-ML+severity=Warning,ReportPortInfo-ML+severity=Data,STARC05-2.1.3.1+severity=Warning,STARC05-2.1.5.3+severity=Warning,STARC05-2.2.3.3+severity=Warning,STARC05-2.3.1.6+severity=Warning,W110+severity=Error,W122+severity=Error,W123+severity=Error,W19+severity=Error,W218+severity=Error,W505+severity=Error,W66+severity=Error,InferLatch+severity=Error,RegInputOutput-ML+severity=Data,STARC05-2.3.4.1v+severity=Warning,STARC05-2.5.1.7+severity=Warning,STARC05-2.5.1.9+severity=Warning,W336+severity=Error,W414+severity=Error,W450L+severity=Warning,UndrivenInTerm-ML+severity=Error,BufClock+severity=Warning,checkPinConnectedToSupply+severity=Error,CombLoop+msgLabel=CombLoop+severity=Error,FlopClockConstant+msgLabel=FlopClockConstant+severity=Error,LatchFeedback+severity=Error,STARC05-1.2.1.2+severity=Error,STARC05-1.3.1.3+severity=Warning,STARC05-1.4.3.4+severity=Warning,STARC05-2.1.4.5+severity=Warning,STARC05-2.4.1.5+severity=Error,W415+msgLabel=W415+severity=Error' --template_info 'lint/lint_rtl' -enable_save_restore -enable_fast_traversal -enable_save_restore_builtin 'true' -assume_driver_load=yes -checkInHierarchy=yes -checkRTLCInst=yes -checkalldimension=yes -checkconstassign=yes -checkfullbus=yes -checkfullrecord=yes -chkTopModule=yes -enableE2Q=yes -ignoreModuleInstance=yes -new_flow_width=yes -nocheckoverflow=yes -report_inferred_cell=yes -reportundrivenout=no -strict=W342,W343 -treat_latch_as_combinational=yes -64bit 
 ##verbosity level: 2
@@ -1507,181 +1507,103 @@
 ##file_label: multidim_array_data -file ./spyglass-1/lint/lint_rtl/spyglass_reports/lint/SignalUsageReport.rpt -policy lint -external
 ##file_label: multidim_array_data -file ./spyglass-1/lint/lint_rtl/spyglass_reports/lint/SignalUsageReport.rpt -policy lint -external
 ##file_label: morelint_ReportPortInfo -file ./spyglass-1/lint/lint_rtl/spyglass_reports/morelint/ReportPortInfo -policy morelint -external
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@46@@1@@1000@@signed argument 'C_col0_ROM[0]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@47@@1@@1000@@signed argument 'C_col0_ROM[1]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@48@@1@@1000@@signed argument 'C_col0_ROM[2]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@49@@1@@1000@@signed argument 'C_col0_ROM[3]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@55@@1@@1000@@signed argument 'C_col1_ROM[0]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@56@@1@@1000@@signed argument 'C_col1_ROM[1]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@57@@1@@1000@@signed argument 'C_col1_ROM[2]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@58@@1@@1000@@signed argument 'C_col1_ROM[3]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@64@@1@@1000@@signed argument 'C_col2_ROM[0]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@65@@1@@1000@@signed argument 'C_col2_ROM[1]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@66@@1@@1000@@signed argument 'C_col2_ROM[2]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@67@@1@@1000@@signed argument 'C_col2_ROM[3]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@73@@1@@1000@@signed argument 'C_col3_ROM[0]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@74@@1@@1000@@signed argument 'C_col3_ROM[1]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@75@@1@@1000@@signed argument 'C_col3_ROM[2]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
+WRN_1024@@WRN_1024@@Warning@@Cubic_engine.v@@76@@1@@1000@@signed argument 'C_col3_ROM[3]' passed to $signed system function call
+##sde_property: violation -ruleLang 1 
 ##file_label: SPG_ELAB_SUMMARY_FILE -file ./spyglass-1/lint/lint_rtl/spyglass_reports/SpyGlass/elab_summary.rpt -policy SpyGlass -external
 ElabSummary@@ElabSummary@@Info@@./spyglass-1/lint/lint_rtl/spyglass_reports/SpyGlass/elab_summary.rpt@@0@@1@@2@@Please refer file './spyglass-1/lint/lint_rtl/spyglass_reports/SpyGlass/elab_summary.rpt' for elab summary report
 ##sde_property: msg_label DEFAULT
 ##sde_property: msg_id DEFAULT
-##files_verilog: Bicubic.v Cubic_engine.v SnS_divider.v
-##sde_property: file Cubic_engine.v -id 1 -inactiveList slc 2 4 1 slc 6 6 1 slc 10 11 1 slc 16 20 1 slc 22 26 1 slc 28 28 1 slc 45 48 1 slc 53 53 1 slc 58 59 1 slc 68 68 1 slc 71 71 1 slc 73 73 1 slc 77 77 1 slc 79 79 1 slc 82 84 1 slc 86 86 1 slc 90 90 1 slc 92 92 1 slc 96 96 1 slc 98 98 1 slc 101 101 1 slc 104 104 1 slc 107 107 1 slc 116 116 1 slc 118 118 1 slc 121 121 1 slc 124 124 1 slc 127 127 1 slc 130 130 1 slc 133 133 1 slc 142 142 1 slc 157 157 1 slc 160 163 1 slc 165 165 1
-##sde_property: file Bicubic.v -id 2 -inactiveList slc 2 3 1 mlc 4 3 12 0 slc 15 15 1 slc 19 19 1 slc 23 23 1 slc 41 41 1 slc 55 55 1 slc 66 67 1 slc 76 76 1 slc 86 91 1 slc 102 103 1 slc 105 105 1 slc 114 114 1 slc 124 126 1 mlc 137 27 137 0 slc 138 138 1 slc 153 153 1 mlc 180 27 180 0 slc 181 181 1 slc 203 203 1 slc 217 217 1 slc 225 225 1 slc 230 230 1 slc 250 250 1 slc 254 254 1 slc 263 263 1 slc 270 270 1 slc 282 282 1 slc 285 285 1 slc 291 292 1 slc 300 300 1 slc 316 317 1 slc 319 320 1 slc 327 327 1 slc 337 337 1 slc 342 343 1 slc 353 353 1 slc 363 364 1 slc 369 369 1 slc 374 374 1 slc 393 393 1 slc 399 399 1 slc 413 414 1 slc 426 426 1 slc 430 431 1 slc 455 455 1 slc 465 465 1 slc 469 469 1 slc 482 482 1 slc 490 490 1 slc 508 508 1 slc 514 514 1 slc 524 524 1 slc 535 535 1 slc 552 554 1 slc 556 556 1 slc 582 582 1 slc 586 586 1 slc 589 589 1 slc 594 594 1 slc 597 597 1 slc 600 601 1 slc 606 607 1 slc 610 610 1 slc 614 614 1 slc 617 617 1 slc 621 621 1 slc 625 625 1 slc 628 628 1 slc 631 631 1 slc 634 634 1 slc 638 638 1 slc 641 641 1 slc 646 646 1 slc 650 650 1 slc 653 653 1 slc 658 658 1 slc 666 667 1 slc 676 677 1 slc 686 687 1 slc 693 694 1 mlc 699 21 699 0 slc 701 702 1 slc 713 714 1 slc 739 739 1 slc 804 804 1 slc 813 813 1 slc 820 820 1 slc 839 840 1 slc 859 859 1 slc 861 861 1 slc 865 865 1 slc 887 888 1 slc 900 900 1
-##sde_property: file SnS_divider.v -id 3 -inactiveList slc 2 3 1 slc 12 12 1 slc 16 16 1 slc 20 20 1
-#span Bicubic Bicubic.v 29 958 Bicubic.v 2 958
-#rtl_idmap Bicubic 1 -lang 1
-#span Cubic_engine Cubic_engine.v 7 169 Cubic_engine.v 2 169
-#rtl_idmap Cubic_engine 2 -lang 1
-#span SnS_divider SnS_divider.v 6 38 SnS_divider.v 2 38
-#rtl_idmap SnS_divider 3 -lang 1
-#greybox Bicubic 15
+##files_verilog: Cubic_engine.v
+##sde_property: file Cubic_engine.v -id 1 -inactiveList slc 6 7 1 slc 12 12 1 slc 18 22 1 slc 24 25 1 slc 31 31 1 slc 33 33 1 slc 40 40 1 slc 42 42 1 slc 45 45 1 slc 50 50 1 slc 54 54 1 slc 59 59 1 slc 63 63 1 slc 68 68 1 slc 72 72 1 slc 77 77 1 slc 80 80 1 slc 82 82 1 slc 87 87 1 slc 93 93 1 slc 96 96 1 slc 108 108 1 slc 117 117 1 slc 120 122 1 slc 132 132 1 slc 136 139 1 slc 144 144 1 slc 159 159 1 slc 162 165 1 slc 167 167 1
+#span Cubic_engine Cubic_engine.v 3 171
+#rtl_idmap Cubic_engine 1 -lang 1
 #greybox Cubic_engine 15
-#greybox SnS_divider 15
-#greybox ImgROM 0
-#greybox ResultSRAM 0
-DetectTopDesignUnits@@DetectTopDesignUnits@@Info@@Bicubic.v@@29@@1@@2@@Module Bicubic is a top level design unit
+DetectTopDesignUnits@@DetectTopDesignUnits@@Info@@Cubic_engine.v@@3@@1@@2@@Module Cubic_engine is a top level design unit
 ##sde_property: violation -duId 1 
-#rtl_top_modules Bicubic
+#rtl_top_modules Cubic_engine
 ##file_label: SPG_CHECKSUM_RPT_FILE -file ./spyglass-1/lint/lint_rtl/spyglass_reports/SpyGlass/checksum.rpt -policy SpyGlass -external
-W123@@@@Error@@./spyglass-1/lint/lint_rtl/spyglass_reports/lint/SignalUsageReport.rpt@@0@@1@@10@@Please refer to 'SignalUsageReport.rpt' for details of violating bits
-##sde_property: violation -ruleLang 1 -elabDuId 1 
-##sde_property: msg_label SignalUsageReport_Refer
-##sde_property: msg_id SignalUsageReport_Refer
-W123@@@@Error@@Bicubic.v@@939@@1@@10@@Variable 'next_rem_h_next[6:0]' read but never set.[Hierarchy: ':Bicubic']
-##continue:
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 next_rem_h_next -mergeRange1 6:0 -completeRange1 -1:0  
-##sde_property: msg_label veCheckUsage_Viol_Msg
-##sde_property: msg_id veCheckUsage_Viol_Msg
-W362@@@@Warning@@Bicubic.v@@255@@1@@10@@For operator (==), left expression: "coord_h" width 7 should match right expression: "TW" width 6 [Hierarchy: ':Bicubic']
+W486@@@@Warning@@Cubic_engine.v@@32@@1@@10@@Rhs width '24' with shift (Expr: '((adder1 + adder1[8]) >> 9)') is more than lhs width '13' (Expr: 'XCP_round'), this may cause overflow [Hierarchy: ':Cubic_engine']
 ##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
-##sde_property: msg_label W362_ve
-##sde_property: msg_id W362_ve
-W528@@@@Info@@./spyglass-1/lint/lint_rtl/spyglass_reports/lint/SignalUsageReport.rpt@@0@@1@@10@@Please refer to 'SignalUsageReport.rpt' for details of violating bits
-##sde_property: violation -ruleLang 1 -elabDuId 1 
-##sde_property: msg_label SignalUsageReport_Refer
-##sde_property: msg_id SignalUsageReport_Refer
-W528@@@@Warning@@Bicubic.v@@913@@1@@10@@Variable 'next_rem_h[6:0]' set but not read.[Hierarchy: ':Bicubic']
-##continue:
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 next_rem_h -mergeRange1 6:0 -completeRange1 -1:0  
-##sde_property: msg_label veCheckUsage_Viol_Msg
-##sde_property: msg_id veCheckUsage_Viol_Msg
+##sde_property: msg_label W486_ve
+##sde_property: msg_id W486_ve
+W71@@@@Error@@Cubic_engine.v@@43@@1@@5@@Case statement does not have a default clause and is not preceded by assignment of target signal in combinational block[Hierarchy: ':Cubic_engine']
+##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
+##sde_property: msg_label W71_ve
+##sde_property: msg_id W71_ve
 ReportPortInfo-ML@@@@Data@@./spyglass-1/lint/lint_rtl/spyglass_reports/morelint/ReportPortInfo@@1@@1@@2@@Port Information for top design unit has been generated. For details see report ReportPortInfo.rpt
 ##sde_property: violation -elabDuId 1 
-NoAssignX-ML@@@@Warning@@Bicubic.v@@84@@1@@5@@RHS of the assignment contains 'X'(Reason : Initialization with 'x' in net declaration)
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
-##sde_property: msg_label NoAssignX-ML_msg
-##sde_property: msg_id NoAssignX-ML_msg
-NoAssignX-ML@@@@Warning@@Bicubic.v@@146@@1@@5@@RHS of the assignment contains 'X'(Reason : Assigned with 'x' in assignment)
-##sde_property: violation -ruleLang 1 -duId 1 -elabDuId 1 
-##sde_property: msg_label NoAssignX-ML_msg
-##sde_property: msg_id NoAssignX-ML_msg
-#childElab ResultSRAM ResultSRAM -elabDuId 5
-#childElab ImgROM ImgROM -elabDuId 4
-#elab_rtl_namemap ResultSRAM ResultSRAM ResultSRAM
-#elab_rtl_namemap ImgROM ImgROM ImgROM
-#child SnS_divider SnS_divider SnS_divider -elabDuId 3
-#child Cubic_engine Cubic_engine Cubic_engine -elabDuId 2
-#child ResultSRAM ResultSRAM ResultSRAM -elabDuId 112
-#child ImgROM ImgROM ImgROM -elabDuId 113
-#child Bicubic Bicubic Bicubic -elabDuId 1 cubic_engine Cubic_engine sns_divider SnS_divider u_ImgROM ImgROM u_ResultSRAM ResultSRAM
-#top_modules Bicubic
+#child Cubic_engine Cubic_engine Cubic_engine -elabDuId 1
+#top_modules Cubic_engine
 #bbox_modules
-InferBlackBox@@inferblackbox@@Info@@N.A.@@0@@1@@10@@Interfaces for blackbox modules have been inferred. Please refer to AnalyzeBBox violations for more details
-##sde_property: violation -ruleLang 1 
 #precompiled_dulist
-RegInputOutput-ML@@@@Data@@Cubic_engine.v@@150@@1@@10@@Port 'RST' is not registered [Hierarchy: 'Bicubic']@@0
+RegInputOutput-ML@@@@Data@@Cubic_engine.v@@152@@1@@10@@Port 'rst' is not registered [Hierarchy: 'Cubic_engine']@@0
 ##continue: S.1
 ##sde_property: container S.1 -rtlpath 1 -nonprob
-##sde_property: violation -duId 2 -elabDuId 1 
+##sde_property: violation -duId 1 -elabDuId 1 
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@Bicubic.v@@184@@1@@10@@Port 'TH[5:0]' is not registered [Hierarchy: 'Bicubic']@@0
-##continue: S.7
-##sde_property: container S.7 -rtlpath 1 
-##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 TH -mergeRange1 5:0 -completeRange1 5:0  
-##sde_property: msg_label RegInputOutput-ML
-##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@Bicubic.v@@158@@1@@10@@Port 'TW[5:0]' is not registered [Hierarchy: 'Bicubic']@@0
-##continue: S.6
-##sde_property: container S.6 -rtlpath 1 
-##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 TW -mergeRange1 5:0 -completeRange1 5:0  
-##sde_property: msg_label RegInputOutput-ML
-##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@Bicubic.v@@437@@1@@10@@Port 'SH[4:0]' is not registered [Hierarchy: 'Bicubic']@@0
-##continue: S.5
-##sde_property: container S.5 -rtlpath 1 
-##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 SH -mergeRange1 4:0 -completeRange1 4:0  
-##sde_property: msg_label RegInputOutput-ML
-##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@Bicubic.v@@544@@1@@10@@Port 'SW[4:0]' is not registered [Hierarchy: 'Bicubic']@@0
+RegInputOutput-ML@@@@Data@@Cubic_engine.v@@99@@1@@10@@Port 'cycle_cnt[2:0]' is not registered [Hierarchy: 'Cubic_engine']@@0
 ##continue: S.4
 ##sde_property: container S.4 -rtlpath 1 
-##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 SW -mergeRange1 4:0 -completeRange1 4:0  
+##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 cycle_cnt -mergeRange1 2:0 -completeRange1 2:0  
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@Bicubic.v@@744@@1@@10@@Port 'H0[6:0]' is not registered [Hierarchy: 'Bicubic']@@0
+RegInputOutput-ML@@@@Data@@Cubic_engine.v@@139@@1@@10@@Port 'P_in[7:0]' is not registered [Hierarchy: 'Cubic_engine']@@0
 ##continue: S.3
 ##sde_property: container S.3 -rtlpath 1 
-##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 H0 -mergeRange1 6:0 -completeRange1 6:0  
+##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 P_in -mergeRange1 7:0 -completeRange1 7:0  
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-RegInputOutput-ML@@@@Data@@Bicubic.v@@724@@1@@10@@Port 'V0[6:0]' is not registered [Hierarchy: 'Bicubic']@@0
+RegInputOutput-ML@@@@Data@@Cubic_engine.v@@120@@1@@10@@Port 'X_in[23:0]' is not registered [Hierarchy: 'Cubic_engine']@@0
 ##continue: S.2
 ##sde_property: container S.2 -rtlpath 1 
-##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 V0 -mergeRange1 6:0 -completeRange1 6:0  
+##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 X_in -mergeRange1 23:0 -completeRange1 23:0  
 ##sde_property: msg_label RegInputOutput-ML
 ##sde_property: msg_id RegInputOutput-ML
-InferLatch@@(OpenMORE 5.5.2.1)@@Error@@Cubic_engine.v@@82@@1@@5@@Latch inferred for signal 'X[0][7:0]' in module 'Cubic_engine'@@0
-##continue: S.10
-##sde_property: violation -duId 2 -elabDuId 1 -type 1WBusMerge -mergeStr1 X[0] -mergeRange1 7:0 -completeRange1 7:0  
+InferLatch@@(OpenMORE 5.5.2.1)@@Error@@Cubic_engine.v@@88@@1@@5@@Latch inferred for signal 'adder1[23:0]' in module 'Cubic_engine'@@0
+##continue: S.5
+##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 adder1 -mergeRange1 23:0 -completeRange1 23:0  
 ##sde_property: msg_label InferLatch
 ##sde_property: msg_id InferLatch
-InferLatch@@(OpenMORE 5.5.2.1)@@Error@@Cubic_engine.v@@83@@1@@5@@Latch inferred for signal 'X[1][7:0]' in module 'Cubic_engine'@@0
-##continue: S.9
-##sde_property: violation -duId 2 -elabDuId 1 -type 1WBusMerge -mergeStr1 X[1] -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label InferLatch
-##sde_property: msg_id InferLatch
-InferLatch@@(OpenMORE 5.5.2.1)@@Error@@Cubic_engine.v@@84@@1@@5@@Latch inferred for signal 'X[2][7:0]' in module 'Cubic_engine'@@0
-##continue: S.8
-##sde_property: violation -duId 2 -elabDuId 1 -type 1WBusMerge -mergeStr1 X[2] -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label InferLatch
-##sde_property: msg_id InferLatch
-InferLatch@@(OpenMORE 5.5.2.1)@@Error@@Bicubic.v@@355@@1@@5@@Latch inferred for signal 'mode_next' in module 'Bicubic'@@0
-##continue: S.11
-##sde_property: violation -duId 1 -elabDuId 1 
-##sde_property: msg_label InferLatch
-##sde_property: msg_id InferLatch
-UndrivenInTerm-ML@@@@Error@@Bicubic.v@@939@@1@@10@@Detected undriven input terminal Bicubic.next_rem_h_next[6:0]@@0
-##continue: S.12
-##sde_property: container S.12 -rtlpath 1 
-##sde_property: violation -duId 1 -elabDuId 1 -type 1WBusMerge -mergeStr1 next_rem_h_next -mergeRange1 6:0 -completeRange1 6:0  
-##sde_property: msg_label vsMLHangingNet_2_rtlc
-##sde_property: msg_id vsMLHangingNet_2_rtlc
-W415@@@@Error@@Cubic_engine.v@@82@@1@@10@@Signal 'Bicubic.cubic_engine.X[0][7:0]' has multiple simultaneous drivers@@0
-##continue: S.15
-##sde_property: container S.15 -rtlpath 1.2 
-##sde_property: violation -duId 2 -type 1WBusMerge -mergeStr1 X[0] -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label W415
-##sde_property: msg_id W415
-W415@@@@Error@@Cubic_engine.v@@83@@1@@10@@Signal 'Bicubic.cubic_engine.X[1][7:0]' has multiple simultaneous drivers@@0
-##continue: S.14
-##sde_property: container S.14 -rtlpath 1.2 
-##sde_property: violation -duId 2 -type 1WBusMerge -mergeStr1 X[1] -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label W415
-##sde_property: msg_id W415
-W415@@@@Error@@Cubic_engine.v@@84@@1@@10@@Signal 'Bicubic.cubic_engine.X[2][7:0]' has multiple simultaneous drivers@@0
-##continue: S.13
-##sde_property: container S.13 -rtlpath 1.2 
-##sde_property: violation -duId 2 -type 1WBusMerge -mergeStr1 X[2] -mergeRange1 7:0 -completeRange1 7:0  
-##sde_property: msg_label W415
-##sde_property: msg_id W415
-ErrorAnalyzeBBox@@ErrorAnalyzeBBox@@Error@@Bicubic.v@@117@@1@@10@@Design Unit 'ImgROM' has no definition; black-box behavior assumed and module interface inferred
-##sde_property: violation -duId 1 -elabDuId 1 
-##sde_property: msg_label Label_5
-##sde_property: msg_id Label_5
-ErrorAnalyzeBBox@@ErrorAnalyzeBBox@@Error@@Bicubic.v@@127@@1@@10@@Design Unit 'ResultSRAM' has no definition; black-box behavior assumed and module interface inferred
-##sde_property: violation -duId 1 -elabDuId 1 
-##sde_property: msg_label Label_5
-##sde_property: msg_id Label_5
-W415@@@@Info@@./spyglass-1/lint/lint_rtl/spyglass_reports/lint/W415_Report.rpt@@0@@1@@10@@Please refer 'W415_Report.rpt' for driver details
-##sde_property: msg_label W415Rpt
-##sde_property: msg_id W415Rpt
 ##warning_total_suppressed_count:         0
 ##error_total_suppressed_count:         0
-##warning_total_reported_count:         9
-##error_total_reported_count:        12
+##warning_total_reported_count:        19
+##error_total_reported_count:         2
 ##total_warning_waived_viol_count:         0
 ##total_error_waived_viol_count:         0
 ##totalGeneratedCount:        21
 ##totalWaivedViolationCount:         0
 ##totalReportCount:        21
-##totalDataSeverityCount:         8
+##totalDataSeverityCount:         5
 ##totalSuppressedCount:         0
 ##Active_Rules  BlockHeader BufClock CheckDelayTimescale-ML CombLoop FlopClockConstant FlopEConst InferLatch LatchFeedback NoAssignX-ML NoXInCase-ML ParamWidthMismatch-ML STARC05-1.2.1.2 STARC05-1.3.1.3 STARC05-2.1.3.1 STARC05-2.1.4.5 STARC05-2.1.5.3 STARC05-2.1.6.5 STARC05-2.10.1.4a STARC05-2.10.1.4b STARC05-2.10.2.3 STARC05-2.10.3.2a STARC05-2.11.3.1 STARC05-2.2.3.3 STARC05-2.3.1.2c STARC05-2.3.1.5b STARC05-2.3.1.6 STARC05-2.3.3.1 STARC05-2.3.4.1v STARC05-2.4.1.5 STARC05-2.5.1.2 STARC05-2.5.1.7 STARC05-2.5.1.9 UndrivenInTerm-ML W110 W110a W116 W122 W123 W156 W19 W215 W216 W218 W224 W240 W263 W287a W287b W289 W292 W293 W317 W336 W337 W339a W352 W362 W392 W398 W414 W415 W415a W416 W421 W422 W424 W426 W442a W442b W442c W442f W450L W467 W480 W481a W481b W486 W496a W496b W499 W502 W505 W528 W66 W71 badimplicitSM1 badimplicitSM2 badimplicitSM4 bothedges mixedsenselist sim_race02

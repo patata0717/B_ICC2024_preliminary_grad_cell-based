@@ -1,0 +1,134 @@
+Information: Derived library resistance unit is 1.000000 Kohm (Time unit is 1 ns, and Capacitance unit is 1.000000 pF). (DES-028)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/remainder_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_lv2_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/remainder_reg[6]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'next_rem_v_reg[5]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_lv2_reg[6]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'mode_reg/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'next_mode_reg/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_h_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_lv2_reg[4]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_lv2_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_lv2_reg[5]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_h_reg[3]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_h_reg[4]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_v_reg[5]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'DONE_reg/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'next_rem_v_reg[6]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_v_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'next_rem_v_reg[4]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_lv2_reg[7]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/remainder_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/remainder_reg[3]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/remainder_reg[4]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/remainder_reg[5]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'next_rem_v_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/remainder_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'next_rem_v_reg[3]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'next_rem_v_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_v_reg[6]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_h_reg[6]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_h_reg[5]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'next_rem_v_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_lv2_reg[3]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_lv2_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_v_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_h_reg[6]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_h_reg[5]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_h_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_h_reg[4]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_h_reg[3]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_v_reg[3]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_v_reg[4]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_v_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'state_reg/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'coord_h_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_h_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_h_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_h_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_v_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_h_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_h_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_h_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_h_reg[3]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_h_reg[4]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_h_reg[5]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_h_reg[6]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_v_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_v_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_v_reg[3]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_v_reg[4]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_v_reg[5]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_coord_v_reg[6]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'prev_mode_reg/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'cycle_cnt_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_v_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/qoutient_reg[0]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_v_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_v_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_v_reg[3]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_v_reg[4]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_v_reg[5]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'rem_v_reg[6]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/qoutient_reg[1]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/qoutient_reg[2]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/qoutient_reg[3]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/qoutient_reg[4]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/qoutient_reg[5]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/qoutient_reg[6]/CK'. (PTE-014)
+Error: No net timing arc from pin 'u_ResultSRAM/CLK' to pin 'sns_divider/qoutient_reg[7]/CK'. (PTE-014)
+
+
+****************************************
+Report : read_parasitics /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/syn/Bicubic_syn.spef
+Design : Bicubic
+Version: W-2024.09-SP2
+Date   : Fri Aug 22 18:47:23 2025
+****************************************
+
+        80 error(s)
+        Format is SPEF
+        Annotated nets                   :         1366
+        Annotated capacitances           :            0
+        Annotated resistances            :            0
+        Reduced coupling capacitances    :            0
+        Annotated PI models              :         1366
+        Annotated Elmore delays          :         2871
+
+
+
+
+Executing command 'report_annotated_parasitics':
+
+****************************************
+Report : annotated_parasitics
+	-internal_nets
+	-boundary_nets
+	-driverless_nets
+	-loadless_nets
+	-pin_to_pin_nets
+Design : Bicubic
+Version: W-2024.09-SP2
+Date   : Fri Aug 22 18:47:23 2025
+****************************************
+
+                    |         |         |         |   RC    |   Not   |
+Net Type            |  Total  | Lumped  |  RC pi  | network |Annotated|
+--------------------+---------+---------+---------+---------+---------+
+Internal nets       |         |         |         |         |         |
+  - Pin to pin nets |    1333 |       0 |    1333 |       0 |       0 |
+  - Driverless nets |       0 |       0 |       0 |       0 |       0 |
+  - Loadless nets   |       8 |       0 |       8 |       0 |       0 |
+--------------------+---------+---------+---------+---------+---------+
+
+Boundary/port nets  |         |         |         |         |         |
+  - Pin to pin nets |      25 |       0 |      25 |       0 |       0 |
+  - Driverless nets |       0 |       0 |       0 |       0 |       0 |
+  - Loadless nets   |      14 |       0 |       0 |       0 |      14 |
+--------------------+---------+---------+---------+---------+---------+
+
+                    |    1380 |       0 |    1366 |       0 |      14 |
+
+

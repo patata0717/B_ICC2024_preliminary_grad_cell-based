@@ -1,7 +1,7 @@
-<CWD>/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl</CWD>
+<CWD>/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/hdl</CWD>
 <ENVVAR>
 	<env name="SPYGLASS_SPYAUTH_FILE">
-		<value>/tmp/spyAuthFileList93851755851993</value>
+		<value>/tmp/spyAuthFileList48871755958992</value>
 	</env>
 	<env name="LD_LIBRARY_PATH">
 		<value>/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/auxi:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/auxi/tkgui-new:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/auxi/policy_data/spyglass/design_read:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/Audits:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/adv_lowpower:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/area:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/auto-verify:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/clock:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/constraints:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/cubic_netlist:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/dft:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/dft_dsm:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/erc:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/latch:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/lint:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/lowpower:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/mbist-dft:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/miscellaneous:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/morelint:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/openmore:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/power_est:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/prof:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/rtl2netlist:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/sec:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/simulation:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/spyglass:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/starc:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/starc2002:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/starc2005:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/starcad-21:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/timing:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/policies/txv:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/auxi/rme:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/auxi/rme/Parser:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/auxi/rme/Parser/Linux4:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/multi-perl/lib/5.8.3:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/multi-perl/lib/site_perl/5.8.3:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/lib64/tls:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/multi-tcl/lib/Linux4:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/python/Linux4/lib:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/../dotty/lib/Linux4:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/auxi/tkgui-new/Linux4:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/multi-tcl/lib/Linux4::/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/multi-qt/lib/Linux4:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/multi-nlview/Linux4:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/multi-boost/Linux4:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/multi-thirdparty/Linux4:/depot/gcc-4.8.3-patch/lib64:/usr/lib64:/usr/X11R6/lib64:/usr/local/lib64:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/multi-vcst/vcs-mx/linux64/lib:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/oa/Linux4:::/lib64:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/lib:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/lib/64bit:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/lib64:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/oa/Linux4:/usr/cad/synopsys/verdi/2024.09-sp2/etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/:/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/cur/share/PLI/VCS/LINUX64:/usr/lib64:/usr/local/lib64::/usr/lib:/lib:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/zebulib</value>
@@ -19,7 +19,7 @@
 		<value>1717@lshc</value>
 	</env>
 	<env name="XDG_SESSION_ID">
-		<value>21390</value>
+		<value>21825</value>
 	</env>
 	<env name="XLOCALEDIR">
 		<value>/usr/cad/synopsys/icc2/2024.09-sp2//etc/locale</value>
@@ -49,7 +49,7 @@
 		<value>/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/dw_support</value>
 	</env>
 	<env name="SSH_CLIENT">
-		<value>140.116.226.70 63464 22</value>
+		<value>140.116.226.70 57123 22</value>
 	</env>
 	<env name="TMPDIR">
 		<value/>
@@ -64,7 +64,7 @@
 		<value>3</value>
 	</env>
 	<env name="SPYGLASS_IPC_SERVER_APP_INFO">
-		<value>/tmp/.SPYGLASS_IPC_SERVER_APP_INFO@@993</value>
+		<value>/tmp/.SPYGLASS_IPC_SERVER_APP_INFO@@992</value>
 	</env>
 	<env name="MGC_LOCATION_MAP">
 		<value>NO_MAP</value>
@@ -130,10 +130,10 @@
 		<value>/usr/cad/synopsys/verdi/2024.09-sp2</value>
 	</env>
 	<env name="PWD">
-		<value>/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl</value>
+		<value>/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/hdl</value>
 	</env>
 	<env name="CMD_FILE_PATH">
-		<value>/tmp/cmdfile_9385</value>
+		<value>/tmp/cmdfile_4887</value>
 	</env>
 	<env name="VCS_HOME">
 		<value>/usr/cad/synopsys/vcs/2024.09-sp2</value>
@@ -142,7 +142,7 @@
 		<value/>
 	</env>
 	<env name="SPYGLASS_IPC_SERVER_APP_PID">
-		<value>9599</value>
+		<value>5101</value>
 	</env>
 	<env name="XILINX_HLS">
 		<value>/tools/Xilinx/Vitis_HLS/2020.2</value>
@@ -220,7 +220,7 @@
 		<value>ok</value>
 	</env>
 	<env name="SSH_CONNECTION">
-		<value>140.116.226.70 63464 140.116.226.74 22</value>
+		<value>140.116.226.70 57123 140.116.226.74 22</value>
 	</env>
 	<env name="XDG_DATA_DIRS">
 		<value>/home/patata0717/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share</value>
@@ -250,7 +250,7 @@
 		<value>no</value>
 	</env>
 	<env name="SPYGLASS_CHECKER_PID_FILE_VAR">
-		<value>/tmp/.SPYGLASS_CHECKER_PID_FILE@@9385993</value>
+		<value>/tmp/.SPYGLASS_CHECKER_PID_FILE@@4887992</value>
 	</env>
 	<env name="SAVE_PATH">
 		<value>/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/obj:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/bin::/usr/local/bin:/usr/bin:/bin:/tools/Xilinx/Vitis_HLS/2020.2/bin:/tools/Xilinx/Model_Composer/2020.2/bin:/tools/Xilinx/Vivado/2020.2/bin:/usr/cad/mentor/calibre/aoj_cal_2024.4_12.9/bin:/usr/cad/mentor/Questa_Sim/2024.3/questasim/bin:/usr/cad/mentor/Questa_VIP/2024.3/bin:/usr/cad/synopsys/icc2/2024.09-sp2//bin:/usr/cad/synopsys/tmax/2024.09-sp2//vui/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vtran/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vgen/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vcap/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//testmax/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//idq/cur/linux64/iddq/bin:/usr/cad/synopsys/tmax/2024.09-sp2//dftview/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//ale/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//bin:/usr/cad/cadence/JASPER/jasper_2024.03p002/bin:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/bin:/usr/cad/synopsys/primetime/2024.09-sp2//amd64/syn/bin:/usr/cad/synopsys/primetime/2024.09-sp2//primeclosure/cur/amd64/syn/bin:/usr/cad/synopsys/formality/2024.09-sp2//amd64/fm/bin:/usr/cad/synopsys/vcs/2024.09-sp2/bin:/usr/cad/synopsys/vcs/2024.09-sp2/vcfca/bin:/usr/cad/synopsys/vcs/2024.09-sp2/amd64/bin:/usr/cad/synopsys/verdi/2024.09-sp2/bin:/usr/cad/synopsys/lc/2024.09-sp2/bin:/usr/cad/synopsys/synthesis/2024.09-sp2/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/bin/64bit:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/bin:/opt/riscv/bin:/opt/automake-1.16.1/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin</value>
@@ -299,14 +299,12 @@
 	</Opt>
 	<Opt name="-verilog_files">
 		<value>Cubic_engine.v</value>
-		<value>Bicubic.v</value>
-		<value>SnS_divider.v</value>
 	</Opt>
 	<Opt name="+vlogarg">
 		<value>+suppress+36</value>
 	</Opt>
 	<Opt name="--stime">
-		<value>04:39:53 PM on Aug 22 2025</value>
+		<value>10:23:12 PM on Aug 23 2025</value>
 	</Opt>
 	<Opt name="-blackboxdir">
 		<value>inout</value>
@@ -387,59 +385,36 @@
 <SPG_LOG>./spyglass-1/lint/lint_abstract/spyglass.log</SPG_LOG>
 <CMD_STRING> -batch -project spyglass-1.prj -goal lint/lint_abstract -64bit</CMD_STRING>
 <Module_Perf>
-	<Module name="Bicubic">
-		<Memory>56</Memory>
-		<Time>0</Time>
-	</Module>
 	<Module name="Cubic_engine">
-		<Memory>200</Memory>
-		<Time>0</Time>
-	</Module>
-	<Module name="SnS_divider">
-		<Memory>-134544</Memory>
+		<Memory>-134448</Memory>
 		<Time>0</Time>
 	</Module>
 </Module_Perf>
 <NOM_DESIGN>
-	<Modules>3</Modules>
-	<Instances>2669</Instances>
-	<Nets>4517</Nets>
-	<Terminals>15593</Terminals>
-	<MAX>2044</MAX>
-	<Avg>889</Avg>
+	<Modules>1</Modules>
+	<Instances>591</Instances>
+	<Nets>1342</Nets>
+	<Terminals>4242</Terminals>
+	<MAX>591</MAX>
+	<Avg>591</Avg>
 </NOM_DESIGN>
 <FLAT_DESIGN>
-	<Instances>2667</Instances>
-	<Nets>4238</Nets>
-	<Terminals>14668</Terminals>
-	<Paths>3</Paths>
-	<Ports>45</Ports>
-	<BBOX_Inst>2</BBOX_Inst>
+	<Instances>591</Instances>
+	<Nets>1286</Nets>
+	<Terminals>3906</Terminals>
+	<Paths>1</Paths>
+	<Ports>49</Ports>
+	<BBOX_Inst>0</BBOX_Inst>
 	<LIB_Inst>0</LIB_Inst>
 	<ILM_Inst>0</ILM_Inst>
 </FLAT_DESIGN>
-<BlackBox>
-	<BBOX>
-		<SEVERITY>ERROR</SEVERITY>
-		<SEV_CODE>14</SEV_CODE>
-		<CAUSE>ImgROM</CAUSE>
-		<ELABNAME>ImgROM</ELABNAME>
-		<RTLNAME>ImgROM</RTLNAME>
-	</BBOX>
-	<BBOX>
-		<SEVERITY>ERROR</SEVERITY>
-		<SEV_CODE>14</SEV_CODE>
-		<CAUSE>ResultSRAM</CAUSE>
-		<ELABNAME>ResultSRAM</ELABNAME>
-		<RTLNAME>ResultSRAM</RTLNAME>
-	</BBOX>
-</BlackBox>
+<BlackBox/>
 <WAIVER_COUNT>
 	<Applied>0</Applied>
 	<Reduntant>0</Reduntant>
 	<Viol_Waived>0</Viol_Waived>
 </WAIVER_COUNT>
-<PEAK_MEMORY>1951924</PEAK_MEMORY>
+<PEAK_MEMORY>1951388</PEAK_MEMORY>
 <Parameters>
 	<Param name="-allow_cascaded_cgc">
 		<DefaultValue>UNDEFINED</DefaultValue>
@@ -595,7 +570,7 @@
 	</Rule>
 	<Rule name="AcOvlRtl">
 		<Time>0</Time>
-		<Memory>-160</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="_meta_delay01">
@@ -695,7 +670,7 @@
 	</Rule>
 	<Rule name="Prereqs_ConstantInput-ML">
 		<Time>0</Time>
-		<Memory>-160</Memory>
+		<Memory>0</Memory>
 		<Count>0</Count>
 	</Rule>
 	<Rule name="Prereqs_ConstantInput-ML">
@@ -720,27 +695,22 @@
 	</Rule>
 	<Rule name="LINT_abstract01">
 		<Time>0</Time>
-		<Memory>2688</Memory>
+		<Memory>2432</Memory>
 		<Count>1</Count>
+	</Rule>
+	<Rule name="WRN_1024">
+		<Time>0</Time>
+		<Memory>0</Memory>
+		<Count>16</Count>
 	</Rule>
 	<Rule name="ElabSummary">
 		<Time>0</Time>
 		<Memory>0</Memory>
 		<Count>1</Count>
 	</Rule>
-	<Rule name="ErrorAnalyzeBBox">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>2</Count>
-	</Rule>
-	<Rule name="InferBlackBox">
-		<Time>0</Time>
-		<Memory>0</Memory>
-		<Count>1</Count>
-	</Rule>
 	<Rule name="DetectTopDesignUnits">
 		<Time>0</Time>
-		<Memory>128</Memory>
+		<Memory>0</Memory>
 		<Count>1</Count>
 	</Rule>
 </RULES>
@@ -758,9 +728,9 @@
 </REPORTS>
 <VIOL_SUMMARY>
 	<FATAL>0</FATAL>
-	<ERROR>2</ERROR>
-	<WARNING>0</WARNING>
-	<INFO>4</INFO>
+	<ERROR>0</ERROR>
+	<WARNING>16</WARNING>
+	<INFO>3</INFO>
 </VIOL_SUMMARY>
 <Exit_code>0</Exit_code>
-<Total_time>21</Total_time>
+<Total_time>23</Total_time>

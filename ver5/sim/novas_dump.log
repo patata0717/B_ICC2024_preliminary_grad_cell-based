@@ -87,7 +87,7 @@ ANF: vhdi_enc_ist_get_module_id('simv: undefined symbol: vhdi_enc_ist_get_module
 ANF: vhdi_enc_def_get_handle_by_module_id('simv: undefined symbol: vhdi_enc_def_get_handle_by_module_id')
 VCS compile option:
  option[0]: simv
- option[1]: +define+P1
+ option[1]: +define+P3
  option[2]: +access=r
  option[3]: +fsdb+mda
  option[4]: +fsdbfile+Bicubic.fsdb
@@ -112,7 +112,7 @@ VCS compile option:
  option[23]: -Msyslibs=/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/pli.a -ldl 
  option[24]: -Xvcs_run_simv=1
  option[25]: -full64
- option[26]: +define+P1
+ option[26]: +define+P3
  option[27]: +access=r
  option[28]: -debug_access
  option[29]: +vpi
@@ -146,7 +146,7 @@ Limit information:
 cputime		unlimited
 filesize		unlimited
 datasize		unlimited
-stacksize		8193 kbytes
+stacksize		8194 kbytes
 coredumpsize		0 kbytes
 memoryuse		unlimited
 vmemoryuse		unlimited
@@ -161,7 +161,7 @@ REMOTEHOST=140.116.226.70
 MANPATH=/usr/cad/synopsys/synthesis/2024.09-sp2/doc/syn/man:/usr/cad/synopsys/lc/2024.09-sp2/doc/lc/man:/usr/cad/synopsys/vcs/2024.09-sp2/doc/man
 SYNOPSYS_LC_ROOT=/usr/cad/synopsys/lc/cur
 SNPS_VCS_INTERNAL_MAKE_OPT=
-XDG_SESSION_ID=21390
+XDG_SESSION_ID=21825
 SALT_LICENSE_SERVER=1717@lshc
 HOSTNAME=vlsilab.es.ncku.edu.tw
 XLOCALEDIR=/usr/cad/synopsys/icc2/2024.09-sp2//etc/locale
@@ -174,7 +174,7 @@ TERM=xterm
 SHELL=/bin/bash
 HOST=vlsilab.es.ncku.edu.tw
 HISTSIZE=1000
-SSH_CLIENT=140.116.226.70 63464 22
+SSH_CLIENT=140.116.226.70 57123 22
 SELINUX_USE_CURRENT_RANGE=
 CALIBRE_2025_1_ENABLE_DEPRECATED_RHEL7=3
 VCS_PYTHON3=/usr/cad/synopsys/vcs/2024.09-sp2/linux64/bin/Python3/bin/python3
@@ -183,7 +183,7 @@ MGC_LOCATION_MAP=NO_MAP
 QTINC=/usr/lib64/qt-3.3/include
 SSH_TTY=/dev/pts/0
 LC_ALL=C
-SNPS_VCS_INTERNAL_ROOT_PID=26620
+SNPS_VCS_INTERNAL_ROOT_PID=2338
 QT_GRAPHICSSYSTEM_CHECKED=1
 USER=patata0717
 GROUP=patata0717
@@ -200,7 +200,7 @@ VCS_MODE_FLAG=64
 MAIL=/var/spool/mail/patata0717
 PATH=.:/tools/Xilinx/Vitis_HLS/2020.2/bin:/tools/Xilinx/Model_Composer/2020.2/bin:/tools/Xilinx/Vivado/2020.2/bin:/usr/cad/mentor/calibre/aoj_cal_2024.4_12.9/bin:/usr/cad/mentor/Questa_Sim/2024.3/questasim/bin:/usr/cad/mentor/Questa_VIP/2024.3/bin:/usr/cad/synopsys/icc2/2024.09-sp2//bin:/usr/cad/synopsys/tmax/2024.09-sp2//vui/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vtran/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vgen/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//vcap/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//testmax/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//idq/cur/linux64/iddq/bin:/usr/cad/synopsys/tmax/2024.09-sp2//dftview/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//ale/cur/bin:/usr/cad/synopsys/tmax/2024.09-sp2//bin:/usr/cad/cadence/JASPER/jasper_2024.03p002/bin:/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/bin:/usr/cad/synopsys/primetime/2024.09-sp2//amd64/syn/bin:/usr/cad/synopsys/primetime/2024.09-sp2//primeclosure/cur/amd64/syn/bin:/usr/cad/synopsys/formality/2024.09-sp2//amd64/fm/bin:/usr/cad/synopsys/vcs/2024.09-sp2/bin:/usr/cad/synopsys/vcs/2024.09-sp2/vcfca/bin:/usr/cad/synopsys/vcs/2024.09-sp2/amd64/bin:/usr/cad/synopsys/verdi/2024.09-sp2/bin:/usr/cad/synopsys/lc/2024.09-sp2/bin:/usr/cad/synopsys/synthesis/2024.09-sp2/amd64/syn/bin:/usr/cad/synopsys/lc/cur/bin:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/bin/64bit:/usr/cad/cadence/GENUS/GENUS_21.18.000/tools/bin:/opt/riscv/bin:/opt/automake-1.16.1/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 SALT_LICENSE_FILE=1717@lshc
-SNPS_VCS_INTERNAL_CURR_PID=26620
+SNPS_VCS_INTERNAL_CURR_PID=2338
 VERDI_HOME=/usr/cad/synopsys/verdi/2024.09-sp2
 CALIBRE_HOME=/usr/cad/mentor/calibre/aoj_cal_2024.4_12.9
 PWD=/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/sim
@@ -217,7 +217,7 @@ SYNOPSYS=/usr/cad/synopsys/formality/cur
 XILINX_VIVADO=/tools/Xilinx/Vivado/2020.2
 HISTCONTROL=ignoredups
 VCS_ARG_ADDED_FOR_TMP=1
-SNPS_VCS_TMPDIR=/tmp/vcs_20250822085920_26620
+SNPS_VCS_TMPDIR=/tmp/vcs_20250823142059_2338
 RISCV=/opt/riscv
 SHLVL=4
 HOME=/home/patata0717
@@ -233,9 +233,9 @@ LOGNAME=patata0717
 MACHTYPE=x86_64
 SNPS_VCS_INTERNAL_MAKE=make
 QTLIB=/usr/lib64/qt-3.3/lib
-SNPS_VCS_INTERNAL_ROOT_START_TIME=1755853160.279298564
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1755958859.855996442
 XDG_DATA_DIRS=/home/patata0717/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
-SSH_CONNECTION=140.116.226.70 63464 140.116.226.74 22
+SSH_CONNECTION=140.116.226.70 57123 140.116.226.74 22
 LESSOPEN=||/usr/bin/lesspipe.sh %s
 SHLIB_PATH=/usr/cad/synopsys/verdi/2024.09-sp2/etc/lib/libstdc++/LINUX64/:/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/lib/LINUX64/:/usr/cad/synopsys/verdi/2024.09-sp2/share/PLI/VCS/LINUX64/:
 sysc_uni_pwd=/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/sim
@@ -253,14 +253,14 @@ SPECMAN_OUTPUT_TO_TTY=1
 FLEXLM_BORROWFILE=/home/patata0717/.vlsilab.es.ncku.edu.tw-borrow.txt
 Runtime command line arguments:
 argv[0]=simv
-argv[1]=+define+P1
+argv[1]=+define+P3
 argv[2]=+access=r
 argv[3]=+fsdb+mda
 argv[4]=+fsdbfile+Bicubic.fsdb
 argv[5]=+notimingcheck
 260 profile - 100
           CPU/Mem usage: 0.020 sys,  0.130 user,  231.03M mem
-261 Elapsed time:    0:00:01    Fri Aug 22 16:59:22 2025
+261 Elapsed time:    0:00:05    Sat Aug 23 22:21:31 2025
 262 User CPU time used: 0 seconds
 263 System CPU time used: 0 seconds
 264 pliAppInit
@@ -290,62 +290,62 @@ argv[5]=+notimingcheck
 288 [spi_vcs_vd_ppi_create_root]: no upf option
 289 DUMPER_MEMORY_REDUCTION is enabled.
 290 compile option from '/home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/sim/simv.daidir/vcs_rebuild'.
-291   "vcs '-R' '-sverilog' '-full64' '-f' 'hdl.f' '+define+P1' '+access=r' '+vcs+fsdbon' '+fsdb+mda' '+fsdbfile+Bicubic.fsdb' '+notimingcheck' 2>&1"
+291   "vcs '-R' '-sverilog' '-full64' '-f' 'hdl.f' '+define+P3' '+access=r' '+vcs+fsdbon' '+fsdb+mda' '+fsdbfile+Bicubic.fsdb' '+notimingcheck' 2>&1"
 292 *Verdi* : Begin traversing the scopes, layer (0).
 293 *Verdi* : Enable +mda dumping.
 294 *Verdi* : End of traversing.
 295 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.020 sys,  0.130 user,  331.05M mem
-                   incr: 0.000 sys,  0.000 user,  10.15M mem
-                   accu: 0.000 sys,  0.000 user,  10.15M mem
-              accu incr: 0.000 sys,  0.000 user,  10.15M mem
+          CPU/Mem usage: 0.030 sys,  0.130 user,  331.05M mem
+                   incr: 0.000 sys,  0.000 user,  10.16M mem
+                   accu: 0.000 sys,  0.000 user,  10.16M mem
+              accu incr: 0.000 sys,  0.000 user,  10.16M mem
 
-          Count usage: 2205 var,  131 idcode,  115 callback
-                 incr: 2205 var,  131 idcode,  115 callback
-                 accu: 2205 var,  131 idcode,  115 callback
-            accu incr: 2205 var,  131 idcode,  115 callback
+          Count usage: 2185 var,  111 idcode,  100 callback
+                 incr: 2185 var,  111 idcode,  100 callback
+                 accu: 2185 var,  111 idcode,  100 callback
+            accu incr: 2185 var,  111 idcode,  100 callback
 296 Idcode  0 - bc1:0  mda:2078
-297 Elapsed time:    0:00:01    Fri Aug 22 16:59:22 2025
+297 Elapsed time:    0:00:06    Sat Aug 23 22:21:32 2025
 298 User CPU time used: 0 seconds
 299 System CPU time used: 0 seconds
 300 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.020 sys,  0.130 user,  331.05M mem
+          CPU/Mem usage: 0.030 sys,  0.130 user,  331.05M mem
                    incr: 0.000 sys,  0.000 user,  0.00M mem
-                   accu: 0.000 sys,  0.000 user,  10.15M mem
+                   accu: 0.000 sys,  0.000 user,  10.16M mem
               accu incr: 0.000 sys,  0.000 user,  0.00M mem
 
-          Count usage: 2205 var,  131 idcode,  115 callback
+          Count usage: 2185 var,  111 idcode,  100 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 2205 var,  131 idcode,  115 callback
+                 accu: 2185 var,  111 idcode,  100 callback
             accu incr: 0 var,  0 idcode,  0 callback
 301 Idcode  0 - bc1:0  mda:2078
-302 Elapsed time:    0:00:01    Fri Aug 22 16:59:22 2025
+302 Elapsed time:    0:00:06    Sat Aug 23 22:21:32 2025
 303 User CPU time used: 0 seconds
 304 System CPU time used: 0 seconds
-305 End of simulation at 29292000
-306 Memory usage: 406.553 M
-307 Maximum resident set size: 83 MB
+305 End of simulation at 75332000
+306 Memory usage: 408.658 M
+307 Maximum resident set size: 87 MB
 308 Hard page faults: 0
-309 Soft page faults: 32281
-310 Elapsed time:    0:00:01    Fri Aug 22 16:59:22 2025
+309 Soft page faults: 33180
+310 Elapsed time:    0:00:06    Sat Aug 23 22:21:32 2025
 311 User CPU time used: 0 seconds
 312 System CPU time used: 0 seconds
 313 Begin FSDB profile info:
-314 FSDB Writer : bc1(8986) bcn(184706) mtf/stf(0/0)
-FSDB Writer elapsed time : flush(0.143086) io wait(0.000000) theadpool wait(0.000000)
+314 FSDB Writer : bc1(24240) bcn(515932) mtf/stf(0/0)
+FSDB Writer elapsed time : flush(0.119280) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
 315 End FSDB profile info
-316 FSDB closed. Name: Bicubic.fsdb Size: 57302
+316 FSDB closed. Name: Bicubic.fsdb Size: 112658
 317 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-318                      - BlockUsed:3 Acquire:0 BufferUsed:2263511
-319                      - Flush:2 Expand:0 ProducerWait:0 ConsumerWait:0
-320                      - MainProducerTime:0.208012531 TotalConsumerTime:0.009926933
-321                      - ElapsedTime:0.710526000
-322 Producer   0 profile - BlockUsed:3 Acquire:0 BufferUsed:2263511
-323 Consumer   0 profile - Affinity:-1 CPUTime:0.009926933 LifeTime:0.009856243 (1.01%)
-324                      - BlockUsed:3 Acquire:0 BufferUsed:2263511
+318                      - BlockUsed:5 Acquire:0 BufferUsed:6488736
+319                      - Flush:2 Expand:0 ProducerWait:0 ConsumerWait:2
+320                      - MainProducerTime:0.280266868 TotalConsumerTime:0.029442018
+321                      - ElapsedTime:0.689496000
+322 Producer   0 profile - BlockUsed:5 Acquire:0 BufferUsed:6488736
+323 Consumer   0 profile - Affinity:-1 CPUTime:0.029442018 LifeTime:0.036441245 (0.81%)
+324                      - BlockUsed:5 Acquire:0 BufferUsed:6488736
 325 SimExit
-326 Elapsed time:    0:00:02    Fri Aug 22 16:59:23 2025
+326 Elapsed time:    0:00:06    Sat Aug 23 22:21:32 2025
 327 User CPU time used: 0 seconds
 328 System CPU time used: 0 seconds
 329 Sim process exit

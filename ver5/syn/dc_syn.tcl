@@ -1,6 +1,5 @@
 remove_design -all
 
-
 set GTECH_DB  /cad/CBDK/CBDK_IC_Contest_v2.5/SynopsysDC/db/slow.db
 if {[file exists ../ImgROM_slow.db]}      { set IMG_ROM_DB ../ImgROM_slow.db }
 if {[file exists ../ResultSRAM_slow.db]}  { set SRAM_DB    ../ResultSRAM_slow.db }
@@ -13,10 +12,10 @@ set_app_var link_library $link_list
 
 #Read All Files
 read_file -format sverilog ../hdl/Cubic_engine.v
-read_file -format sverilog ../hdl/SnS_divider.v
-read_file -format sverilog ../hdl/Bicubic.v
-read_file -format sverilog ../hdl/ImgROM.v
-read_file -format sverilog ../hdl/ResultSRAM.v
+#read_file -format sverilog ../hdl/SnS_divider.v
+#read_file -format sverilog ../hdl/Bicubic.v
+#read_file -format sverilog ../hdl/ImgROM.v
+#read_file -format sverilog ../hdl/ResultSRAM.v
 
 elaborate Bicubic -architecture verilog -library DEFAULT
 current_design Bicubic

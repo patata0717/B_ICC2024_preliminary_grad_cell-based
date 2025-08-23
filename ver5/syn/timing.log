@@ -1,71 +1,36 @@
-Warning: Design 'Bicubic' has '1' unresolved references. For more detailed information, use the "link" command. (UID-341)
  
 ****************************************
 Report : timing
         -path full
         -delay max
         -max_paths 1
-Design : Bicubic
+Design : Cubic_engine
 Version: W-2024.09-SP2
-Date   : Fri Aug 22 17:00:28 2025
+Date   : Sat Aug 23 22:27:25 2025
 ****************************************
 
 Operating Conditions: slow   Library: slow
 Wire Load Model Mode: top
 
-  Startpoint: TH[1] (input port clocked by CLK)
-  Endpoint: next_rem_v_reg[4]
-            (rising edge-triggered flip-flop clocked by CLK)
-  Path Group: CLK
+  Startpoint: XCP_reg[7] (rising edge-triggered flip-flop)
+  Endpoint: out[7] (output port)
+  Path Group: (none)
   Path Type: max
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
-  Bicubic            tsmc13_wl10           slow
+  Cubic_engine       tsmc13_wl10           slow
 
   Point                                    Incr       Path
   -----------------------------------------------------------
-  clock CLK (rise edge)                    0.00       0.00
-  clock network delay (ideal)              0.50       0.50
-  input external delay                     1.00       1.50 f
-  TH[1] (in)                               0.01       1.51 f
-  U1171/CO (ADDHX1)                        0.28       1.79 f
-  U1482/Y (OR2X1)                          0.39       2.18 f
-  U1483/Y (OR2X1)                          0.39       2.57 f
-  U1484/Y (OR2X1)                          0.39       2.96 f
-  U1485/Y (XNOR2X1)                        0.57       3.52 r
-  U1111/CO (ADDFHX2)                       0.54       4.06 r
-  U1199/Y (XOR2X1)                         0.23       4.29 r
-  U1186/Y (XNOR2X1)                        0.31       4.60 f
-  U1174/Y (NOR2X1)                         0.27       4.87 r
-  U1501/Y (NAND2X2)                        0.16       5.03 f
-  U1502/Y (NOR2X4)                         0.12       5.15 r
-  U1012/Y (AND2X4)                         0.16       5.31 r
-  U1008/Y (INVX6)                          0.10       5.41 f
-  U1513/Y (NOR2X2)                         0.13       5.54 r
-  U863/Y (MX2X1)                           0.27       5.81 r
-  U1514/Y (XOR2X1)                         0.28       6.09 r
-  U1518/S (ADDFX2)                         0.46       6.55 f
-  U773/Y (NOR2X2)                          0.30       6.85 r
-  U1532/Y (NOR2X1)                         0.19       7.04 f
-  U1534/Y (AOI21X2)                        0.37       7.41 r
-  U1544/Y (XOR2X1)                         0.34       7.75 f
-  U1545/Y (AOI222X2)                       0.24       7.99 r
-  U746/Y (INVX1)                           0.14       8.13 f
-  next_rem_v_reg[4]/D (DFFQX1)             0.00       8.13 f
-  data arrival time                                   8.13
-
-  clock CLK (rise edge)                    8.00       8.00
-  clock network delay (ideal)              0.50       8.50
-  clock uncertainty                       -0.10       8.40
-  next_rem_v_reg[4]/CK (DFFQX1)            0.00       8.40 r
-  library setup time                      -0.27       8.13
-  data required time                                  8.13
+  XCP_reg[7]/CK (DFFQX1)                   0.00       0.00 r
+  XCP_reg[7]/Q (DFFQX1)                    0.44       0.44 r
+  U275/Y (INVX1)                           0.27       0.71 f
+  U274/Y (INVX12)                          0.68       1.38 r
+  out[7] (out)                             0.00       1.38 r
+  data arrival time                                   1.38
   -----------------------------------------------------------
-  data required time                                  8.13
-  data arrival time                                  -8.13
-  -----------------------------------------------------------
-  slack (MET)                                         0.00
+  (Path is unconstrained)
 
 
 1

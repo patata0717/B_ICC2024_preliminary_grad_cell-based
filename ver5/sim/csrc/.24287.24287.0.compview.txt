@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1755956149.356684288, "rt":1.16, "ut":0.02, "st":0.02}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1755956149.204799665}
+{"VCS_COMP_START_TIME": 1755956149.204799665}
+{"VCS_COMP_END_TIME": 1755956150.543040133}
+{"VCS_USER_OPTIONS": "test_Cubic_engine.v Cubic_engine_un_sim.sh -R -full64 -debug_access+all +v2k"}

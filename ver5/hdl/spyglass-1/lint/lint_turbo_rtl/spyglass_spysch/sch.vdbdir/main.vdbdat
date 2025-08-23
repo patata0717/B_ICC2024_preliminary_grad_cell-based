@@ -1,70 +1,24 @@
 #x HLBEGIN S.1
 #x {{COLOR=>1;}}
-#x 110 { @@n 1 a 0 @@p 1 a 0 }
+#x 73 { @@n 1 a 0 @@p 1 a 0 }
 #x HLEND
 #x HLBEGIN S.2
 #x {{COLOR=>1;}}
-#x 110 { @@n 3 a 0 @@p 3 a 0 }
+#x 73 { @@n 3 a 0 @@p 3 a 0 }
 #x HLEND
 #x HLBEGIN S.3
 #x {{COLOR=>1;}}
-#x 110 { @@n 11 a 0 @@p 11 a 0 }
+#x 73 { @@n 28 a 0 @@p 28 a 0 }
 #x HLEND
 #x HLBEGIN S.4
 #x {{COLOR=>1;}}
-#x 110 { @@n 19 a 0 @@p 19 a 0 }
+#x 73 { @@n 37 a 0 @@p 37 a 0 }
 #x HLEND
 #x HLBEGIN S.5
 #x {{COLOR=>1;}}
-#x 110 { @@n 25 a 0 @@p 25 a 0 }
+#x 73 { @@i 376 a 0 }
 #x HLEND
 #x HLBEGIN S.6
 #x {{COLOR=>1;}}
-#x 110 { @@n 31 a 0 @@p 31 a 0 }
-#x HLEND
-#x HLBEGIN S.7
-#x {{COLOR=>1;}}
-#x 110 { @@n 38 a 0 @@p 38 a 0 }
-#x HLEND
-#x HLBEGIN S.8
-#x {{COLOR=>1;}}
-#x 110 { @@i 1894 a 0 }
-#x HLEND
-#x HLBEGIN S.9
-#x {{COLOR=>1;}}
-#x 76 { @@i 344 a 0 }
-#x HLEND
-#x HLBEGIN S.10
-#x {{COLOR=>1;}}
-#x 76 { @@i 351 a 0 }
-#x HLEND
-#x HLBEGIN S.11
-#x {{COLOR=>1;}}
-#x 76 { @@i 359 a 0 }
-#x HLEND
-#x HLBEGIN S.12
-#x {{COLOR=>1;}}
-#x 76 { @@i 343 a 0 }
-#x HLEND
-#x HLBEGIN S.13
-#x {{COLOR=>2;}{COLOR=>1;}}
-#x 110 { @@i 1710 a 1 @@t 1710 2 a 0 @@t 1710 2 a 0 }
-#x HLEND
-#x HLBEGIN S.14
-#x {{COLOR=>2;}{COLOR=>1;}}
-#x !{2 0 0 2 0 0}
-#x 110.0 { @@t 343 0 a 1 @@t 375 0 a 1 @@t0 0 343 0 @@t0 1 24 1 @@t1 0 375 0
-#x @@t1 1 24 1 }
-#x HLEND
-#x HLBEGIN S.15
-#x {{COLOR=>2;}{COLOR=>1;}}
-#x !{2 0 0 2 0 0}
-#x 110.0 { @@t 351 0 a 1 @@t 383 0 a 1 @@t0 0 351 0 @@t0 1 32 1 @@t1 0 383 0
-#x @@t1 1 32 1 }
-#x HLEND
-#x HLBEGIN S.16
-#x {{COLOR=>2;}{COLOR=>1;}}
-#x !{2 0 0 2 0 0}
-#x 110.0 { @@t 359 0 a 1 @@t 391 0 a 1 @@t0 0 359 0 @@t0 1 40 1 @@t1 0 391 0
-#x @@t1 1 40 1 }
+#x 73 { @@i 375 a 0 }
 #x HLEND

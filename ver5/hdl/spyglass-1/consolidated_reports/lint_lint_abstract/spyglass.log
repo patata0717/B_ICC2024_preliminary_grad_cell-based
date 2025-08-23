@@ -1,4 +1,4 @@
-SpyGlass run started at 04:39:53 PM on Aug 22 2025 
+SpyGlass run started at 10:23:12 PM on Aug 23 2025 
 
 SpyGlass Predictive Analyzer(R) - Version SpyGlass_vW-2024.09-SP2
 Synopsys TestMAX(TM)
@@ -134,7 +134,7 @@ GenTopLevelBlocksForAutoSoc
 Total Rules Enabled Only For Save : 36
 ##build_id : W-2024.09-SP2
 ##system   : Linux vlsilab.es.ncku.edu.tw 3.10.0-1160.el7.x86_64 #1 SMP Mon Oct 19 16:18:59 UTC 2020 x86_64
-##cwd      : /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl
+##cwd      : /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/hdl
 ##lang     : Verilog+VHDL
 ##args     : -mSpyGlass::Compatibility::v2_7_3 \
              -mSpyGlass::Compatibility::v2_7_3 \
@@ -155,21 +155,17 @@ Total Rules Enabled Only For Save : 36
              -enable_save_restore \
              -enable_save_restore_builtin 'true' \
              -64bit  \
-             Cubic_engine.v \
-             Bicubic.v \
-             SnS_divider.v
+             Cubic_engine.v
 
 ##verbosity level   : 2
 ##exact cmdline arg : -batch -project spyglass-1.prj -goal lint/lint_abstract -64bit
 ##spyglass_run.csh begins :
-;	cd /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl
+;	cd /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/hdl
 ;	setenv SPYGLASS_LD_PRELOAD /usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/lib/libreplacemalloc.so
 ;	setenv SPYGLASS_DW_PATH /usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/dw_support
 ;	/usr/cad/synopsys/spyglass/2024.09-sp2/SPYGLASS_HOME/bin/spyglass  -batch -project spyglass-1.prj -goal lint/lint_abstract -64bit
 ##spyglass_run.csh ends
-##files    : Cubic_engine.v \
-             Bicubic.v \
-             SnS_divider.v
+##files    : Cubic_engine.v 
 
 
 INFO [76]    Using './spyglass-1/WORK/64' as the Work Directory for 64bit precompiled dump.
@@ -229,22 +225,20 @@ Checking Rule CMD_ignorelibs01 (Rule 53 of total 164) .... done (Time = 0.00s, M
 Checking Rule ReportRuleNotRun (Rule 54 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportStopSummary (Rule 55 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportIgnoreSummary (Rule 56 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis started: 3 sec, 2.89 sec, 561912 KB, 1886356 KB
-##SGDEBUG [BENCHMARK_INCR]: Analysis started: 3 sec, 2.89 sec, 561912 KB, 1886356 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis started: 3 sec, 2.79 sec, 558668 KB, 1885820 KB
+##SGDEBUG [BENCHMARK_INCR]: Analysis started: 3 sec, 2.79 sec, 558668 KB, 1885820 KB
  Analyzing source file "Cubic_engine.v" ....
- Analyzing source file "Bicubic.v" ....
- Analyzing source file "SnS_divider.v" ....
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis finished: 3 sec, 2.89 sec, 627456 KB, 1886356 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Analysis finished: 3 sec, 2.80 sec, 624212 KB, 1885820 KB
 ##SGDEBUG [BENCHMARK_INCR]: Analysis finished: 0 sec, 0.00 sec, 65544 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration started: 3 sec, 2.89 sec, 627456 KB, 1886356 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration started: 3 sec, 2.80 sec, 624212 KB, 1885820 KB
 ##SGDEBUG [BENCHMARK_INCR]: Elaboration started: 0 sec, 0.00 sec, 0 KB, 0 KB
- Elaborating Top Verilog Design Unit 'Bicubic' .....
+ Elaborating Top Verilog Design Unit 'Cubic_engine' .....
  done
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration finished: 3 sec, 2.89 sec, 693120 KB, 1886356 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elaboration finished: 3 sec, 2.80 sec, 689876 KB, 1885820 KB
 ##SGDEBUG [BENCHMARK_INCR]: Elaboration finished: 0 sec, 0.00 sec, 65664 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker started: 3 sec, 2.89 sec, 693120 KB, 1886356 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker started: 3 sec, 2.80 sec, 689876 KB, 1885820 KB
 ##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker started: 0 sec, 0.00 sec, 0 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker finished: 3 sec, 2.89 sec, 693120 KB, 1886356 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: RTL Semantic Checker finished: 3 sec, 2.80 sec, 689876 KB, 1885820 KB
 ##SGDEBUG [BENCHMARK_INCR]: RTL Semantic Checker finished: 0 sec, 0.00 sec, 0 KB, 0 KB
 Checking Rule ElabSummary (Rule 57 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ViolationLimitReached (Rule 58 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
@@ -253,8 +247,8 @@ Checking Rule ReportCheckDataSummary (Rule 59 of total 164) .... done (Time = 0.
  Generating SGDC file "./spyglass-1/lint/lint_abstract/spyglass_spysch/constraint/pragma2Constraint.sgdc" from pragmas in HDL source files ....
  Generating WAIVER file "./spyglass-1/lint/lint_abstract/spyglass_spysch/waiver/pragma2Waiver.swl" from pragmas in HDL source files ....
 Checking Rule DetectTopDesignUnits (Rule 60 of total 164) Detected 1 top level design units: 
-     Bicubic
- .... done (Time = 0.00s, Memory = 128.0K)
+     Cubic_engine
+ .... done (Time = 0.00s, Memory = 0.0K)
 Performing semantic checks on SGDC contents
 ..... SGDC semantic checks completed. (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_testmode03 (Rule 61 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
@@ -273,19 +267,19 @@ Checking Rule SGDC_libgroup03 (Rule 73 of total 164) .... done (Time = 0.00s, Me
 Checking Rule SGDC_ungroup02 (Rule 74 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule HdlLibDuCheck (Rule 75 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule RtlDesignInfo (Rule 76 of total 164)
-##SGDEBUG [BENCHMARK_DATA]: Number of RTL Design Units = 3
+##SGDEBUG [BENCHMARK_DATA]: Number of RTL Design Units = 1
 ##SGDEBUG: RTL statistics for Verilog design units:
-##SGDEBUG[BENCHMARK_DATA]: RTL Ports = 21 111 14
-##SGDEBUG[BENCHMARK_DATA]: RTL Insts = 5
-##SGDEBUG[BENCHMARK_DATA]: RTL Nets = 104 899 89
-##SGDEBUG[BENCHMARK_DATA]: RTL Terms = 24 129 13
+##SGDEBUG[BENCHMARK_DATA]: RTL Ports = 6 45 4
+##SGDEBUG[BENCHMARK_DATA]: RTL Insts = 0
+##SGDEBUG[BENCHMARK_DATA]: RTL Nets = 13 197 13
+##SGDEBUG[BENCHMARK_DATA]: RTL Terms = 0 0 0
 
 ##SGDEBUG: NOTE: Following estimated data is applicable for structural designs only.
 ##SGDEBUG:     In case of RTL designs, this data may differ significantly from the actual figure.
-##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Insts = 4
-##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Nets = 424
-##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Terms = 129
-##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Paths = 1
+##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Insts = 1
+##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Nets = 0
+##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Terms = 45
+##SGDEBUG[BENCHMARK_DATA]: Estimated Flat Paths = 0
  .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Pragma_setupa (Rule 77 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule _deltaDelay (Rule 78 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
@@ -295,23 +289,7 @@ Checking Rule SGDC_waive23 (Rule 81 of total 164) .... done (Time = 0.00s, Memor
 Checking Rule SGDC_waive26 (Rule 82 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive27 (Rule 83 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive29 (Rule 84 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking ELABDU Rules for designUnit Bicubic
-    Checking Rule Prereqs_ConstantInput-ML (Rule 85 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Prereqs_ConstantInput-ML (Rule 86 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Ac_classify_param01 (Rule 87 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule AcOvlRtl (Rule 88 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule AcOvlRtl (Rule 89 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule GenTopLevelBlocksForAutoSoc (Rule 90 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Prereqs_Usage (Rule 91 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking ELABDU Rules for designUnit Cubic_engine
-    Checking Rule Prereqs_ConstantInput-ML (Rule 85 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Prereqs_ConstantInput-ML (Rule 86 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Ac_classify_param01 (Rule 87 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule AcOvlRtl (Rule 88 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule AcOvlRtl (Rule 89 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule GenTopLevelBlocksForAutoSoc (Rule 90 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-    Checking Rule Prereqs_Usage (Rule 91 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking ELABDU Rules for designUnit SnS_divider
     Checking Rule Prereqs_ConstantInput-ML (Rule 85 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule Prereqs_ConstantInput-ML (Rule 86 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
     Checking Rule Ac_classify_param01 (Rule 87 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
@@ -325,52 +303,36 @@ Checking Rule SGDC_waive24 (Rule 94 of total 164) .... done (Time = 0.00s, Memor
 Checking Rule SGDC_waive25 (Rule 95 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive31 (Rule 96 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_waive35 (Rule 97 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis started: 4 sec, 3.47 sec, 694912 KB, 1886356 KB
-##SGDEBUG [BENCHMARK_INCR]: Synthesis started: 1 sec, 0.57 sec, 1792 KB, 0 KB
- Synthesizing module: SnS_divider (elaborated name: SnS_divider) ... (Module 1 of total 3)  done 
-     (Memory Used = -134544.0K(incr), 629904.0K(tot), Cpu Time = 0.00s(incr))
- Synthesizing module: Cubic_engine (elaborated name: Cubic_engine) ... (Module 2 of total 3)  done 
-     (Memory Used = 200.0K(incr), 630104.0K(tot), Cpu Time = 0.02s(incr))
- Synthesizing module: Bicubic (elaborated name: Bicubic) ... (Module 3 of total 3)  done 
-     (Memory Used = 56.0K(incr), 630160.0K(tot), Cpu Time = 0.05s(incr))
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis started: 3 sec, 3.35 sec, 691668 KB, 1885820 KB
+##SGDEBUG [BENCHMARK_INCR]: Synthesis started: 0 sec, 0.56 sec, 1792 KB, 0 KB
+ Synthesizing module: Cubic_engine (elaborated name: Cubic_engine) ... (Module 1 of total 1)  done 
+     (Memory Used = -134448.0K(incr), 626756.0K(tot), Cpu Time = 0.02s(incr))
  Synthesis completed.
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis completed: 4 sec, 3.54 sec, 630672 KB, 1951908 KB
-##SGDEBUG [BENCHMARK_INCR]: Synthesis completed: 0 sec, 0.07 sec, -64240 KB, 65552 KB
-Checking Rule InferBlackBox (Rule 98 of total 164) .... done (Time = 0.01s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Modules = 3
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances = 2669
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Nets = 4517
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Terminals = 15593
-##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances per Module (max and avg) = 2044, 889
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Synthesis completed: 3 sec, 3.38 sec, 627268 KB, 1951372 KB
+##SGDEBUG [BENCHMARK_INCR]: Synthesis completed: 0 sec, 0.02 sec, -64400 KB, 65552 KB
+Checking Rule InferBlackBox (Rule 98 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Modules = 1
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances = 591
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Nets = 1342
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Terminals = 4242
+##SGDEBUG [BENCHMARK_DATA]: Number of NOM Instances per Module (max and avg) = 591, 591
 Checking Rule checkCMD_mthresh (Rule 99 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM started: 4 sec, 3.54 sec, 630672 KB, 1951908 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM started: 3 sec, 3.38 sec, 627268 KB, 1951372 KB
 ##SGDEBUG [BENCHMARK_INCR]: Saving NOM started: 0 sec, 0.00 sec, 0 KB, 0 KB
 
 INFO [234]    Saving design database in directory './spyglass-1/.SG_SaveRestoreDB/autogenerated__default_snapshot' ...
               done
 
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM completed: 4 sec, 3.55 sec, 692400 KB, 1951916 KB
-##SGDEBUG [BENCHMARK_INCR]: Saving NOM completed: 0 sec, 0.01 sec, 61728 KB, 8 KB
-     (Memory Used = 61728.0K(incr), 692400.0K(tot), Cpu Time = 0.00s(incr))
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Saving NOM completed: 3 sec, 3.38 sec, 680788 KB, 1951376 KB
+##SGDEBUG [BENCHMARK_INCR]: Saving NOM completed: 0 sec, 0.00 sec, 53520 KB, 4 KB
+     (Memory Used = 53520.0K(incr), 680788.0K(tot), Cpu Time = 0.00s(incr))
 Checking Rule SGDC_waive37 (Rule 100 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule CondOpInReset-ML for module SnS_divider (Rule 101 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule PESVASETUP01 for module SnS_divider (Rule 102 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule _cdc_save_license01 for module SnS_divider (Rule 103 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule _syncResetStyleRTL for module SnS_divider (Rule 104 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule _meta_delay01 for module SnS_divider (Rule 105 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule Ac_svasetup01 for module SnS_divider (Rule 106 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule CondOpInReset-ML for module Cubic_engine (Rule 101 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule PESVASETUP01 for module Cubic_engine (Rule 102 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule _cdc_save_license01 for module Cubic_engine (Rule 103 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule _syncResetStyleRTL for module Cubic_engine (Rule 104 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule _meta_delay01 for module Cubic_engine (Rule 105 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule Ac_svasetup01 for module Cubic_engine (Rule 106 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule CondOpInReset-ML for module Bicubic (Rule 101 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule PESVASETUP01 for module Bicubic (Rule 102 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule _cdc_save_license01 for module Bicubic (Rule 103 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule _syncResetStyleRTL for module Bicubic (Rule 104 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule _meta_delay01 for module Bicubic (Rule 105 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule Ac_svasetup01 for module Bicubic (Rule 106 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Performing semantic checks on SGDC contents
 ..... SGDC semantic checks completed. (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_testmode03 (Rule 61 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
@@ -387,30 +349,30 @@ Checking Rule SGDC_abstract_port13 (Rule 116 of total 164) .... done (Time = 0.0
 Checking Rule ReportUngroup (Rule 117 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ResetFlop-ML (Rule 118 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule SGDC_abstract_port21 (Rule 119 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: VS rule checking finished...: 4 sec, 3.56 sec, 635656 KB, 1951908 KB
-##SGDEBUG [BENCHMARK_INCR]: VS rule checking finished...: 0 sec, 0.01 sec, -56744 KB, -8 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Elab View Deletion Finished: 4 sec, 3.56 sec, 569968 KB, 1951908 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: VS rule checking finished...: 3 sec, 3.39 sec, 632260 KB, 1951372 KB
+##SGDEBUG [BENCHMARK_INCR]: VS rule checking finished...: 0 sec, 0.01 sec, -48528 KB, -4 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Elab View Deletion Finished: 3 sec, 3.39 sec, 566572 KB, 1951372 KB
 ##SGDEBUG [BENCHMARK_INCR]: Elab View Deletion Finished: 0 sec, 0.00 sec, -65688 KB, 0 KB
-##SGDEBUG [BENCHMARK_ABSOLUTE]: After deleting RTL view: 4 sec, 3.56 sec, 502896 KB, 1951908 KB
-##SGDEBUG [BENCHMARK_INCR]: After deleting RTL view: 0 sec, 0.00 sec, -67072 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: After deleting RTL view: 3 sec, 3.39 sec, 499356 KB, 1951372 KB
+##SGDEBUG [BENCHMARK_INCR]: After deleting RTL view: 0 sec, 0.00 sec, -67216 KB, 0 KB
 Checking Rule SGDC_assume_path05 (Rule 120 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening started: 4 sec, 3.56 sec, 504176 KB, 1951908 KB
-##SGDEBUG [BENCHMARK_INCR]: Flattening started: 0 sec, 0.00 sec, 1280 KB, 0 KB
- Flattening Bicubic (.lib instances separately flattened) ....
-     (Memory Used = 3112.0K(incr), 507288.0K(tot), Cpu Time = 0.02s(incr))
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening started: 3 sec, 3.39 sec, 500764 KB, 1951372 KB
+##SGDEBUG [BENCHMARK_INCR]: Flattening started: 0 sec, 0.00 sec, 1408 KB, 0 KB
+ Flattening Cubic_engine (.lib instances separately flattened) ....
+     (Memory Used = 2208.0K(incr), 502972.0K(tot), Cpu Time = 0.01s(incr))
  Flattening completed
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Instances = 2667
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Nets = 4238
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Terms = 14668
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Paths = 3
-##SGDEBUG [BENCHMARK_DATA]: Number of Flat Ports = 45
-##SGDEBUG [BENCHMARK_DATA]: Number of Black-Box Instances = 2
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Instances = 591
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Nets = 1286
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Terms = 3906
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Paths = 1
+##SGDEBUG [BENCHMARK_DATA]: Number of Flat Ports = 49
+##SGDEBUG [BENCHMARK_DATA]: Number of Black-Box Instances = 0
 ##SGDEBUG [BENCHMARK_DATA]: Number of Lib Instances = 0
 ##SGDEBUG [BENCHMARK_DATA]: Number of ILM Instances = 0
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening finished: 4 sec, 3.58 sec, 507288 KB, 1951908 KB
-##SGDEBUG [BENCHMARK_INCR]: Flattening finished: 0 sec, 0.02 sec, 3112 KB, 0 KB
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Flattening finished: 3 sec, 3.40 sec, 502972 KB, 1951372 KB
+##SGDEBUG [BENCHMARK_INCR]: Flattening finished: 0 sec, 0.01 sec, 2208 KB, 0 KB
 Checking Rule SGDC_set_case_analysis_LC (Rule 121 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
-Checking Rule LINT_abstract01 (Rule 122 of total 164) .... done (Time = 0.02s, Memory = 2688.0K)
+Checking Rule LINT_abstract01 (Rule 122 of total 164) .... done (Time = 0.00s, Memory = 2432.0K)
 Checking Rule AnalyzeBBox (Rule 123 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ViolationLimitReached (Rule 58 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
 Checking Rule ReportCheckDataSummary (Rule 59 of total 164) .... done (Time = 0.00s, Memory = 0.0K)
@@ -418,12 +380,12 @@ Checking Rule ReportCheckDataSummary (Rule 59 of total 164) .... done (Time = 0.
 Applying user specified and internally generated waivers on violation database .... done (Time = 0.00s)
 
 Generating data for Console...
-##SGDEBUG [PEAK_VMSIZE_END_RULE]: 1951912 KB for entire run at 'Saving NOM completed' stage
+##SGDEBUG [PEAK_VMSIZE_END_RULE]: 1951376 KB for entire run at 'Saving NOM completed' stage
 ##SGDEBUG [PEAK_SWAP_MEMORY_END_RULE]: 0 KB for entire run
-##SGDEBUG [VMPEAK_MEMORY]: 1951924 KB for entire run
-##SGDEBUG [PEAK_RSS_MEMORY]: 692716 KB for entire run
-##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking finished: 4 sec, 3.64 sec, 503632 KB, 1951904 KB
-##SGDEBUG [BENCHMARK_INCR]: Rule checking finished: 0 sec, 0.06 sec, -3656 KB, -4 KB
+##SGDEBUG [VMPEAK_MEMORY]: 1951388 KB for entire run
+##SGDEBUG [PEAK_RSS_MEMORY]: 683384 KB for entire run
+##SGDEBUG [BENCHMARK_ABSOLUTE]: Rule checking finished: 3 sec, 3.44 sec, 499644 KB, 1951368 KB
+##SGDEBUG [BENCHMARK_INCR]: Rule checking finished: 0 sec, 0.04 sec, -3328 KB, -4 KB
 
 
 =====================================================================================
@@ -3895,9 +3857,8 @@ Generating data for Console...
  Prereqs_RTLSchematic (Verilog) lint            Yes            0 SETUP          -               
  Prereqs_Usage        (Verilog) lint            Yes            0 ELABDU         -               
  LINT_abstract01                lint            Yes            1 FLATDU2_WL     -               
+ WRN_1024             (Verilog) SpyGlass        Yes           16 SETUP          -               
  ElabSummary                    SpyGlass        Yes            1 SETUP          -               
- ErrorAnalyzeBBox               SpyGlass        Yes            2 SETUP          -               
- InferBlackBox        (Verilog) SpyGlass        Yes            1 VSDULIST       -               
  DetectTopDesignUnits           SpyGlass        Yes            1 RTLALLDULIST   -               
 -------------------------------------------------------------------------------------
 Note: VSDU type of rules (as seen in the above table) are not run on
@@ -3911,22 +3872,18 @@ Results Summary:
 ---------------------------------------------------------------------------------------------
    Goal Run           :      lint/lint_abstract
    Command-line read  :      0 error,      0 warning,      0 information message 
-   Design Read        :      0 error,      0 warning,      3 information messages
+   Design Read        :      0 error,     16 warnings,     2 information messages
       Found 1 top module:
-         Bicubic   (file: Bicubic.v)
+         Cubic_engine   (file: Cubic_engine.v)
 
-** Blackbox Resolution:      2 errors,     0 warning,      0 information message 
+   Blackbox Resolution:      0 error,      0 warning,      0 information message 
    SGDC Checks        :      0 error,      0 warning,      0 information message 
    Policy lint        :      0 error,      0 warning,      1 information message 
    -------------------------------------------------------------------------------------
-   Total              :      2 errors,     0 warning,      4 information messages
+   Total              :      0 error,     16 warnings,     3 information messages
 
-  Total Number of Generated Messages     :         6 (2 errors, 0 warning, 4 Infos)
-  Number of Reported Messages            :         6 (2 errors, 0 warning, 4 Infos)
-
-  NOTE: It is recommended to first fix/reconcile fatals/errors reported on
-        lines starting with ** as subsequent issues might be related to it.
-        Please re-run SpyGlass once ** prefixed lines are fatal/error clean.
+  Total Number of Generated Messages     :        19 (0 error, 16 warnings, 3 Infos)
+  Number of Reported Messages            :        19 (0 error, 16 warnings, 3 Infos)
 
 ---------------------------------------------------------------------------------------------
 
@@ -3949,19 +3906,19 @@ SpyGlass critical reports for the current run are present in directory './spygla
 Results Summary:
 ---------------------------------------------------------------------------------------------------
    Goal Run           :      lint/lint_abstract
-   Top Module         :      Bicubic
+   Top Module         :      Cubic_engine
 ---------------------------------------------------------------------------------------------------
    Reports Directory: 
-   /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl/spyglass-1/consolidated_reports/lint_lint_abstract/ 
+   /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/hdl/spyglass-1/consolidated_reports/lint_lint_abstract/ 
 
    SpyGlass LogFile: 
-    /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl/spyglass-1/lint/lint_abstract/spyglass.log 
+    /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/hdl/spyglass-1/lint/lint_abstract/spyglass.log 
 
    Standard Reports: 
      moresimple.rpt          no_msg_reporting_rules.rpt       
 
    HTML report:
-    /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver4/hdl/spyglass-1/html_reports/goals_summary.html
+    /home/patata0717/ic_contest/IC_contest/ASIC_flow/B_ICC2024_preliminary_grad_cell-based/ver5/hdl/spyglass-1/html_reports/goals_summary.html
   
 
    Technology Reports:  
@@ -3971,13 +3928,13 @@ Results Summary:
 ---------------------------------------------------------------------------------------------------
    Goal Violation Summary:
        Waived   Messages:                      0 Errors,      0 Warnings,      0 Infos
-       Reported Messages:         0 Fatals,    2 Errors,      0 Warnings,      4 Infos
+       Reported Messages:         0 Fatals,    0 Errors,     16 Warnings,      3 Infos
 ---------------------------------------------------------------------------------------------------
    
 ---------------------------------------------------------------------------------------------------
  
-SpyGlass Exit Code 0 (Rule-checking completed with errors)
-SpyGlass total run-time is 00:00:21 (21 secs)
+SpyGlass Exit Code 0 (Rule-checking completed with warnings)
+SpyGlass total run-time is 00:00:23 (23 secs)
 SpyGlass total goal run-time is 00:00:04 (4 secs)
-SpyGlass total cpu-time is 4 secs
-SpyGlass run completed at 04:40:14 PM on Aug 22 2025
+SpyGlass total cpu-time is 3 secs
+SpyGlass run completed at 10:23:35 PM on Aug 23 2025
